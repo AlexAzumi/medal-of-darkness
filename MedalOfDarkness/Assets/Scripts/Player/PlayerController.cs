@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public float m_WalkSpeed = 5.0f; //Walk speed multiplier
     public float m_RunSpeed = 8.0f; //Run speed multiplier
     public bool m_CanRun = true; //Can the player run?
+    public bool m_CanMove = true; //Can the player move?
+
     //Camera movement
     public float m_ZoomSpeed = 0.1f; //Camera zoom speed multiplier
     public float m_MaxZoom = 3.5f; //Max camera zoom
@@ -35,14 +37,17 @@ public class PlayerController : MonoBehaviour
 
 	void FixedUpdate() //Updates the movement values
     {
-        float horizontalAxis = Input.GetAxisRaw("Horizontal"); //Horizontal axis
-        float verticalAxis = Input.GetAxisRaw("Vertical"); //Vertical axis
-        m_Camera = Camera.main.GetComponent<Transform>(); //Gets tranform from the main camera
-        m_IsRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton1); //Gets Shitf key or B button on Xbox Controller
+        if (m_CanMove)
+        {
+            float horizontalAxis = Input.GetAxisRaw("Horizontal"); //Horizontal axis
+            float verticalAxis = Input.GetAxisRaw("Vertical"); //Vertical axis
+            m_Camera = Camera.main.GetComponent<Transform>(); //Gets tranform from the main camera
+            m_IsRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton1); //Gets Shitf key or B button on Xbox Controller
 
-        //Call functions
-        MoveCharacter(horizontalAxis, verticalAxis);
-        Animation(horizontalAxis, verticalAxis);
+            //Call functions
+            MoveCharacter(horizontalAxis, verticalAxis);
+            Animation(horizontalAxis, verticalAxis);
+        }
 	}
 
     void MoveCharacter(float hAxis, float vAxis)
