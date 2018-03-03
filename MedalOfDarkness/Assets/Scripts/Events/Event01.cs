@@ -11,11 +11,12 @@ public class Event01 : MonoBehaviour
     public PlayerController m_Player;
     public Text m_MessageText;
     public Image m_BlackScreen;
-    public float m_InactiveTime = 5f;
+    public float m_InactiveTime = 6f;
 
     /* Private stuff */
     private Camera m_MainCamera;
     private Animator m_BlackScreenAnimator;
+    private Animator m_MessageTextAnimator;
     private float m_Timer;
     private bool m_Start, m_Movement;
 
@@ -24,6 +25,7 @@ public class Event01 : MonoBehaviour
         m_MainCamera = Camera.main;
         m_MessageText.text = "";
         m_BlackScreenAnimator = m_BlackScreen.GetComponent<Animator>();
+        m_MessageTextAnimator = m_MessageText.GetComponent<Animator>();
         m_Player.m_CanRun = false;
         m_Player.m_CanMove = false;
 
@@ -41,7 +43,12 @@ public class Event01 : MonoBehaviour
             m_Timer += Time.deltaTime;
             if (m_Timer > m_InactiveTime)
             {
-                StartMovement();
+                if (ChangeCameraSize(2.2f, 0.01f))
+                {
+                    m_Player.m_CanMove = true;
+                    m_Timer = 0.0f;
+                    m_Start = true;
+                }
             }
         }
         else if (!m_Movement)
@@ -50,25 +57,54 @@ public class Event01 : MonoBehaviour
         }
 	}
 
-    void StartMovement()
+    private bool ChangeCameraSize(float size, float vel)
     {
-        m_Timer = 0.0f;
-        m_Player.m_CanMove = true;
-        m_Start = true;
-    }
-
-    void InputText()
-    {
-        if (m_MessageText.text != "Puedes desplazarte con A, W, S y D")
+        if (m_MainCamera.orthographicSize.Equals(size))
+            return true;
+        else
         {
-            m_MessageText.text = "Puedes desplazarte con A, W, S y D";
-        }    
+            float cameraSize = m_MainCamera.orthographicSize;
+            //Debug.Log("Orthographic size = " + cameraSize);
+            if (cameraSize < size)
+                cameraSize += vel;
+            if (cameraSize > size)
+                cameraSize -= vel;
+
+            m_MainCamera.orthographicSize = (float)System.Math.Round(cameraSize, 2);
+            return false;
+        }
+    }
         
+    private void InputText()
+    {
+        m_MessageText.text = "Puedes desplazarte con A, W, S y D";
+        m_MessageTextAnimator.SetBool("isOnScreen", true);
+  
         m_Timer += Time.deltaTime;
         if (m_Timer > m_InactiveTime)
         {
-            m_MessageText.text = "";
+            m_MessageTextAnimator.SetBool("isOnScreen", false);
+            m_Timer = 0.0f;
             m_Movement = true;
         }
+    }
+
+    public void SetMessageText(bool isOnTrigger, string text)
+    {
+        if (isOnTrigger)
+        {
+            
+            if (!m_MessageText.text.Equals(text))
+                m_MessageText.text = text;
+                
+            m_MessageTextAnimator.SetBool("isOnScreen", true);
+        }
+        else
+            m_MessageTextAnimator.SetBool("isOnScreen", false);
+    }
+
+    public void PlayerCanRun(bool canRun)
+    {
+        m_Player.m_CanRun = canRun;
     }
 }

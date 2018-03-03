@@ -9,10 +9,11 @@ public class PlayerController : MonoBehaviour
     /* PUBLIC VARIABLES */
 
     //Character movement
-    public float m_WalkSpeed = 5.0f; //Walk speed multiplier
-    public float m_RunSpeed = 8.0f; //Run speed multiplier
+    public float m_WalkSpeed = 2.0f; //Walk speed multiplier
+    public float m_RunSpeed = 3.5f; //Run speed multiplier
     public bool m_CanRun = true; //Can the player run?
     public bool m_CanMove = true; //Can the player move?
+    public Animator m_Animation; //Control animations
 
     //Camera movement
     public float m_ZoomSpeed = 0.1f; //Camera zoom speed multiplier
@@ -22,7 +23,6 @@ public class PlayerController : MonoBehaviour
     /* PRIVATE VARIABLES */
     private Rigidbody m_PlayerRB; //Player's rigidbody
     private Vector3 m_Movement; //Vector to save the direcction of player input
-    private Animator m_Animation; //Control animations
     private Transform m_Camera; //Control of camera's position and size
     private bool m_IsWalking; //Flag to know if player's walking
     private bool m_IsRunning; //Flag to know if player's running
@@ -75,6 +75,11 @@ public class PlayerController : MonoBehaviour
 
             m_PlayerRB.MoveRotation(charRotation);
             m_PlayerRB.MovePosition(transform.position + m_Movement);
+        }
+        else
+        {
+            m_PlayerRB.velocity = Vector3.zero;
+            m_PlayerRB.angularVelocity = Vector3.zero;
         }
     }
 
