@@ -43,7 +43,7 @@ public class Event01 : MonoBehaviour
             m_Timer += Time.deltaTime;
             if (m_Timer > m_InactiveTime)
             {
-                if (m_CameraControl.SetCameraSize(2.2f, true, 0.01f))
+                if (m_CameraControl.SetCameraSize(2.5f, true, 0.01f))
                 {
                     m_CharacterControl.SetCanMove(true);
                     m_Timer = 0.0f;

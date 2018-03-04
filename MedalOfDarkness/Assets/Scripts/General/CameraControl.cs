@@ -9,7 +9,7 @@ public class CameraControl : MonoBehaviour
     /* Private stuff */
     private Camera m_MainCamera;
 
-	void Start() 
+	void Awake() 
     {
         m_MainCamera = Camera.main;
 	}
