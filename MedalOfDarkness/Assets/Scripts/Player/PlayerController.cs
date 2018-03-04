@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     /* Made by Aldan Project | 2018 */
 
-    /* PUBLIC VARIABLES */
+    /* Public stuff */
 
     //Character movement
     public float m_WalkSpeed = 2.0f; //Walk speed multiplier
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public float m_MaxZoom = 3.5f; //Max camera zoom
     public float m_MinZoom = 4.5f; //Min camera zoom
 
-    /* PRIVATE VARIABLES */
+    /* Private stuff */
     private Rigidbody m_PlayerRB; //Player's rigidbody
     private Vector3 m_Movement; //Vector to save the direcction of player input
     private Transform m_Camera; //Control of camera's position and size

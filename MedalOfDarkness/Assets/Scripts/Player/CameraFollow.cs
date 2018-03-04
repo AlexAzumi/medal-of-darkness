@@ -6,18 +6,41 @@ public class CameraFollow : MonoBehaviour
 {
     /* Made by Aldan Project | 2018 */
 
-    /* PUBLIC VARIABLES */
-    public Transform m_Target;
+    /* Public stuff */
     public float m_Smooting = 5.0f;
     public float m_XOffset = -0.4f;
     public float m_ZOffset = 0.4f;
 
-    /* PRIVATE VARIABLES */
+    /* Private stuff */
+    private Transform m_Target;
     private Vector3 m_TargetCamPos;
+    private bool m_PlayerAsTarget;
+
+    void Start()
+    {
+        m_Target = GameObject.Find("Katherine").GetComponent<Transform>();
+        m_PlayerAsTarget = true;
+    }
 
 	void FixedUpdate() 
     {
-        m_TargetCamPos = m_Target.position + new Vector3(m_XOffset, 0.0f, m_ZOffset);
+        m_TargetCamPos = m_Target.position;
+
+        if(m_PlayerAsTarget) //Adds offset if the camera is following the player
+            m_TargetCamPos += new Vector3(m_XOffset, 0.0f, m_ZOffset);
+        
         transform.position = Vector3.Lerp(transform.position, m_TargetCamPos, m_Smooting * Time.deltaTime);	
 	}
+
+    public void SetPlayerAsTarget()
+    {
+        m_Target = GameObject.Find("Katherine").GetComponent<Transform>();
+        m_PlayerAsTarget = true;
+    }
+
+    public void SetTarget(Transform target)
+    {
+        m_Target = target;
+        m_PlayerAsTarget = false;
+    }
 }

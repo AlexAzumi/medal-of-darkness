@@ -115,11 +115,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 223587641}
   m_Script: {fileID: 11500000, guid: 9e3f4b64552f8eb41a33c9abd86dfbac, type: 3}
---- !u!4 &24178261 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4089387591676940, guid: 22f0ca2e95ac3404e9d595a4e9ceac63,
-    type: 2}
-  m_PrefabInternal: {fileID: 223587641}
 --- !u!1 &55944250 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: e36cf732b73e87f458b5e69d2c1f6417, type: 3}
@@ -713,6 +708,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1341899325}
   - component: {fileID: 1341899326}
+  - component: {fileID: 1341899327}
+  - component: {fileID: 1341899329}
+  - component: {fileID: 1341899328}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -744,10 +742,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22acb1065ae2b14ba74aebdf4245bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 24178259}
-  m_MessageText: {fileID: 2076904827}
   m_BlackScreen: {fileID: 1601259993}
+  m_InitialText: Puedes desplazarte con A, W, S y D
   m_InactiveTime: 7
+--- !u!114 &1341899327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341899324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5fdc647e6f7ca4b800ee72dbcc4d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MessageText: {fileID: 2076904827}
+--- !u!114 &1341899328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341899324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3f03f95861400498df847b7da3e82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1341899329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341899324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ebd1d770cb35c4ca374fe8d0933305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Player: {fileID: 24178259}
 --- !u!1001 &1354186781
 Prefab:
   m_ObjectHideFlags: 0
@@ -868,6 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerCanRun: 1
+  m_Text: Presiona Shift para correr
 --- !u!1 &1601259991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,7 +1366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebaadcddb939a5488f24d3890eb7f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 24178261}
   m_Smooting: 5
   m_XOffset: -0.4
   m_ZOffset: 0.4
