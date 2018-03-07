@@ -2,7 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Events\Event01.cs">
     <Files>
-      <File FileName="Assets\Scripts\Events\Event01.cs" Line="46" Column="54" />
+      <File FileName="Assets\Scripts\Events\Event01.cs" Line="28" Column="72" />
+      <File FileName="Assets\Scripts\Player\DialogManager.cs" Line="31" Column="19" />
       <File FileName="Assets\Scripts\Menu\QuitOnClick.cs" Line="7" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>

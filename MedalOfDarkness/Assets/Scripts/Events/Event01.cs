@@ -9,8 +9,8 @@ public class Event01 : MonoBehaviour
 
     /* Public stuff */
     public Image m_BlackScreen;
-    public string m_InitialText = "Puedes desplazarte con A, W, S y D";
-    public float m_InactiveTime = 6f;
+    public string m_InitialText = "Usa la palaca izq. para desplazarte";
+    public float m_InactiveTime = 7f;
 
     /* Private stuff */
     private CameraControl m_CameraControl;
@@ -26,6 +26,7 @@ public class Event01 : MonoBehaviour
         m_CharacterControl = GetComponent<CharacterControl>();
         m_MessageText = GetComponent<MessageText>();
         m_BlackScreenAnimator = m_BlackScreen.GetComponent<Animator>();
+
         m_CharacterControl.SetCanMove(false);
         m_CharacterControl.SetCanRun(false);
 
