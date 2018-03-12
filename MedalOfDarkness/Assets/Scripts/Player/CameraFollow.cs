@@ -14,11 +14,13 @@ public class CameraFollow : MonoBehaviour
     /* Private stuff */
     private Transform m_Target;
     private Vector3 m_TargetCamPos;
+    private CharacterControl m_CharacterControl;
     private bool m_PlayerAsTarget;
 
     void Start()
     {
         m_Target = GameObject.Find("Katherine").GetComponent<Transform>();
+        m_CharacterControl = GameObject.Find("GameManager").GetComponent<CharacterControl>();
         m_PlayerAsTarget = true;
     }
 
@@ -36,10 +38,12 @@ public class CameraFollow : MonoBehaviour
     {
         m_Target = GameObject.Find("Katherine").GetComponent<Transform>();
         m_PlayerAsTarget = true;
+        m_CharacterControl.SetCanMove(true);
     }
 
     public void SetTarget(Transform target)
     {
+        m_CharacterControl.SetCanMove(false);
         m_Target = target;
         m_PlayerAsTarget = false;
     }
