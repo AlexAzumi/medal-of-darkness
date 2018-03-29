@@ -51,9 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Events\Event01.cs" />
+     <Compile Include="Assets\Scripts\Events\Level01\Event.cs" />
+     <Compile Include="Assets\Scripts\Events\Level02\EventTwo.cs" />
      <Compile Include="Assets\Scripts\General\CameraControl.cs" />
-     <Compile Include="Assets\Scripts\General\CharacterControl.cs" />
      <Compile Include="Assets\Scripts\General\MessageText.cs" />
      <Compile Include="Assets\Scripts\General\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\NewGame.cs" />
@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Triggers\ChangeMovement.cs" />
      <Compile Include="Assets\Scripts\Triggers\FocusObject.cs" />
+     <Compile Include="Assets\Scripts\Triggers\Level02\FocusObjectTwo.cs" />
      <Compile Include="Assets\Scripts\Triggers\ShowMessageTrigger.cs" />
      <None Include="Assets\Unity Chan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\Unity Chan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />

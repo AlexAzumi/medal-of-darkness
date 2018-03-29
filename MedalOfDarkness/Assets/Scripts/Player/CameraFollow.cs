@@ -14,13 +14,13 @@ public class CameraFollow : MonoBehaviour
     /* Private stuff */
     private Transform m_Target;
     private Vector3 m_TargetCamPos;
-    private CharacterControl m_CharacterControl;
+    private PlayerController m_CharacterControl;
     private bool m_PlayerAsTarget;
 
     void Start()
     {
         m_Target = GameObject.Find("Katherine").GetComponent<Transform>();
-        m_CharacterControl = GameObject.Find("GameManager").GetComponent<CharacterControl>();
+        m_CharacterControl = GameObject.Find("Katherine").GetComponent<PlayerController>();
         m_PlayerAsTarget = true;
     }
 

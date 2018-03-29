@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Event01 : MonoBehaviour 
+public class Event : MonoBehaviour 
 {
     /* Made by Aldan Project | 2018 */
 
@@ -11,21 +11,22 @@ public class Event01 : MonoBehaviour
     public Image m_BlackScreen;
     public string m_InitialText = "Usa la palaca izq. para desplazarte";
     public float m_InactiveTime = 7f;
-    public string[] m_Messages;
+    public string[] m_InitialMessages = {"...", "¿Dónde estoy?...", "¿Quién soy?...", "¿Qué está sucediendo?..."};
+    public string[] m_RockMessages = {"La roca está bloqueando el camino", "¿Qué hago ahora?"};
 
     /* Private stuff */
     private CameraControl m_CameraControl;
-    private CharacterControl m_CharacterControl;
+    private PlayerController m_CharacterControl;
     private MessageText m_MessageText;
     private DialogManager m_DialogManager;
     private Animator m_BlackScreenAnimator;
     private float m_Timer;
-    private bool m_Start, m_InitialDialog, m_MovementMessage;
+    private bool m_Start, m_InitialDialog, m_MovementMessage, m_Rock;
 
 	void Start() 
     {
         m_CameraControl = GetComponent<CameraControl>();
-        m_CharacterControl = GetComponent<CharacterControl>();
+        m_CharacterControl = GameObject.Find("Katherine").GetComponent<PlayerController>();
         m_MessageText = GetComponent<MessageText>();
         m_BlackScreenAnimator = m_BlackScreen.GetComponent<Animator>();
         m_DialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
@@ -39,6 +40,7 @@ public class Event01 : MonoBehaviour
         m_Start = false;
         m_InitialDialog = false;
         m_MovementMessage = false;
+        m_Rock = false;
 	}
 
 	void Update() 
@@ -57,15 +59,22 @@ public class Event01 : MonoBehaviour
         }
         else if (!m_InitialDialog)
         {
-            m_DialogManager.SetMessageDialog(m_Messages);
+            m_DialogManager.SetMessageDialog(m_InitialMessages);
             m_InitialDialog = true;
         }
-        if (m_CharacterControl.m_Player.m_CanMove == true && !m_MovementMessage)
+        if (m_CharacterControl.m_CanMove == true && !m_MovementMessage)
         {
             InitialText();
         }
+        if (m_Rock)
+        {
+            m_DialogManager.SetMessageDialog(m_RockMessages);
+            m_Rock = false;
+        }
 	} 
         
+    /* Private methods */
+
     private void InitialText()
     {
         m_MessageText.SetMessageText(m_InitialText, true);
@@ -77,5 +86,12 @@ public class Event01 : MonoBehaviour
             m_Timer = 0.0f;
             m_MovementMessage = true;
         }
+    }
+
+    /* Public methods */
+
+    public void SetMessages()
+    {
+        m_Rock = true;
     }
 }

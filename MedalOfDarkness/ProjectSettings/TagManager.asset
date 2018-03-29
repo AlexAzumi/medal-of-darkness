@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameManager
   - Pause Menu
+  - Bars
   layers:
   - Default
   - TransparentFX

@@ -12,15 +12,16 @@ public class DialogManager : MonoBehaviour
     public PauseMenu m_PauseMenu;
 
     /* Private stuff */
-    private CharacterControl m_CharacterControl;
+    private PlayerController m_CharacterControl;
     private bool m_Active, m_ShowAll;
     private string[] m_DialogMessage;
     private int m_Count;
 
 	private void Start() 
     {
-        m_CharacterControl = GameObject.Find("GameManager").GetComponent<CharacterControl>();
+        m_CharacterControl = GameObject.Find("Katherine").GetComponent<PlayerController>();
         m_ShowAll = false;
+        m_Count = 0;
 	}
 	
 	private void Update() 
@@ -32,6 +33,7 @@ public class DialogManager : MonoBehaviour
                 m_DialogBox.SetActive(false);
                 m_Active = false;
                 m_Count = 0;
+                m_ShowAll = false;
                 m_CharacterControl.SetCanMove(true);
             }
             else
@@ -44,6 +46,7 @@ public class DialogManager : MonoBehaviour
 
     private void ShowNext()
     {
+        //Debug.Log(m_Count + " | " + m_DialogMessage.Length);
         if (m_Count < m_DialogMessage.Length)
         {
             m_DialogText.text = m_DialogMessage[m_Count];
@@ -53,7 +56,7 @@ public class DialogManager : MonoBehaviour
                 m_DialogBox.SetActive(true);
                 m_Active = true;
             }
-            if((Math.Abs(m_Count - m_DialogMessage.Length)) == 1)
+            if (m_Count == m_DialogMessage.Length - 1)
                 m_ShowAll = true;
         }
     }
@@ -61,6 +64,8 @@ public class DialogManager : MonoBehaviour
     public void SetMessageDialog(string[] dialogText)
     {
         m_DialogMessage = dialogText;
+        m_CharacterControl.SetAnimation("IsWalking", false);
+        m_CharacterControl.SetAnimation("IsRunning", false);
         ShowNext();
     }
 }

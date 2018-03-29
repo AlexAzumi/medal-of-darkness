@@ -28,14 +28,14 @@ public class PlayerController : MonoBehaviour
     private bool m_IsRunning; //Flag to know if player's running
     private float m_ActualZoom; //Value of the orthographic's camera zoom
 
-	void Awake() 
+	private void Awake()
     {
         m_PlayerRB = GetComponent<Rigidbody>(); //Gets rigidbody component (from character)
         m_Animation = GetComponent<Animator>(); //Gets animator component (from character)
         m_IsWalking = false; //Player starts at idle
 	}
 
-	void FixedUpdate() //Updates the movement values
+	private void FixedUpdate() //Updates the movement values
     {
         if (m_CanMove)
         {
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         }
 	}
 
-    void MoveCharacter(float hAxis, float vAxis)
+    private void MoveCharacter(float hAxis, float vAxis)
     {
         if (hAxis != 0 || vAxis != 0)
         {
@@ -83,11 +83,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Animation(float hAxis, float vAxis)
+    private void Animation(float hAxis, float vAxis)
     {
         m_IsWalking = hAxis != 0.0f || vAxis != 0.0f;
         bool running = m_IsRunning && m_CanRun;
         m_Animation.SetBool("IsWalking", m_IsWalking);
         m_Animation.SetBool("IsRunning", running);
+    }
+
+    /* Public methods */
+
+    public void SetCanMove(bool canMove)
+    {
+        m_CanMove = canMove;
+    }
+
+    public void SetCanRun(bool canRun)
+    {
+        m_CanRun = canRun;
+    }
+        
+    public void SetAnimation(string anim, bool value)
+    {
+        m_Animation.SetBool(anim, value);
     }
 }

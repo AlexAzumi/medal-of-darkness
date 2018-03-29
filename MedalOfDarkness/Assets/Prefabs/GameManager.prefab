@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4107516718158030}
   - component: {fileID: 114855336960516640}
   - component: {fileID: 114273066683708224}
-  - component: {fileID: 114309314093611692}
   - component: {fileID: 114529788827109432}
   m_Layer: 0
   m_Name: GameManager
@@ -55,18 +54,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MessageText: {fileID: 0}
---- !u!114 &114309314093611692
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1565344375708228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92ebd1d770cb35c4ca374fe8d0933305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
 --- !u!114 &114529788827109432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,8 +79,11 @@ MonoBehaviour:
   m_BlackScreen: {fileID: 0}
   m_InitialText: Usa la palaca izq. para desplazarte
   m_InactiveTime: 7
-  m_Messages:
+  m_InitialMessages:
   - '...'
   - "\xBFD\xF3nde estoy?..."
   - "\xBFQui\xE9n soy?..."
-  - "\xBFQu\xE9 est\xE1 pasando?..."
+  - "\xBFQu\xE9 est\xE1 sucediendo?..."
+  m_RockMessages:
+  - "La roca est\xE1 bloqueando el camino"
+  - "\xBFQu\xE9 hago ahora?"

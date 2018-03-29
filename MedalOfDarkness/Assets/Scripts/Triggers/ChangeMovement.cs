@@ -9,12 +9,12 @@ public class ChangeMovement : MonoBehaviour
     public string m_Text = "Presiona Shift para correr";
 
     /* Private stuff */
-    private CharacterControl m_CharacterControl;
+    private PlayerController m_CharacterControl;
     private MessageText m_MessageText;
 
     void Start()
     {
-        m_CharacterControl = GameObject.Find("GameManager").GetComponent<CharacterControl>();
+        m_CharacterControl = GameObject.Find("Katherine").GetComponent<PlayerController>();
         m_MessageText = GameObject.Find("GameManager").GetComponent<MessageText>();
     }
 
