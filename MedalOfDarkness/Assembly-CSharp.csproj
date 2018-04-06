@@ -80,6 +80,7 @@
      <None Include="Assets\HighQualityBricks&amp;Walls\Shaders\wood-938698.shader" />
      <None Include="Assets\Unity Chan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\Unity Chan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+     <None Include="Assets\MedievalTownExteriors\Readme.txt" />
      <None Include="Assets\Unity Chan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\Unity Chan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
      <None Include="Assets\HighQualityBricks&amp;Walls\README.txt" />
