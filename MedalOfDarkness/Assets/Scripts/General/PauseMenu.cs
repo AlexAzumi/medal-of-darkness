@@ -9,13 +9,16 @@ public class PauseMenu : MonoBehaviour
 
     /* Public stuff */
     public GameObject m_MainPanel;
+    public GameObject m_SelectedObject;
 
     /* Private stuff */
     private AudioSource m_BackgroundMusic;
+    private SelectOnInput m_Select;
 
     void Start()
     {
         m_BackgroundMusic = GameObject.Find("Katherine").GetComponent<AudioSource>();
+        m_Select = GetComponent<SelectOnInput>();
     }
 
 	void Update() 
@@ -24,18 +27,14 @@ public class PauseMenu : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.JoystickButton1))
             {
-                m_MainPanel.SetActive(false);
-                Time.timeScale = 1.0f;
-                m_BackgroundMusic.Play();
+                PauseGame(false);
             }
         }
         else
         {
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
             {
-                m_MainPanel.SetActive(true);
-                Time.timeScale = 0f;
-                m_BackgroundMusic.Pause();
+                PauseGame(true);
             }
         }
 	}
@@ -43,5 +42,23 @@ public class PauseMenu : MonoBehaviour
     public bool GetPauseActive()
     {
         return m_MainPanel.activeSelf;
+    }
+
+    public void PauseGame(bool pause)
+    {
+        if (pause)
+        {
+            m_MainPanel.SetActive(true);
+            Time.timeScale = 0f;
+            m_BackgroundMusic.Pause();
+            m_Select.SelectSelected(m_SelectedObject);
+        }
+        else
+        {  
+            m_MainPanel.SetActive(false);
+            Time.timeScale = 1.0f;
+            m_BackgroundMusic.Play();
+            m_Select.RemoveSelection();
+        }
     }
 }

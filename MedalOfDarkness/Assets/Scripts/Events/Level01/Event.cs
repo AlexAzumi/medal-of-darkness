@@ -9,6 +9,7 @@ public class Event : MonoBehaviour
 
     /* Public stuff */
     public Image m_BlackScreen;
+    public GameObject m_PauseMenu;
     public string m_InitialText = "Usa la palaca izq. para desplazarte";
     public float m_InactiveTime = 7f;
     public string[] m_InitialMessages = {"...", "¿Dónde estoy?...", "¿Quién soy?...", "¿Qué está sucediendo?..."};
@@ -21,7 +22,9 @@ public class Event : MonoBehaviour
     private DialogManager m_DialogManager;
     private Animator m_BlackScreenAnimator;
     private float m_Timer;
-    private bool m_Start, m_InitialDialog, m_MovementMessage, m_Rock;
+
+    /* Useful stuff */
+    public bool m_Start, m_InitialDialog, m_MovementMessage, m_Rock;
 
 	void Start() 
     {
@@ -61,6 +64,7 @@ public class Event : MonoBehaviour
         {
             m_DialogManager.SetMessageDialog(m_InitialMessages);
             m_InitialDialog = true;
+            m_PauseMenu.SetActive(true);
         }
         if (m_CharacterControl.m_CanMove == true && !m_MovementMessage)
         {
