@@ -9,12 +9,14 @@ public class Game
     private string m_User;
     private int m_Score;
     private int m_ActualScene;
+    private int m_Time;
     private Transform m_Position;
 
-    public Game(string user, int score)
+    public Game(string user, int score, int time)
     {
         this.m_User = user;
         this.m_Score = score;
+        this.m_Time = time;
         this.m_ActualScene = 1;
     }
 
@@ -35,6 +37,16 @@ public class Game
     }
 
     /* Get values */
+    public string GetUsername()
+    {
+        return m_User;
+    }
+
+    public int GetTime()
+    {
+        return m_Time;
+    }
+
     public int GetScore()
     {
         return m_Score;

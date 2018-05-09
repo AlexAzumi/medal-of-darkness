@@ -14,6 +14,7 @@ public class Event : MonoBehaviour
     public float m_InactiveTime = 7f;
     public string[] m_InitialMessages = {"...", "¿Dónde estoy?...", "¿Quién soy?...", "¿Qué está sucediendo?..."};
     public string[] m_RockMessages = {"La roca está bloqueando el camino", "¿Qué hago ahora?"};
+    public string[] m_BarrelMessages;
 
     /* Private stuff */
     private CameraControl m_CameraControl;
@@ -24,7 +25,7 @@ public class Event : MonoBehaviour
     private float m_Timer;
 
     /* Useful stuff */
-    public bool m_Start, m_InitialDialog, m_MovementMessage, m_Rock;
+    public bool m_Start, m_InitialDialog, m_MovementMessage, m_Rock, m_Barrel;
 
 	void Start() 
     {
@@ -44,6 +45,7 @@ public class Event : MonoBehaviour
         m_InitialDialog = false;
         m_MovementMessage = false;
         m_Rock = false;
+        m_Barrel = false;
 	}
 
 	void Update() 
@@ -74,6 +76,11 @@ public class Event : MonoBehaviour
         {
             m_DialogManager.SetMessageDialog(m_RockMessages);
             m_Rock = false;
+        }
+        if (m_Barrel)
+        {
+            m_DialogManager.SetMessageDialog(m_BarrelMessages);
+            m_Barrel = false;
         }
 	} 
         
