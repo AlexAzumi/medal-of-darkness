@@ -724,8 +724,18 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
         type: 2}
+      propertyPath: m_RockMessages.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
       propertyPath: m_BarrelMessages.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_InitialMessages.Array.size
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
       propertyPath: m_LocalPosition.x
@@ -782,18 +792,94 @@ Prefab:
     - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
         type: 2}
       propertyPath: m_BarrelMessages.Array.data[0]
-      value: "Encontr\xE9 un papel"
+      value: "Encontr\xE9 un papel debajo del barril"
       objectReference: {fileID: 0}
     - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
         type: 2}
       propertyPath: m_BarrelMessages.Array.data[1]
-      value: "El papel tiene escrito: \"Para poder continuar en tu camino, tendr\xE1s
-        que buscar detr\xE1s de algo, justo d\xF3nde tus ojos no pueden verte\""
+      value: "El papel tiene escrito: \"Para continuar con tu camino, tendr\xE1s que
+        buscar detr\xE1s de algo, justo d\xF3nde tus ojos no pueden verte\""
       objectReference: {fileID: 0}
     - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
         type: 2}
       propertyPath: m_BarrelMessages.Array.data[2]
-      value: "Ser\xE1 una pista... Esto se est\xE1 tornando bastante extra\xF1o"
+      value: "Esto es bastante confuso, \xBFqu\xE9 est\xE1 sucediendo?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_RockMessages.Array.data[0]
+      value: "Una roca gigante est\xE1 bloqueando el camino"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_RockMessages.Array.data[1]
+      value: '...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_RockMessages.Array.data[2]
+      value: '....'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_Start
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_InitialDialog
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_InitialMessages.Array.data[3]
+      value: No recuerdo absolutamente nada...
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_InitialMessages.Array.data[2]
+      value: "\xBFQu\xE9 est\xE1 sucediendo?..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_InitialMessages.Array.data[4]
+      value: "\xBFQu\xE9 es este lugar?... Parece que es un bosque, pero me siento
+        bastante extra\xF1a, como si alguien me estuviera observando"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_InitialMessages.Array.data[5]
+      value: Tengo miedo...
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_InitialMessages.Array.data[6]
+      value: '...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_InitialMessages.Array.data[7]
+      value: Mejor busco ayuda
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_InitialMessages.Array.data[8]
+      value: '...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_RockMessages.Array.data[3]
+      value: '"Para remover la roca necesitas buscar en un contenedor hecho de madera"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_RockMessages.Array.data[4]
+      value: '....'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_RockMessages.Array.data[5]
+      value: "\xBFQui\xE9n ha dicho eso?"
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114309314093611692, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
@@ -1112,7 +1198,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1090453689462878, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
@@ -1204,6 +1290,110 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e36cf732b73e87f458b5e69d2c1f6417, type: 3}
   m_PrefabInternal: {fileID: 1076200549}
+--- !u!1001 &1192304015
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1228225845}
+    m_Modifications:
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10.539
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 29.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.6864866
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7271426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090453689462878, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.4000018
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090453689462878, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_Name
+      value: ButtonTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 86.705
+      objectReference: {fileID: 0}
+    - target: {fileID: 114247672384057678, guid: cb40bd77ebc4c804ca4096dfa12192f5,
+        type: 2}
+      propertyPath: m_ActionText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114247672384057678, guid: cb40bd77ebc4c804ca4096dfa12192f5,
+        type: 2}
+      propertyPath: m_Text
+      value: Presiona X para mover
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090453689462878, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.250001
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: cb40bd77ebc4c804ca4096dfa12192f5, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1192304016 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1192304015}
+--- !u!1 &1192304017 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1090453689462878, guid: cb40bd77ebc4c804ca4096dfa12192f5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1192304015}
+--- !u!114 &1192304018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1192304017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6393156b4bfa2e41bcb05386ca1016d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_XPosition: -1
+  m_YPosition: 0
+  m_ZPosition: -0.8
+  m_SmoothTime: 1
+  m_Barrel: {fileID: 1981630863}
+  m_Trigger: {fileID: 1192304017}
+  m_Event: {fileID: 447560620}
 --- !u!1 &1228225844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1423,7 @@ Transform:
   - {fileID: 1453789631}
   - {fileID: 21126510}
   - {fileID: 856614094}
+  - {fileID: 1192304016}
   m_Father: {fileID: 1625975411}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1821,6 +2012,25 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1749546618}
+    - target: {fileID: 114837377072965408, guid: 3e3bcec2d7fc84940b593c891f197b00,
+        type: 2}
+      propertyPath: m_WaitTime
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114628931236276248, guid: 3e3bcec2d7fc84940b593c891f197b00,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114628931236276248, guid: 3e3bcec2d7fc84940b593c891f197b00,
+        type: 2}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369790344240728, guid: 3e3bcec2d7fc84940b593c891f197b00, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e3bcec2d7fc84940b593c891f197b00, type: 2}
   m_IsPrefabParent: 0
