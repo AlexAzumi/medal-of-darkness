@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     /* Public stuff */
     public GameObject m_MainPanel;
+    public GameObject m_PausePanel, m_OptionsPanel;
     public GameObject m_SelectedObject;
 
     /* Private stuff */
@@ -25,7 +26,11 @@ public class PauseMenu : MonoBehaviour
     {
         if (m_MainPanel.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.JoystickButton1))
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
+            {
+                PauseGame(false);
+            }
+            else if (Input.GetKeyDown(KeyCode.JoystickButton1) && m_PausePanel.activeSelf)
             {
                 PauseGame(false);
             }
@@ -48,6 +53,11 @@ public class PauseMenu : MonoBehaviour
     {
         if (pause)
         {
+            if (!m_PausePanel.activeSelf)
+            {
+                m_PausePanel.SetActive(true);
+                //m_OptionsPanel.SetActive(false);
+            }
             m_MainPanel.SetActive(true);
             Time.timeScale = 0f;
             m_BackgroundMusic.Pause();

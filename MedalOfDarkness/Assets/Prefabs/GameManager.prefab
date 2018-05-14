@@ -77,13 +77,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BlackScreen: {fileID: 0}
+  m_PauseMenu: {fileID: 0}
   m_InitialText: Usa la palaca izq. para desplazarte
   m_InactiveTime: 7
   m_InitialMessages:
   - '...'
   - "\xBFD\xF3nde estoy?..."
-  - "\xBFQui\xE9n soy?..."
   - "\xBFQu\xE9 est\xE1 sucediendo?..."
+  - No recuerdo absolutamente nada...
+  - "\xBFQu\xE9 es este lugar?... Parece que es un bosque, pero me siento bastante
+    extra\xF1a, como si alguien me estuviera observando"
+  - Tengo miedo...
+  - '...'
+  - Mejor busco ayuda
   m_RockMessages:
-  - "La roca est\xE1 bloqueando el camino"
-  - "\xBFQu\xE9 hago ahora?"
+  - "Una roca gigante est\xE1 bloqueando el camino"
+  - '...'
+  - '....'
+  - '"Para remover la roca necesitas buscar en un contenedor hecho de madera"'
+  - '....'
+  - "\xBFQui\xE9n ha dicho eso?"
+  m_BarrelMessages:
+  - "Encontr\xE9 un papel debajo del barril"
+  - "nde tus ojos no pueden verte\" continuar con tu camino, tendr\xE1s que buscar
+    detr\xE1s de algo, justo d\xF3nde tus ojos no pueden verte\""
+  - "Esto es bastante confuso, \xBFqu\xE9 est\xE1 sucediendo?"
+  m_SolvedPuzzle:
+  - "Bien, encontr\xE9 los tres botones que me mencionaba el papel"
+  - "Pero no sucedi\xF3 nada, \xBFhabr\xE9 hecho algo mal?"
+  - "Investigar\xE9 la salida"
+  m_ExitMessages:
+  - La roca ha desaparecido
+  - "Esto es bastante extra\xF1o"
+  - Sin embargo, necesito continuar buscando ayuda en ese lugar tan tenebroso
+  m_Buttons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_FocusTrigger: {fileID: 0}
+  m_RockMesh: {fileID: 0}
+  m_RockCollider: {fileID: 0}
+  m_Start: 0
+  m_InitialDialog: 0
+  m_MovementMessage: 0
+  m_Rock: 0
+  m_Barrel: 0
+  m_Barrel01: 0
+  m_Barrel02: 0
+  m_Barrel03: 0
+  m_Solved: 0
+  m_Exit: 0

@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LoadMenuData : MonoBehaviour 
 {
     /* Made by Aldan Project | 2018 */
     public Text m_UserText;
-    public Button m_ResumeGameButton;
-
-    public Text m_UserFile1, m_UserFile2, m_UserFile3;
-    public Text m_TimeFile1, m_TimeFile2, m_TimeFile3;
 
     private SaveLoad m_SaveLoad;
-    private List<Game> m_Games;
 
     private void Start()
     {
         m_SaveLoad = new SaveLoad();
         CheckIfUser();
-        CheckIfGames();
     }
 
     private void CheckIfUser()
@@ -37,12 +32,16 @@ public class LoadMenuData : MonoBehaviour
         }
     }
 
+    /*
     private void CheckIfGames()
     {
         m_Games = m_SaveLoad.LoadGames();
         if (m_Games != null)
         {
-            m_ResumeGameButton.interactable = true;
+            if (m_MainMenu)
+            {
+                m_ResumeGameButton.interactable = true;
+            }
             for (int i = 0; i < 3; i++)
             {
                 if (m_Games[i] != null)
@@ -90,4 +89,20 @@ public class LoadMenuData : MonoBehaviour
                 break;
         }
     }
+
+    public void SaveGame(int slot)
+    {
+        if (m_Games[slot - 1] != null)
+        {
+            string scene = SceneManager.GetActiveScene().name;
+            switch (scene)
+            {
+                case "Level01":
+                    m_Games[slot - 1].SetLevel01(m_Event.m_ActualEvent, m_Event.m_RockEvent, m_Event.m_BarrelEvent, m_Event.m_Barrel01, m_Event.m_Barrel02, m_Event.m_Barrel03, m_Event.m_Solved);
+                    m_SaveLoad.SaveGame(slot, m_Games[slot - 1]);
+                    break;
+            }
+        }
+    }
+    */
 }

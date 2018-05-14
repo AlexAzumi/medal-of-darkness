@@ -8,13 +8,29 @@ public class Event : MonoBehaviour
     /* Made by Aldan Project | 2018 */
 
     /* Public stuff */
+    public LoadMenuData m_Data;
+
     public Image m_BlackScreen;
     public GameObject m_PauseMenu;
-    public string m_InitialText = "Usa la palaca izq. para desplazarte";
+
+    public string m_InitialText;
     public float m_InactiveTime = 7f;
-    public string[] m_InitialMessages = {"...", "¿Dónde estoy?...", "¿Quién soy?...", "¿Qué está sucediendo?..."};
-    public string[] m_RockMessages = {"La roca está bloqueando el camino", "¿Qué hago ahora?"};
+
+    public string[] m_InitialMessages;
+    public string[] m_RockMessages;
     public string[] m_BarrelMessages;
+    public string[] m_SolvedPuzzle;
+    public string[] m_ExitMessages;
+
+    public GameObject[] m_Buttons;
+    public BoxCollider m_FocusTrigger;
+    public MeshRenderer m_RockMesh;
+    public SphereCollider m_RockCollider;
+
+    /* Flags */
+    public int m_ActualEvent = 0;
+    public bool m_Barrel01, m_Barrel02, m_Barrel03;
+    public bool m_Solved;
 
     /* Private stuff */
     private CameraControl m_CameraControl;
@@ -23,9 +39,6 @@ public class Event : MonoBehaviour
     private DialogManager m_DialogManager;
     private Animator m_BlackScreenAnimator;
     private float m_Timer;
-
-    /* Useful stuff */
-    public bool m_Start, m_InitialDialog, m_MovementMessage, m_Rock, m_Barrel;
 
 	void Start() 
     {
@@ -41,16 +54,18 @@ public class Event : MonoBehaviour
         m_CameraControl.SetCameraSize(1.5f, false, 0.0f);
         m_BlackScreenAnimator.Play("BlackScreenFadeOut");
 
-        m_Start = false;
-        m_InitialDialog = false;
-        m_MovementMessage = false;
-        m_Rock = false;
-        m_Barrel = false;
+        m_ActualEvent = 1;
+        m_Solved = false;
 	}
 
 	void Update() 
     {
-        if (!m_Start)
+        if (m_Barrel01 && m_Barrel02 && m_Barrel03)
+        {
+            m_ActualEvent = 6;
+        }
+
+        if (m_ActualEvent == 1)
         {
             m_Timer += Time.deltaTime;
             if (m_Timer > m_InactiveTime)
@@ -58,51 +73,80 @@ public class Event : MonoBehaviour
                 if (m_CameraControl.SetCameraSize(2.5f, true, 0.01f))
                 {
                     m_Timer = 0.0f;
-                    m_Start = true;
+                    m_ActualEvent = 2;
                 }
             }
         }
-        else if (!m_InitialDialog)
+        else if (m_ActualEvent == 2)
         {
             m_DialogManager.SetMessageDialog(m_InitialMessages);
-            m_InitialDialog = true;
             m_PauseMenu.SetActive(true);
+            m_ActualEvent = 3;
         }
-        if (m_CharacterControl.m_CanMove == true && !m_MovementMessage)
+        else if (m_ActualEvent == 3 && m_CharacterControl.m_CanMove == true)
         {
-            InitialText();
+            m_MessageText.ShowMessageInTime(m_InitialText, 7f);
+            m_ActualEvent = 0;
         }
-        if (m_Rock)
+        else if (m_ActualEvent == 4)
         {
             m_DialogManager.SetMessageDialog(m_RockMessages);
-            m_Rock = false;
+            m_ActualEvent = 0;
         }
-        if (m_Barrel)
+        else if (m_ActualEvent == 5)
         {
             m_DialogManager.SetMessageDialog(m_BarrelMessages);
-            m_Barrel = false;
+            for (int i = 0; i < m_Buttons.Length; i++)
+            {
+                m_Buttons[i].SetActive(true);
+            }
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 6)
+        {
+            m_DialogManager.SetMessageDialog(m_SolvedPuzzle);
+            m_FocusTrigger.enabled = true;
+            m_RockMesh.enabled = false;
+            m_RockCollider.enabled = false;
+            m_Barrel01 = false;
+            m_Barrel02 = false;
+            m_Barrel03 = false;
+            m_Solved = true;
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 7)
+        {
+            m_DialogManager.SetMessageDialog(m_ExitMessages);
+            m_ActualEvent = 0;
         }
 	} 
         
     /* Private methods */
 
     private void InitialText()
-    {
-        m_MessageText.SetMessageText(m_InitialText, true);
-  
+    { 
+        /*
         m_Timer += Time.deltaTime;
         if (m_Timer > m_InactiveTime)
         {
             m_MessageText.SetMessageText("", false);
             m_Timer = 0.0f;
-            m_MovementMessage = true;
+            m_ActualEvent = 0;
         }
+        */
     }
 
     /* Public methods */
 
     public void SetMessages()
     {
-        m_Rock = true;
+        if (m_Solved)
+        {
+            m_ActualEvent = 7;
+        }
+        else
+        {
+            m_ActualEvent = 4;
+        }
     }
 }

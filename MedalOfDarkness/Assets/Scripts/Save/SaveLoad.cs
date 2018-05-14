@@ -9,7 +9,7 @@ public class SaveLoad
 {
     /* Made by Aldan Project | 2018 */
     public User m_User;
-    public List<Game> m_Games;
+    public Game[] m_Games = new Game[3];
 
     public void SaveUser()
     {
@@ -63,13 +63,14 @@ public class SaveLoad
         }
     }
 
+    /*
     public List<Game> LoadGames()
     {
         if (File.Exists(Application.persistentDataPath + "savedGames.save"))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/savedGames.save", FileMode.Open);
-            m_Games = (List<Game>)bf.Deserialize(file);
+            m_Games = (Game[])bf.Deserialize(file);
             file.Close();
             return m_Games;
         }
@@ -78,4 +79,15 @@ public class SaveLoad
             return null;
         }
     }
+
+
+    public void SaveGame(int slot, Game actualGame)
+    {
+        m_Games[slot - 1] = actualGame;
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/savedGames.save");
+        bf.Serialize(file, m_Games);
+        file.Close();
+    }
+    */
 }

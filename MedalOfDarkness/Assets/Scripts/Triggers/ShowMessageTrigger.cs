@@ -7,8 +7,8 @@ public class ShowMessageTrigger : MonoBehaviour
     /* Made by Aldan Project | 2018 */
 
     /* Public stuff */
-    public string m_Text = "Presiona E para abrir";
-    public string m_ActionText = "La puerta está cerrada";
+    public string m_Text;
+    public string m_ActionText;
 
     /* Private stuff */
     private MessageText m_Event01;
@@ -25,6 +25,11 @@ public class ShowMessageTrigger : MonoBehaviour
     }
 
     void OnTriggerExit()
+    {
+        m_Event01.SetMessageText("", false);
+    }
+
+    void OnDisable()
     {
         m_Event01.SetMessageText("", false);
     }

@@ -42,7 +42,7 @@ public class MessageText : MonoBehaviour
     {
         if (onTrigger && !m_OnUse)
         {
-
+            m_Timer = 0f;
             if (!m_MessageText.text.Equals(text))
                 m_MessageText.text = text;
 

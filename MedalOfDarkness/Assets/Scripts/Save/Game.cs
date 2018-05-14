@@ -12,12 +12,22 @@ public class Game
     private int m_Time;
     private Transform m_Position;
 
+    /* Level 01 */
+    public int m_ActualEvent01;
+    public bool m_RockEvent01;
+    public bool m_BarrelEvent01;
+    public bool m_Barrel01, m_Barrel02, m_Barrel03;
+    public bool m_Solved01;
+
     public Game(string user, int score, int time)
     {
-        this.m_User = user;
-        this.m_Score = score;
-        this.m_Time = time;
-        this.m_ActualScene = 1;
+        m_User = user;
+        m_Score = score;
+        m_Time = time;
+        m_ActualScene = 1;
+
+        m_ActualEvent01 = 0;
+        m_Solved01 = false;
     }
 
     /* Set values */
@@ -34,6 +44,16 @@ public class Game
     public void SetActualPosition(Transform position)
     {
         m_Position = position;
+    }
+
+    public void SetLevel01(int actualEvent, bool rockEvent, bool barrelEvent, bool barrel01, bool barrel02, bool barrel03, bool solved)
+    {
+        m_ActualEvent01 = actualEvent;
+        m_RockEvent01 = rockEvent;
+        m_BarrelEvent01 = barrelEvent;
+        m_Barrel01 = barrel01;
+        m_Barrel02 = barrel02;
+        m_Barrel03 = barrel03;
     }
 
     /* Get values */

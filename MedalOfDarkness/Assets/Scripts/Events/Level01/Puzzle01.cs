@@ -27,10 +27,11 @@ public class Puzzle01 : MonoBehaviour
         {
             m_Barrel.position = Vector3.Lerp(m_Barrel.position, m_TargetPosition, 1.0f);
         }
+
         if (m_Activated && m_Barrel.position.Equals(m_TargetPosition))
         {
             m_Activated = false;
-            m_Event.m_Barrel = true;
+            m_Event.m_ActualEvent = 5;
             m_Trigger.SetActive(false);
         }
     }
