@@ -7,9 +7,12 @@ public class FocusObjectTwo : MonoBehaviour
     /* Made by Aldan Project | 2018 */
 
     /* Public stuff */
+    public int m_CallEvent;
+    public float m_FocusTime = 5f;
+    public bool m_DesactivateTrigger = true;
     public Transform m_Object;
     public EventTwo m_Event;
-    public float m_FocusTime = 5f;
+    public Animator m_CharacterAnimator;
 
     /* Private stuff */
     private CameraFollow m_CameraFollow;
@@ -35,14 +38,19 @@ public class FocusObjectTwo : MonoBehaviour
                 m_CameraFollow.SetPlayerAsTarget();
                 m_Bars.SetBool("isActive", false);
                 m_Active = false;
-                m_Event.SetMessages();
-                GetComponent<BoxCollider>().enabled = false;
+                m_Event.SetMessages(m_CallEvent);
+                if (m_DesactivateTrigger)
+                {
+                    GetComponent<BoxCollider>().enabled = false;
+                }
             }
         }
     }
 
     void OnTriggerEnter()
     {
+        m_CharacterAnimator.SetBool("IsRunning", false);
+        m_CharacterAnimator.SetBool("IsWalking", false);
         m_CameraFollow.SetTarget(m_Object);
         m_Bars.SetBool("isActive", true);
         m_Active = true;

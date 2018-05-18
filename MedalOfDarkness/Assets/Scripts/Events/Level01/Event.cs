@@ -18,7 +18,9 @@ public class Event : MonoBehaviour
 
     public string[] m_InitialMessages;
     public string[] m_RockMessages;
+    public string m_RockInstruction;
     public string[] m_BarrelMessages;
+    public string[] m_FoundOneBarrel;
     public string[] m_SolvedPuzzle;
     public string[] m_ExitMessages;
 
@@ -29,7 +31,7 @@ public class Event : MonoBehaviour
 
     /* Flags */
     public int m_ActualEvent = 0;
-    public bool m_Barrel01, m_Barrel02, m_Barrel03;
+    public bool m_Found, m_Barrel01, m_Barrel02, m_Barrel03;
     public bool m_Solved;
 
     /* Private stuff */
@@ -55,6 +57,7 @@ public class Event : MonoBehaviour
         m_BlackScreenAnimator.Play("BlackScreenFadeOut");
 
         m_ActualEvent = 1;
+        m_Found = false;
         m_Solved = false;
 	}
 
@@ -63,6 +66,11 @@ public class Event : MonoBehaviour
         if (m_Barrel01 && m_Barrel02 && m_Barrel03)
         {
             m_ActualEvent = 6;
+        }
+        else if ((m_Barrel01 || m_Barrel02 || m_Barrel03) && !m_Found)
+        {
+            m_DialogManager.SetMessageDialog(m_FoundOneBarrel);
+            m_Found = true;
         }
 
         if (m_ActualEvent == 1)
@@ -91,6 +99,11 @@ public class Event : MonoBehaviour
         else if (m_ActualEvent == 4)
         {
             m_DialogManager.SetMessageDialog(m_RockMessages);
+            m_ActualEvent = 8;
+        }
+        else if (m_ActualEvent == 8 && m_CharacterControl.m_CanMove == true)
+        {
+            m_MessageText.ShowMessageInTime(m_RockInstruction, 7f);
             m_ActualEvent = 0;
         }
         else if (m_ActualEvent == 5)
@@ -120,21 +133,6 @@ public class Event : MonoBehaviour
             m_ActualEvent = 0;
         }
 	} 
-        
-    /* Private methods */
-
-    private void InitialText()
-    { 
-        /*
-        m_Timer += Time.deltaTime;
-        if (m_Timer > m_InactiveTime)
-        {
-            m_MessageText.SetMessageText("", false);
-            m_Timer = 0.0f;
-            m_ActualEvent = 0;
-        }
-        */
-    }
 
     /* Public methods */
 
