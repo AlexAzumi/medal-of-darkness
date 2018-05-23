@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MusicFadeIn : MonoBehaviour 
 {
+    /* Made by Aldan Project | 2018 */
     public int secondsToFade = 2;
 
     private AudioSource audioSource;

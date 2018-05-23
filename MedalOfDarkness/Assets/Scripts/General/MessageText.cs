@@ -21,6 +21,7 @@ public class MessageText : MonoBehaviour
         m_Animator = m_MessageText.GetComponent<Animator>();
         m_Timer = 0.0f;
         m_WaitTime = 0.0f;
+        m_OnUse = false;
     }
 
     void Update()

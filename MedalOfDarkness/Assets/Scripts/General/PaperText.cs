@@ -8,6 +8,11 @@ public class PaperText : MonoBehaviour
     /* Made by Aldan Project | 2018 */
     public Text m_Text;
     public Animator m_Animator;
+    public PlayerController m_Player;
+    public Animator m_PlayerAnimator;
+    public PauseMenu m_PauseMenu;
+
+    private bool showing = false;
 
     public void ShowPaper(string[] text)
     {
@@ -21,10 +26,24 @@ public class PaperText : MonoBehaviour
             }
         }
         m_Animator.SetBool("isShowing", true);
+        showing = true;
+        m_Player.m_CanMove = false;
+        m_PlayerAnimator.SetBool("IsWalking", false);
+        m_PlayerAnimator.SetBool("IsRunning", false);
     }
 
-    public void HidePaper()
+    private void Update()
+    {
+        if (showing && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.JoystickButton3)) && !m_PauseMenu.GetPauseActive())
+        {
+            HidePaper();
+            showing = false;
+        }
+    }
+
+    private void HidePaper()
     {
         m_Animator.SetBool("isShowing", false);
+        m_Player.m_CanMove = true;
     }
 }

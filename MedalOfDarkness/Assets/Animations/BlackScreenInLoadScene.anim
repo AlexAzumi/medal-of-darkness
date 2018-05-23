@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BlackScreenIn
+  m_Name: BlackScreenInLoadScene
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -256,7 +256,7 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 1.1666666
-    functionName: ReturnCharacter
+    functionName: LoadSceneNow
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

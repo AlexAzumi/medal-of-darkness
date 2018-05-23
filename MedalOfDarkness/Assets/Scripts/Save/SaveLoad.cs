@@ -33,6 +33,8 @@ public class SaveLoad
             }
             catch(FileNotFoundException ex)
             {
+                Debug.Log("No hay usuarios almacenados");
+                Debug.Log("Mensaje: " + ex.Message);
                 return null;
             }
         }

@@ -1,32 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class LoadNextScene : MonoBehaviour 
 {
-    public string sceneName;
+    /* Made by Aldan Project | 2018 */
+    public Animator animator;
+    public AudioSource audioSource;
+    public int secondsToFade = 1;
+
+    private bool fadeOut = false;
 
     private void OnTriggerStay()
     {
         if (Input.GetAxisRaw("Action") != 0)
         {
-            LoadSceneNow();
+            animator.SetTrigger("fadeOut");
+            fadeOut = true;
         }
     }
 
-    public void LoadSceneNow()
+    private void FixedUpdate()
     {
-        StartCoroutine(LoadScene());
-    }
-
-    IEnumerator LoadScene()
-    {
-        AsyncOperation load = SceneManager.LoadSceneAsync(sceneName);
-
-        while (!load.isDone)
+        if (fadeOut)
         {
-            yield return null;
+            if (audioSource.volume > 0)
+            {
+                audioSource.volume -= (Time.deltaTime / (secondsToFade + 1));
+            }
+            else
+            {
+                Destroy(this);
+            }
         }
     }
 }
+

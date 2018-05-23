@@ -136,10 +136,10 @@ Transform:
   m_Children:
   - {fileID: 323092645}
   - {fileID: 1147489918}
-  - {fileID: 506616339}
   - {fileID: 1330855632}
   - {fileID: 1447911543}
   - {fileID: 1643764799}
+  - {fileID: 506616339}
   m_Father: {fileID: 2072718443}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -517,6 +517,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22f0ca2e95ac3404e9d595a4e9ceac63, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &425767065 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82933745059835448, guid: 22f0ca2e95ac3404e9d595a4e9ceac63,
+    type: 2}
+  m_PrefabInternal: {fileID: 425767064}
 --- !u!1 &478395637
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,13 +642,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4810019284379292, guid: d3a6f8923bdc7f34aaccfe0c220c2f95, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114703233778634386, guid: d3a6f8923bdc7f34aaccfe0c220c2f95,
         type: 2}
-      propertyPath: sceneName
-      value: Level03
-      objectReference: {fileID: 0}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1751151387}
+    - target: {fileID: 114703233778634386, guid: d3a6f8923bdc7f34aaccfe0c220c2f95,
+        type: 2}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 425767065}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3a6f8923bdc7f34aaccfe0c220c2f95, type: 2}
   m_IsPrefabParent: 0
@@ -671,7 +681,7 @@ MonoBehaviour:
   secondsToFade: 4
 --- !u!95 &866801224 stripped
 Animator:
-  m_PrefabParentObject: {fileID: 95725625096023822, guid: b56360886476093469fd82838436ecec,
+  m_PrefabParentObject: {fileID: 95307905189239152, guid: b56360886476093469fd82838436ecec,
     type: 2}
   m_PrefabInternal: {fileID: 1162728905}
 --- !u!1 &909924117
@@ -1452,7 +1462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CallEvent: 3
-  m_FocusTime: 5
+  m_FocusTime: 3
   m_DesactivateTrigger: 1
   m_Object: {fileID: 1910582060}
   m_Event: {fileID: 984893964}
@@ -1559,6 +1569,11 @@ Prefab:
       propertyPath: m_EventSystem
       value: 
       objectReference: {fileID: 994149250}
+    - target: {fileID: 114266019070030124, guid: b56360886476093469fd82838436ecec,
+        type: 2}
+      propertyPath: sceneName
+      value: Level03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b56360886476093469fd82838436ecec, type: 2}
   m_IsPrefabParent: 0
@@ -1763,7 +1778,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4573295028297564, guid: f91fa80e4905a8b4fbf88d507e26a9db, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4573295028297564, guid: f91fa80e4905a8b4fbf88d507e26a9db, type: 2}
       propertyPath: m_LocalScale.x
@@ -2138,7 +2153,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4573295028297564, guid: f91fa80e4905a8b4fbf88d507e26a9db, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4573295028297564, guid: f91fa80e4905a8b4fbf88d507e26a9db, type: 2}
       propertyPath: m_LocalScale.x
@@ -2572,7 +2587,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4573295028297564, guid: f91fa80e4905a8b4fbf88d507e26a9db, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4573295028297564, guid: f91fa80e4905a8b4fbf88d507e26a9db, type: 2}
       propertyPath: m_LocalScale.x
@@ -2890,6 +2905,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1745139532}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1751151387 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95725625096023822, guid: b56360886476093469fd82838436ecec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1162728905}
 --- !u!1 &1771894373
 GameObject:
   m_ObjectHideFlags: 0
