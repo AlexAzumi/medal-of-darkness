@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Login : MonoBehaviour 
 {
@@ -12,6 +11,11 @@ public class Login : MonoBehaviour
     public string m_LoginURL;
     public InputField m_Username;
     public InputField m_Password;
+    public string m_ServerError = "Se ha generado un problema en el servidor";
+    public string m_Incorrect = "Datos incorrectos";
+    public Text m_Message;
+    public Animator m_BetweenScenes;
+    public EventSystem m_EventSystem;
 
     /* Private stuff */
     private string m_Result;
@@ -37,26 +41,41 @@ public class Login : MonoBehaviour
         yield return sendData;
         string result = sendData.text;
         Debug.Log(sendData.text);
-        if (result != null)
+        if (result != null && result != "")
         {
-            Debug.Log("Guardando usuario...");
-            string[] data = result.Split('|');
-            m_User = new User(data[0], int.Parse(data[1]));
-            m_SaveLoad = new SaveLoad();
-            m_SaveLoad.m_User = m_User;
-            m_SaveLoad.SaveUser();
-            Debug.Log("Usuario guardado");
-            StartCoroutine(LoadScene());
+            if (result.Contains("Error"))
+            {
+                if (result.Contains("01"))
+                {
+                    m_Message.text = m_ServerError;
+                }
+                else if (result.Contains("02"))
+                {
+                    m_Message.text = m_Incorrect;
+                }
+                Color color = m_Message.color;
+                color.a = 1;
+                m_Message.color = color;
+            }
+            else
+            {
+                Debug.Log("Guardando usuario...");
+                string[] data = result.Split('|');
+                m_User = new User(data[0], int.Parse(data[1]));
+                m_SaveLoad = new SaveLoad();
+                m_SaveLoad.m_User = m_User;
+                m_SaveLoad.SaveUser();
+                Debug.Log("Usuario guardado");
+                m_EventSystem.enabled = false;
+                m_BetweenScenes.SetTrigger("fadeOut");
+            }
         }
-    }
-
-    IEnumerator LoadScene()
-    {
-        AsyncOperation load = SceneManager.LoadSceneAsync("Level01");
-
-        while (!load.isDone)
+        else
         {
-            yield return null;
+            m_Message.text = m_ServerError;
+            Color color = m_Message.color;
+            color.a = 1;
+            m_Message.color = color;
         }
     }
 }
