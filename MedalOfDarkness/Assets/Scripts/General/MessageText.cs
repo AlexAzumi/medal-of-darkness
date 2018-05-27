@@ -41,16 +41,23 @@ public class MessageText : MonoBehaviour
 
     public void SetMessageText(string text, bool onTrigger)
     {
-        if (onTrigger && !m_OnUse)
+        try
         {
-            m_Timer = 0f;
-            if (!m_MessageText.text.Equals(text))
-                m_MessageText.text = text;
+            if (onTrigger && !m_OnUse)
+            {
+                m_Timer = 0f;
+                if (!m_MessageText.text.Equals(text))
+                    m_MessageText.text = text;
 
-            m_Animator.SetBool("isOnScreen", true);
+                m_Animator.SetBool("isOnScreen", true);
+            }
+            else
+                m_Animator.SetBool("isOnScreen", false);
         }
-        else
-            m_Animator.SetBool("isOnScreen", false);
+        catch(MissingReferenceException ex)
+        {
+            Debug.Log("Animador perdido");
+        }
     }
 
     public void ShowMessageInTime(string text, float time)

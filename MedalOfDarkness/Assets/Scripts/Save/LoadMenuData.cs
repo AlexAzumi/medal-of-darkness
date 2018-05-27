@@ -8,11 +8,14 @@ public class LoadMenuData : MonoBehaviour
 {
     /* Made by Aldan Project | 2018 */
     public Text m_UserText;
+    public Text m_CloseSession;
 
     private SaveLoad m_SaveLoad;
+    private bool m_Session;
 
     private void Start()
     {
+        m_Session = false;
         m_SaveLoad = new SaveLoad();
         CheckIfUser();
     }
@@ -23,86 +26,31 @@ public class LoadMenuData : MonoBehaviour
         if (user != null)
         {
             m_UserText.text = "<b>Usuario:</b> " + user.m_Username;
+            m_Session = true;
         }
         else
         {
             Color color = m_UserText.color;
             color.a = 0.0f;
             m_UserText.color = color;
+            m_CloseSession.color = color;
         }
     }
 
-    /*
-    private void CheckIfGames()
+    private void Update()
     {
-        m_Games = m_SaveLoad.LoadGames();
-        if (m_Games != null)
+        if (m_Session && (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.JoystickButton3)))
         {
-            if (m_MainMenu)
+            m_Session = false;
+            if (m_SaveLoad.DeleteUser())
             {
-                m_ResumeGameButton.interactable = true;
+                Debug.Log("Usuario eliminado");
+                CheckIfUser();
             }
-            for (int i = 0; i < 3; i++)
+            else
             {
-                if (m_Games[i] != null)
-                {
-                    switch (i)
-                    {
-                        case 3:
-                            m_UserFile3.text = "Nombre del jugador: " + m_Games[2].GetUsername();
-                            m_TimeFile3.text = "Tiempo jugado: " + m_Games[2].GetTime();
-                            SetAlpha(3);
-                            break;
-                        case 2:
-                            m_UserFile2.text = "Nombre del jugador: " + m_Games[1].GetUsername();
-                            m_TimeFile2.text = "Tiempo jugado: " + m_Games[1].GetTime();
-                            SetAlpha(2);
-                            break;
-                        case 1:
-                            m_UserFile1.text = "Nombre del jugador: " + m_Games[0].GetUsername();
-                            m_TimeFile1.text = "Tiempo jugado: " + m_Games[0].GetTime();
-                            SetAlpha(1);
-                            break;
-                    }
-                }
+                Debug.Log("No se pudo eliminar el usuario");
             }
         }
     }
-
-    private void SetAlpha(int fileSave)
-    {
-        Color color = m_UserFile1.color;
-        color.a = 1.0f;
-        switch (fileSave)
-        {
-            case 1:
-                m_UserFile1.color = color;
-                m_TimeFile1.color = color;
-                break;
-            case 2:
-                m_UserFile2.color = color;
-                m_TimeFile2.color = color;
-                break;
-            case 3:
-                m_UserFile1.color = color;
-                m_TimeFile1.color = color;
-                break;
-        }
-    }
-
-    public void SaveGame(int slot)
-    {
-        if (m_Games[slot - 1] != null)
-        {
-            string scene = SceneManager.GetActiveScene().name;
-            switch (scene)
-            {
-                case "Level01":
-                    m_Games[slot - 1].SetLevel01(m_Event.m_ActualEvent, m_Event.m_RockEvent, m_Event.m_BarrelEvent, m_Event.m_Barrel01, m_Event.m_Barrel02, m_Event.m_Barrel03, m_Event.m_Solved);
-                    m_SaveLoad.SaveGame(slot, m_Games[slot - 1]);
-                    break;
-            }
-        }
-    }
-    */
 }

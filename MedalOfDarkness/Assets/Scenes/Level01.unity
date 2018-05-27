@@ -1036,6 +1036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UserText: {fileID: 1365224020}
+  m_CloseSession: {fileID: 0}
 --- !u!1 &669303412 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1090453689462878, guid: cb40bd77ebc4c804ca4096dfa12192f5,
@@ -1582,6 +1583,11 @@ Transform:
   m_Father: {fileID: 1625975411}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1305881688 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1638228068665222, guid: 22f0ca2e95ac3404e9d595a4e9ceac63,
+    type: 2}
+  m_PrefabInternal: {fileID: 596875268}
 --- !u!1001 &1354186781
 Prefab:
   m_ObjectHideFlags: 0
@@ -1655,6 +1661,18 @@ GameObject:
   m_PrefabParentObject: {fileID: 1404360394601904, guid: 3e3bcec2d7fc84940b593c891f197b00,
     type: 2}
   m_PrefabInternal: {fileID: 2044398403}
+--- !u!114 &1397394646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397394645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2603de8e67e950a44bfed50733407bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: MainMenu
 --- !u!1001 &1425143264
 Prefab:
   m_ObjectHideFlags: 0
@@ -1939,6 +1957,16 @@ Prefab:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 942469587}
+    - target: {fileID: 114703233778634386, guid: d3a6f8923bdc7f34aaccfe0c220c2f95,
+        type: 2}
+      propertyPath: m_Katherine
+      value: 
+      objectReference: {fileID: 1305881688}
+    - target: {fileID: 114703233778634386, guid: d3a6f8923bdc7f34aaccfe0c220c2f95,
+        type: 2}
+      propertyPath: m_PauseMenu
+      value: 
+      objectReference: {fileID: 1397394645}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3a6f8923bdc7f34aaccfe0c220c2f95, type: 2}
   m_IsPrefabParent: 0
@@ -2459,7 +2487,28 @@ Prefab:
       propertyPath: m_EventSystem
       value: 
       objectReference: {fileID: 89072178}
-    m_RemovedComponents: []
+    - target: {fileID: 114547258376254516, guid: 3e3bcec2d7fc84940b593c891f197b00,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 608574541}
+    - target: {fileID: 114547258376254516, guid: 3e3bcec2d7fc84940b593c891f197b00,
+        type: 2}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 942469587}
+    - target: {fileID: 114147781611947682, guid: 3e3bcec2d7fc84940b593c891f197b00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadSceneNow
+      objectReference: {fileID: 0}
+    - target: {fileID: 114147781611947682, guid: 3e3bcec2d7fc84940b593c891f197b00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1397394646}
+    m_RemovedComponents:
+    - {fileID: 114547258376254516, guid: 3e3bcec2d7fc84940b593c891f197b00, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3e3bcec2d7fc84940b593c891f197b00, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &2076904827 stripped

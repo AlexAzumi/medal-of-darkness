@@ -15,6 +15,7 @@ public class EventTwo : MonoBehaviour
     public string[] m_FailMessages;
     public string[] m_RestartMessages;
     public string[] m_CompleteMessages;
+    public string[] m_KatherineInfo;
 
     /* Private stuff */
     private DialogManager m_DialogManager;
@@ -64,6 +65,11 @@ public class EventTwo : MonoBehaviour
         else if (m_ActualEvent == 6)
         {
             m_DialogManager.SetMessageDialog(m_CompleteMessages);
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 8)
+        {
+            m_DialogManager.SetMessageDialog(m_KatherineInfo);
             m_ActualEvent = 0;
         }
 	}

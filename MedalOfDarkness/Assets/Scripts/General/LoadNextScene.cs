@@ -8,15 +8,16 @@ public class LoadNextScene : MonoBehaviour
     public Animator animator;
     public AudioSource audioSource;
     public int secondsToFade = 1;
+    public GameObject m_PauseMenu;
+    public GameObject m_Katherine;
 
     private bool fadeOut = false;
 
     private void OnTriggerStay()
     {
-        if (Input.GetAxisRaw("Action") != 0)
+        if (Input.GetAxisRaw("Action") != 0 && !fadeOut)
         {
-            animator.SetTrigger("fadeOut");
-            fadeOut = true;
+            LoadScene();
         }
     }
 
@@ -33,6 +34,16 @@ public class LoadNextScene : MonoBehaviour
                 Destroy(this);
             }
         }
+    }
+
+    public void LoadScene()
+    {
+        fadeOut = true;
+        m_PauseMenu.SetActive(false);
+        m_Katherine.GetComponent<PlayerController>().m_CanMove = false;
+        m_Katherine.GetComponent<Animator>().SetBool("IsWalking", false);
+        m_Katherine.GetComponent<Animator>().SetBool("IsRunning", false);
+        animator.SetTrigger("fadeOut");
     }
 }
 

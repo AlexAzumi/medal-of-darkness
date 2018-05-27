@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114135953567263962}
   - component: {fileID: 82445219862969814}
   - component: {fileID: 114816162092742368}
+  - component: {fileID: 114278450528689954}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -312,6 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224070468966738974}
   - component: {fileID: 114686047966051278}
+  - component: {fileID: 82726290854841700}
   m_Layer: 5
   m_Name: DialogManager
   m_TagString: Untagged
@@ -554,6 +556,87 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243425515748172226, guid: d9e9fe02f2d27a34588ef3d7d78e5c3f,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: c2f9413e22fe68f449c3b8da92255218, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82726290854841700
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594735042800866}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243189375420792890, guid: d9e9fe02f2d27a34588ef3d7d78e5c3f,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 1a64a12b32faefe47ae3cfe0a246488f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -886,7 +969,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2603de8e67e950a44bfed50733407bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level
+  sceneName: Level04
+--- !u!114 &114278450528689954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1082298309733582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2603de8e67e950a44bfed50733407bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: MainMenu
 --- !u!114 &114290419962206734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1489,7 +1584,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114278450528689954}
         m_MethodName: LoadSceneNow
         m_Mode: 1
         m_Arguments:
@@ -1543,7 +1638,7 @@ MonoBehaviour:
   m_DialogBox: {fileID: 1196915668544348}
   m_DialogText: {fileID: 114290419962206734}
   m_PauseMenu: {fileID: 114135953567263962}
-  m_WaitTime: 0.01
+  m_WaitTime: 0.025
 --- !u!114 &114760509671386120
 MonoBehaviour:
   m_ObjectHideFlags: 1

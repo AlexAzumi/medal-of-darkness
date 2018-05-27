@@ -12,10 +12,9 @@ public class PaperText : MonoBehaviour
     public Animator m_PlayerAnimator;
     public PauseMenu m_PauseMenu;
 
-    private bool showing = false;
-
     public void ShowPaper(string[] text)
     {
+        Debug.Log("Abriendo pergamino...");
         m_Text.text = "";
         for (int i = 0; i < text.Length; i++)
         {
@@ -26,24 +25,26 @@ public class PaperText : MonoBehaviour
             }
         }
         m_Animator.SetBool("isShowing", true);
-        showing = true;
         m_Player.m_CanMove = false;
         m_PlayerAnimator.SetBool("IsWalking", false);
         m_PlayerAnimator.SetBool("IsRunning", false);
+        Debug.Log("Pergamino abierto");
     }
 
     private void Update()
     {
-        if (showing && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.JoystickButton3)) && !m_PauseMenu.GetPauseActive())
+        if (m_Text.color.a == 1 && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.JoystickButton3)) && !m_PauseMenu.GetPauseActive())
         {
+            Debug.Log("Se ha solicitado ocultar el pergamino");
             HidePaper();
-            showing = false;
         }
     }
 
     private void HidePaper()
     {
+        Debug.Log("Ocultando pergamino...");
         m_Animator.SetBool("isShowing", false);
         m_Player.m_CanMove = true;
+        Debug.Log("Pergamino ocultado");
     }
 }

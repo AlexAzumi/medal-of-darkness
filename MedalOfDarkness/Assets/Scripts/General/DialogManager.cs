@@ -14,6 +14,7 @@ public class DialogManager : MonoBehaviour
 
     /* Private stuff */
     private PlayerController m_CharacterControl;
+    private AudioSource m_EffectSound;
     private bool m_Active, m_ShowAll;
     private string[] m_DialogMessage;
     private int m_Count, m_CharPosition;
@@ -22,6 +23,7 @@ public class DialogManager : MonoBehaviour
 	private void Start() 
     {
         m_CharacterControl = GameObject.Find("Katherine").GetComponent<PlayerController>();
+        m_EffectSound = GetComponent<AudioSource>();
         m_ShowAll = false;
         m_Count = 0;
         m_CharPosition = 0;
@@ -34,11 +36,14 @@ public class DialogManager : MonoBehaviour
         {
             if (m_ShowAll)
             {
-                m_DialogBox.SetActive(false);
-                m_Active = false;
-                m_Count = 0;
-                m_ShowAll = false;
-                m_CharacterControl.SetCanMove(true);
+                if (!SkipText())
+                {
+                    m_DialogBox.SetActive(false);
+                    m_Active = false;
+                    m_Count = 0;
+                    m_ShowAll = false;
+                    m_CharacterControl.SetCanMove(true);
+                }
             }
             else
             {
@@ -55,6 +60,7 @@ public class DialogManager : MonoBehaviour
             m_Timer -= Time.deltaTime;
             if (m_Timer < 0)
             {
+                m_EffectSound.Play();
                 m_DialogText.text += m_DialogMessage[m_Count][m_CharPosition];
                 m_Timer = m_WaitTime;
                 m_CharPosition++;
@@ -64,12 +70,7 @@ public class DialogManager : MonoBehaviour
 
     private void ShowNext()
     {
-        if (m_CharPosition < m_DialogMessage[m_Count].Length && m_Active == true)
-        {
-            m_DialogText.text = m_DialogMessage[m_Count];
-            m_CharPosition = m_DialogMessage[m_Count].Length;
-        }
-        else
+        if(!SkipText())
         {
             m_DialogText.text = "";
             m_CharPosition = 0;
@@ -88,6 +89,17 @@ public class DialogManager : MonoBehaviour
                 m_ShowAll = true;
             }
         }
+    }
+
+    private bool SkipText()
+    {
+        if (m_CharPosition < m_DialogMessage[m_Count].Length && m_Active == true)
+        {
+            m_DialogText.text = m_DialogMessage[m_Count];
+            m_CharPosition = m_DialogMessage[m_Count].Length;
+            return true;
+        }
+        return false;
     }
 
     public void SetMessageDialog(string[] dialogText)

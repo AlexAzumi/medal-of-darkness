@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  sceneName: Level03
   audioSource: {fileID: 0}
   secondsToFade: 1
+  m_PauseMenu: {fileID: 0}
+  m_Katherine: {fileID: 0}
