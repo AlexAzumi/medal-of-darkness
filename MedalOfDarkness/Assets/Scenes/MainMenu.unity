@@ -123,6 +123,8 @@ GameObject:
   - component: {fileID: 32375910}
   - component: {fileID: 32375914}
   - component: {fileID: 32375915}
+  - component: {fileID: 32375916}
+  - component: {fileID: 32375917}
   m_Layer: 5
   m_Name: BetweenScenes
   m_TagString: Untagged
@@ -308,6 +310,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SceneName: {fileID: 0}
+--- !u!114 &32375916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 32375908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4decc5e50768174599000b5049d321b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Publish: 0
+--- !u!114 &32375917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 32375908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9862ed20e0b114bb92ec228fd4b99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PauseMenu: {fileID: 0}
 --- !u!1 &83726576
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,6 +3179,7 @@ GameObject:
   - component: {fileID: 1258095567}
   - component: {fileID: 1258095568}
   - component: {fileID: 1258095569}
+  - component: {fileID: 1258095570}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3372,6 +3399,17 @@ MonoBehaviour:
   m_Message: {fileID: 1405540815}
   m_BetweenScenes: {fileID: 32375911}
   m_EventSystem: {fileID: 688151857}
+--- !u!114 &1258095570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258095561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78862df82c91f848bdb304ee8ad18b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1271128356
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,6 +4611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UserText: {fileID: 400168887}
   m_CloseSession: {fileID: 105026631}
+  m_LevelScore: {fileID: 0}
 --- !u!114 &2054929208
 MonoBehaviour:
   m_ObjectHideFlags: 0

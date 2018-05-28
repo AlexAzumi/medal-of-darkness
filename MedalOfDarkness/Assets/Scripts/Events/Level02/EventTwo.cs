@@ -7,7 +7,7 @@ public class EventTwo : MonoBehaviour
     /* Made by Aldan Project | 2018 */
 
     /* Public stuff */
-    public GameObject m_PauseMenu;
+    public LevelScore m_LevelScore;
     public PlayerController m_Katherine;
     public KaluMovement m_Kalu;
 
@@ -25,8 +25,8 @@ public class EventTwo : MonoBehaviour
 
 	private void Start()
     {
+        m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
         m_DialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
-        m_PauseMenu.SetActive(true);
 
         m_Lose = gameObject.GetComponent<LoseScript>();
 	}
@@ -45,6 +45,7 @@ public class EventTwo : MonoBehaviour
         }
         else if (m_ActualEvent == 3)
         {
+            m_LevelScore.StartPuzzle();
             m_DialogManager.SetMessageDialog(m_PuzzleMessages);
             m_ActualEvent = 0;
         }
@@ -65,6 +66,7 @@ public class EventTwo : MonoBehaviour
         }
         else if (m_ActualEvent == 6)
         {
+            m_LevelScore.StopPuzzle();
             m_DialogManager.SetMessageDialog(m_CompleteMessages);
             m_ActualEvent = 0;
         }

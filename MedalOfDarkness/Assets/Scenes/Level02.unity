@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa04018abc4985e4493a42b5dab010a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PauseMenu: {fileID: 1345940996}
+  m_LevelScore: {fileID: 0}
   m_Katherine: {fileID: 1538145544}
   m_Kalu: {fileID: 1645400565}
   m_KaluMessages:
@@ -982,6 +982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UserText: {fileID: 1518046336}
   m_CloseSession: {fileID: 0}
+  m_LevelScore: {fileID: 0}
 --- !u!114 &984893966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1417,6 +1418,52 @@ MonoBehaviour:
   m_Object: {fileID: 1910582060}
   m_Event: {fileID: 984893964}
   m_CharacterAnimator: {fileID: 1538145548}
+--- !u!1001 &1159750983
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4965521246280084, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965521246280084, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965521246280084, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965521246280084, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965521246280084, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965521246280084, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965521246280084, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965521246280084, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618941086832998, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1162728905
 Prefab:
   m_ObjectHideFlags: 0
@@ -1519,9 +1566,7 @@ Prefab:
       propertyPath: m_EventSystem
       value: 
       objectReference: {fileID: 994149250}
-    m_RemovedComponents:
-    - {fileID: 114574619946865996, guid: b56360886476093469fd82838436ecec, type: 2}
-    - {fileID: 114759529373345598, guid: b56360886476093469fd82838436ecec, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b56360886476093469fd82838436ecec, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1176470263

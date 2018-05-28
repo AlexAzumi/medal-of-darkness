@@ -5,6 +5,7 @@ using UnityEngine;
 public class EventThree : MonoBehaviour 
 {
     /* Made by Aldan Project | 2018 */
+    public LevelScore m_LevelScore;
     public GameObject m_PauseMenu;
     public PlayerController m_Katherine;
     public KaluMovement m_Kalu;
@@ -27,6 +28,7 @@ public class EventThree : MonoBehaviour
 
 	private void Start() 
     {
+        m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
         m_DialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
         m_PauseMenu.SetActive(true);
         m_Kalu.FollowKatherine();
@@ -77,6 +79,7 @@ public class EventThree : MonoBehaviour
         }
         else if (m_ActualEvent == 4)
         {
+            m_LevelScore.StopPuzzle();
             for (int i = 0; i < m_Switches.Length; i++)
             {
                 m_Switches[i].enabled = false;
@@ -86,6 +89,7 @@ public class EventThree : MonoBehaviour
         }
         else if (m_ActualEvent == 5 && m_Katherine.m_CanMove)
         {
+            m_LevelScore.StartPuzzle();
             m_MessageText.ShowMessageInTime(m_ReopenPage, m_MessageDuration);
             canRead = true;
             m_ActualEvent = 0;

@@ -418,6 +418,9 @@ GameObject:
   - component: {fileID: 114814061102037112}
   - component: {fileID: 95711656910054650}
   - component: {fileID: 114529834626222556}
+  - component: {fileID: 114536321923073882}
+  - component: {fileID: 114762224851421202}
+  - component: {fileID: 114738638221214408}
   m_Layer: 5
   m_Name: BetweenScenes
   m_TagString: Untagged
@@ -1338,6 +1341,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MainMenu
+--- !u!114 &114536321923073882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884855087712518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb06bab48bb03fb4b8af70cc28969003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneName: {fileID: 0}
 --- !u!114 &114580528761334348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1571,6 +1586,30 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114738638221214408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884855087712518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9862ed20e0b114bb92ec228fd4b99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PauseMenu: {fileID: 0}
+--- !u!114 &114762224851421202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884855087712518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4decc5e50768174599000b5049d321b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Publish: 0
 --- !u!114 &114762548790548334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1660,7 +1699,7 @@ MonoBehaviour:
   m_DialogBox: {fileID: 1853819505835082}
   m_DialogText: {fileID: 114628931236276248}
   m_PauseMenu: {fileID: 114427144867901878}
-  m_WaitTime: 0.01
+  m_WaitTime: 0.025
 --- !u!114 &114851395376609062
 MonoBehaviour:
   m_ObjectHideFlags: 1

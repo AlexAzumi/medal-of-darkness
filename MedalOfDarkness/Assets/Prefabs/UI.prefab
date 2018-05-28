@@ -315,8 +315,6 @@ GameObject:
   - component: {fileID: 222310224468068554}
   - component: {fileID: 114760509671386120}
   - component: {fileID: 95307905189239152}
-  - component: {fileID: 114574619946865996}
-  - component: {fileID: 114759529373345598}
   m_Layer: 5
   m_Name: BlackScreen
   m_TagString: Untagged
@@ -354,6 +352,8 @@ GameObject:
   - component: {fileID: 95725625096023822}
   - component: {fileID: 114266019070030124}
   - component: {fileID: 114656529861952610}
+  - component: {fileID: 114228342921472876}
+  - component: {fileID: 114160789259944506}
   m_Layer: 5
   m_Name: BetweenScenes
   m_TagString: Untagged
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 95116720222573520}
   m_Layer: 5
   m_Name: PublishedScore
-  m_TagString: Untagged
+  m_TagString: PublishMessage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1031,6 +1031,30 @@ MonoBehaviour:
   m_PausePanel: {fileID: 1699453779985196}
   m_OptionsPanel: {fileID: 0}
   m_SelectedObject: {fileID: 1530061926008472}
+--- !u!114 &114160789259944506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1604392488622100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9862ed20e0b114bb92ec228fd4b99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PauseMenu: {fileID: 1082298309733582}
+--- !u!114 &114228342921472876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1604392488622100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4decc5e50768174599000b5049d321b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Publish: 1
 --- !u!114 &114266019070030124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1585,22 +1609,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
---- !u!114 &114574619946865996
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593055475338304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca5cee0036063b49ba6d7169ab35c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Katherine: {fileID: 0}
-  m_NewPosition: {fileID: 0}
-  m_WaitTime: 3
-  m_Event: {fileID: 0}
-  m_CallEvent: 2
 --- !u!114 &114616508549263650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1673,7 +1681,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114278450528689954}
         m_MethodName: LoadSceneNow
         m_Mode: 1
         m_Arguments:
@@ -1806,22 +1814,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Paso Khrix
---- !u!114 &114759529373345598
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593055475338304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca5cee0036063b49ba6d7169ab35c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Katherine: {fileID: 0}
-  m_NewPosition: {fileID: 0}
-  m_WaitTime: 0
-  m_Event: {fileID: 0}
-  m_CallEvent: 7
 --- !u!114 &114760509671386120
 MonoBehaviour:
   m_ObjectHideFlags: 1

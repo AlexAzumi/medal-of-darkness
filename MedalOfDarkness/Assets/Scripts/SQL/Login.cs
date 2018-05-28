@@ -8,7 +8,7 @@ public class Login : MonoBehaviour
     /* Made by Aldan Project | 2018 */
 
     /* Public stuff */
-    public string m_LoginURL;
+    public string m_LoginURL = "https://aldanproject.000webhostapp.com/unity-scripts/login.php";
     public InputField m_Username;
     public InputField m_Password;
     public string m_ServerError = "Se ha generado un problema en el servidor";
@@ -34,7 +34,6 @@ public class Login : MonoBehaviour
         //Debug.Log(username);
         //Debug.Log(password);
         WWWForm login = new WWWForm();
-        login.AddField("action", "login");
         login.AddField("username", username);
         login.AddField("password", password);
         WWW sendData = new WWW(m_LoginURL, login);

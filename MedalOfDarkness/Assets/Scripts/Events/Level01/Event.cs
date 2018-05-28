@@ -8,6 +8,7 @@ public class Event : MonoBehaviour
     /* Made by Aldan Project | 2018 */
 
     /* Public stuff */
+    public LevelScore m_LevelScore;
     public Image m_BlackScreen;
     public GameObject m_PauseMenu;
     public GameObject m_SceneName;
@@ -43,6 +44,7 @@ public class Event : MonoBehaviour
 
 	void Start() 
     {
+        m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
         m_CameraControl = GetComponent<CameraControl>();
         m_CharacterControl = GameObject.Find("Katherine").GetComponent<PlayerController>();
         m_MessageText = GetComponent<MessageText>();
@@ -103,6 +105,7 @@ public class Event : MonoBehaviour
         }
         else if (m_ActualEvent == 8 && m_CharacterControl.m_CanMove == true)
         {
+            m_LevelScore.StartPuzzle();
             m_MessageText.ShowMessageInTime(m_RockInstruction, 7f);
             m_ActualEvent = 0;
         }
@@ -117,6 +120,7 @@ public class Event : MonoBehaviour
         }
         else if (m_ActualEvent == 6)
         {
+            m_LevelScore.StopPuzzle();
             m_DialogManager.SetMessageDialog(m_SolvedPuzzle);
             m_FocusTrigger.enabled = true;
             m_RockMesh.enabled = false;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EventFour : MonoBehaviour 
 {
     /* Made by Aldan Project | 2018 */
+    public LevelScore m_LevelScore;
     public GameObject m_PauseMenu;
     public PlayerController m_Katherine;
     public KaluMovement m_Kalu;
@@ -25,6 +26,7 @@ public class EventFour : MonoBehaviour
 
     private void Start()
     {
+        m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
         m_PauseMenu.SetActive(true);
         m_ActualEvent = 0;
         m_Solved = false;
@@ -39,6 +41,7 @@ public class EventFour : MonoBehaviour
         }
         else if (m_ActualEvent == 2 && m_Katherine.m_CanMove)
         {
+            m_LevelScore.StopPuzzle();
             ActivateColliders(true);
             m_MessageText.ShowMessageInTime(m_HideMessage, m_MessageTime);
             m_ActualEvent = 0;
@@ -69,6 +72,7 @@ public class EventFour : MonoBehaviour
             m_DialogManager.SetMessageDialog(m_SelectOptionMessages);
             if (m_ActualEvent == 8)
             {
+                m_LevelScore.StopPuzzle();
                 m_Solved = true;
                 Debug.Log("Solucionado");
             }
