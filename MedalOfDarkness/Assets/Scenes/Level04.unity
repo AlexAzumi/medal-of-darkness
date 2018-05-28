@@ -134,7 +134,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 564291264}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &92545191
 Prefab:
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c079c76a2aa3e1444a5f1da148eb90f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CallEvent: 13
+  m_CallEvent: 14
   m_EventSelector: {fileID: 1083187256}
   m_Katherine: {fileID: 695696579}
 --- !u!1 &158799477
@@ -888,6 +888,88 @@ Transform:
   m_Father: {fileID: 564291264}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &432834221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 432834222}
+  - component: {fileID: 432834225}
+  - component: {fileID: 432834224}
+  - component: {fileID: 432834223}
+  m_Layer: 0
+  m_Name: Rock (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &432834222
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 432834221}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 21.53, y: 16.82, z: 42.63}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
+  m_Children: []
+  m_Father: {fileID: 564291264}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &432834223
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 432834221}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: b008959149fa72c439bcf9774b99f48b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!135 &432834224
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 432834221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &432834225
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 432834221}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &455977538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1286,7 @@ Transform:
   - {fileID: 479247891}
   - {fileID: 1436812622}
   - {fileID: 1141172554}
+  - {fileID: 432834222}
   - {fileID: 1923687}
   - {fileID: 1508196979}
   m_Father: {fileID: 0}
@@ -1924,6 +2007,7 @@ GameObject:
   - component: {fileID: 1083187256}
   - component: {fileID: 1083187261}
   - component: {fileID: 1083187262}
+  - component: {fileID: 1083187263}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -2003,23 +2087,68 @@ MonoBehaviour:
   m_MessageText: {fileID: 1083187257}
   m_DialogManager: {fileID: 192900023}
   m_FocusObject: {fileID: 1083187262}
+  m_FocusObjectRockPuzzle: {fileID: 1083187263}
   m_BlackScreenWin: {fileID: 347116413}
   m_SeenEnemy:
-  - Mira perro
+  - "Tch, vaya adelante se encuentran m\xE1s enemigos, \xBFno se cansan?"
+  - "\"Tal parece que no nos dejar\xE1n pasar tan f\xE1cilmente\""
+  - "Ser\xE1 mejor no acercarnos mucho o podr\xE1n atraparnos f\xE1cilmente"
+  - "\"Debemos de ocultarnos detr\xE1s de alg\xFAn lado para idear un plan y poder
+    deshacernos de ellos\""
+  - '"Echa un vistazo a la zona, y mira en donde nos podemos ocultar"'
   m_LoseMessages:
-  - Perdiste men
-  m_PuzzleMessages:
-  - Puzzle
+  - "\"Wow, espera, ser\xE1 mejor no acercarnos demasiado o puede que nos atrapen\""
+  m_PuzzleMessagesOne:
+  - "\"Maldici\xF3n, no logr\xF3 ver una manera de distraerlos o de deshacernos de
+    ellos\""
+  - "\xBFY ahora que haremos?"
+  - '"Tranquila, debe de haber una manera"'
+  - "Hey, \xA1mira!"
+  m_PuzzleMessagesTwo:
+  - "\xBFPero qu\xE9 hace una roca arriba del acantilado?"
+  - "\"No lo s\xE9 pero tal vez podamos utilizarla en su contra\""
+  - "\xBFY c\xF3mo piensas hacerlo?"
+  - "La roca est\xE1 demasiado lejos y dudo que arrojandole algo sea suficiente para
+    derribarla"
+  - "\"Tranquila, no te lo hab\xEDa dicho, pero puedo utilizar algo de magia, pero...
+    s\xF3lo puede ser por poco tiempo\""
+  - "\xBFQu\xE9 clase de magia puedes utilizar?"
   m_SelectOptionMessages:
-  - Puzzle
+  - Intenta usar esta, tal vez funcione
+  - '"Muy bien, vamos a acabar con ellos"'
   m_RockDropMessages:
-  - "\xA1Mira!"
+  - "\"\xBFLista?, voy a usar mi magia\""
   m_BeforeRockMessages:
-  - Idea
+  - "Ouch, eso debi\xF3 doler"
+  - "\"Tal vez, pero ellos se lo buscar\xF3n. Adem\xE1s, necesitamos recuperar mi
+    medall\xF3n\""
+  - "Bueno, ahora que ya no nos impiden el paso, podemos pasar por los escombros,
+    al parecer la roca no bloque\xF3 por completo el camino"
+  - "\"Vale, s\xF3lo espero no cortarme con alg\xFAn escombro o algo\""
+  - "Eres un fantasma, \xBFqu\xE9 te podria pasar?"
+  - "\"S\xF3lo bromeaba jijiji\""
+  - Muy gracioso
+  - Vamos entonces
   m_BeforeTeleportMessages:
-  - "M\xE1s texto"
+  - "\"\xBFEst\xE1s bien?\""
+  - Si, demasiada tierra y polvo, es todo
+  - "\"Venga, continu\xE9mos, espero que no nos encontremos con m\xE1s enemigos durante
+    un rato\""
+  - Eso esperemos
   m_CharlotteMessages:
-  - "\xA1Charlotte!"
+  - 'El cartel dice:'
+  - "\"Katherine, encu\xE9ntrame m\xE1s adelante en Pueblo Nerea, he seguido el rastro
+    de Khrix y del medall\xF3n, pero sin ustedes no podr\xE9 quitarselo\""
+  - '"Nos veremos en Pueblo Nerea al atardecer"'
+  - -Charlotte-
+  - '"..."'
+  - "Pero, \xBFqui\xE9n es ella?, \xBFporqu\xE9 parece que me conoce?"
+  - "\"Mmmmm, no lo s\xE9 pero solo hay una manera de averiguarlo\""
+  - "Tienes raz\xF3n, adem\xE1s tengo que devolverle su pulsera"
+  - "(Pero sobre todo, \xBFqui\xE9n es ese tal Khrix?)"
+  - "(\xBFY porqu\xE9 mencion\xF3 nuestra ayuda?)"
+  - "(\xBFSer\xE1 que es una amiga de Kal\xFA?)"
+  - "(No lo s\xE9 pero prefiero no preguntarle a Kal\xFA hasta encontrarnos con ella)"
   m_HideMessage: Busca un escondite
   m_MessageTime: 5
   m_HidePositions:
@@ -2027,6 +2156,7 @@ MonoBehaviour:
   - {fileID: 1992652198}
   m_PuzzleMenu: {fileID: 2007421375}
   m_Rock: {fileID: 1141172553}
+  m_VisibleRock: {fileID: 432834221}
   m_Solved: 0
 --- !u!114 &1083187261
 MonoBehaviour:
@@ -2055,6 +2185,23 @@ MonoBehaviour:
   m_FocusTime: 5
   m_DesactivateTrigger: 0
   m_Object: {fileID: 1141172554}
+  m_Event: {fileID: 1083187256}
+  m_CharacterAnimator: {fileID: 850692026}
+--- !u!114 &1083187263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1083187255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd8eec365aed53439fbbac9cb998483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CallEvent: 16
+  m_FocusTime: 5
+  m_DesactivateTrigger: 0
+  m_Object: {fileID: 432834222}
   m_Event: {fileID: 1083187256}
   m_CharacterAnimator: {fileID: 850692026}
 --- !u!1 &1083395110 stripped
@@ -2975,7 +3122,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 564291264}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 35, z: 0}
 --- !u!1 &1513418079 stripped
 GameObject:

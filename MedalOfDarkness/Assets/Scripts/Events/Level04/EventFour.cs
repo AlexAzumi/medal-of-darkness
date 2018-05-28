@@ -10,14 +10,14 @@ public class EventFour : MonoBehaviour
     public KaluMovement m_Kalu;
     public MessageText m_MessageText;
     public DialogManager m_DialogManager;
-    public FocusObjectGeneric m_FocusObject;
+    public FocusObjectGeneric m_FocusObject, m_FocusObjectRockPuzzle;
     public Animator m_BlackScreenWin;
 
-    public string[] m_SeenEnemy, m_LoseMessages, m_PuzzleMessages, m_SelectOptionMessages, m_RockDropMessages, m_BeforeRockMessages, m_BeforeTeleportMessages, m_CharlotteMessages;
+    public string[] m_SeenEnemy, m_LoseMessages, m_PuzzleMessagesOne, m_PuzzleMessagesTwo, m_SelectOptionMessages, m_RockDropMessages, m_BeforeRockMessages, m_BeforeTeleportMessages, m_CharlotteMessages;
     public string m_HideMessage;
     public float m_MessageTime;
     public GameObject[] m_HidePositions;
-    public GameObject m_PuzzleMenu, m_Rock;
+    public GameObject m_PuzzleMenu, m_Rock, m_VisibleRock;
 
     public bool m_Solved;
 
@@ -55,8 +55,8 @@ public class EventFour : MonoBehaviour
         else if (m_ActualEvent == 4)
         {
             ActivateColliders(false);
-            m_DialogManager.SetMessageDialog(m_PuzzleMessages);
-            m_ActualEvent = 5;
+            m_DialogManager.SetMessageDialog(m_PuzzleMessagesOne);
+            m_ActualEvent = 15;
         }
         else if (m_ActualEvent == 5 && m_Katherine.m_CanMove)
         {
@@ -81,6 +81,7 @@ public class EventFour : MonoBehaviour
         }
         else if (m_ActualEvent == 10 && m_Katherine.m_CanMove)
         {
+            m_VisibleRock.SetActive(false);
             m_Rock.SetActive(true);
             m_FocusObject.FocusObject();
             m_ActualEvent = 0;
@@ -104,6 +105,16 @@ public class EventFour : MonoBehaviour
         {
             m_DialogManager.SetMessageDialog(m_CharlotteMessages);
             m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 15 && m_Katherine.m_CanMove)
+        {
+            m_FocusObjectRockPuzzle.FocusObject();
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 16)
+        {
+            m_DialogManager.SetMessageDialog(m_PuzzleMessagesTwo);
+            m_ActualEvent = 5;
         }
     }
 
