@@ -36,8 +36,10 @@ public class ShowMessageTrigger : MonoBehaviour
 
     void OnTriggerStay()
     {
-        if (Input.GetAxisRaw("Action") != 0)
+        if (Input.GetAxisRaw("Action") != 0 && m_ActionText.Length > 0)
+        {
             m_Event01.SetMessageText(m_ActionText, true);
+        }
     }
 }
 

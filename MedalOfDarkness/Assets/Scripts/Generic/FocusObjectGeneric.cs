@@ -49,6 +49,11 @@ public class FocusObjectGeneric : MonoBehaviour
 
     private void OnTriggerEnter()
     {
+        FocusObject();
+    }
+
+    public void FocusObject()
+    {
         m_CharacterAnimator.SetBool("IsRunning", false);
         m_CharacterAnimator.SetBool("IsWalking", false);
         m_CameraFollow.SetTarget(m_Object);

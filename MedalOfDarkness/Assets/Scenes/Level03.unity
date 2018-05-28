@@ -3637,6 +3637,16 @@ Prefab:
       propertyPath: m_EventSystem
       value: 
       objectReference: {fileID: 345125849}
+    - target: {fileID: 114266019070030124, guid: b56360886476093469fd82838436ecec,
+        type: 2}
+      propertyPath: sceneName
+      value: Level04
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750738718198918, guid: b56360886476093469fd82838436ecec,
+        type: 2}
+      propertyPath: m_Text
+      value: Mazmorra de las mil almas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b56360886476093469fd82838436ecec, type: 2}
   m_IsPrefabParent: 0
@@ -3877,13 +3887,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1426030090}
-  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalRotation: {x: 0.39044833, y: 0.34682897, z: -0.161729, w: 0.8373192}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 336904324}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 45, z: 0}
 --- !u!1 &1426476814
 GameObject:
   m_ObjectHideFlags: 0

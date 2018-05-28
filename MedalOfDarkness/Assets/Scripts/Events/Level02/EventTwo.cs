@@ -10,6 +10,7 @@ public class EventTwo : MonoBehaviour
     public GameObject m_PauseMenu;
     public PlayerController m_Katherine;
     public KaluMovement m_Kalu;
+
     public string[] m_KaluMessages;
     public string[] m_PuzzleMessages;
     public string[] m_FailMessages;

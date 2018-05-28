@@ -8,10 +8,9 @@ public class Event : MonoBehaviour
     /* Made by Aldan Project | 2018 */
 
     /* Public stuff */
-    public LoadMenuData m_Data;
-
     public Image m_BlackScreen;
     public GameObject m_PauseMenu;
+    public GameObject m_SceneName;
 
     public string m_InitialText;
     public float m_InactiveTime = 7f;
@@ -93,6 +92,7 @@ public class Event : MonoBehaviour
         }
         else if (m_ActualEvent == 3 && m_CharacterControl.m_CanMove == true)
         {
+            m_SceneName.GetComponent<Animator>().SetTrigger("showName");
             m_MessageText.ShowMessageInTime(m_InitialText, 7f);
             m_ActualEvent = 0;
         }

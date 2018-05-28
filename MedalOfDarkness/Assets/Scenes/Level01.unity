@@ -132,6 +132,11 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e36cf732b73e87f458b5e69d2c1f6417, type: 3}
+--- !u!1 &85607831 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1770152794248828, guid: 3e3bcec2d7fc84940b593c891f197b00,
+    type: 2}
+  m_PrefabInternal: {fileID: 2044398403}
 --- !u!1 &89072176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1021,11 @@ Prefab:
       value: "Mmm, tal vez en los otro barriles tambien haya interruptores. Ir\xE9
         a investigar"
       objectReference: {fileID: 0}
+    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
+        type: 2}
+      propertyPath: m_SceneName
+      value: 
+      objectReference: {fileID: 85607831}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
   m_IsPrefabParent: 0
@@ -1661,18 +1671,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1404360394601904, guid: 3e3bcec2d7fc84940b593c891f197b00,
     type: 2}
   m_PrefabInternal: {fileID: 2044398403}
---- !u!114 &1397394646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1397394645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2603de8e67e950a44bfed50733407bf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: MainMenu
 --- !u!1001 &1425143264
 Prefab:
   m_ObjectHideFlags: 0
@@ -2487,30 +2485,31 @@ Prefab:
       propertyPath: m_EventSystem
       value: 
       objectReference: {fileID: 89072178}
-    - target: {fileID: 114547258376254516, guid: 3e3bcec2d7fc84940b593c891f197b00,
+    - target: {fileID: 114837377072965408, guid: 3e3bcec2d7fc84940b593c891f197b00,
         type: 2}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 608574541}
-    - target: {fileID: 114547258376254516, guid: 3e3bcec2d7fc84940b593c891f197b00,
-        type: 2}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 942469587}
-    - target: {fileID: 114147781611947682, guid: 3e3bcec2d7fc84940b593c891f197b00,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: LoadSceneNow
+      propertyPath: m_WaitTime
+      value: 0.025
       objectReference: {fileID: 0}
-    - target: {fileID: 114147781611947682, guid: 3e3bcec2d7fc84940b593c891f197b00,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1397394646}
-    m_RemovedComponents:
-    - {fileID: 114547258376254516, guid: 3e3bcec2d7fc84940b593c891f197b00, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e3bcec2d7fc84940b593c891f197b00, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2044398404 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1884855087712518, guid: 3e3bcec2d7fc84940b593c891f197b00,
+    type: 2}
+  m_PrefabInternal: {fileID: 2044398403}
+--- !u!114 &2044398405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2044398404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb06bab48bb03fb4b8af70cc28969003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneName: {fileID: 0}
 --- !u!114 &2076904827 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114176638405681626, guid: 3e3bcec2d7fc84940b593c891f197b00,

@@ -11,12 +11,17 @@ public class MistakeEvent : MonoBehaviour
 
     private void OnTriggerEnter()
     {
-        if (!m_Event.solved)
+        if (!m_Event.m_Solved)
         {
             m_BlackScreen.SetBool("isActive", true);
             m_Katherine.GetComponent<PlayerController>().m_CanMove = false;
             m_Katherine.GetComponent<Animator>().SetBool("IsWalking", false);
             m_Katherine.GetComponent<Animator>().SetBool("IsRunning", false);
+        }
+        else
+        {
+            GetComponent<BoxCollider>().enabled = false;
+            m_Event.SetEvent(9);
         }
     }
 }

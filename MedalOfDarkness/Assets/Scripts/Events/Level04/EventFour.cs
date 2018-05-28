@@ -10,10 +10,16 @@ public class EventFour : MonoBehaviour
     public KaluMovement m_Kalu;
     public MessageText m_MessageText;
     public DialogManager m_DialogManager;
+    public FocusObjectGeneric m_FocusObject;
+    public Animator m_BlackScreenWin;
 
-    public string[] m_SeenEnemy, m_LoseMessages;
+    public string[] m_SeenEnemy, m_LoseMessages, m_PuzzleMessages, m_SelectOptionMessages, m_RockDropMessages, m_BeforeRockMessages, m_BeforeTeleportMessages, m_CharlotteMessages;
+    public string m_HideMessage;
+    public float m_MessageTime;
+    public GameObject[] m_HidePositions;
+    public GameObject m_PuzzleMenu, m_Rock;
 
-    public bool solved;
+    public bool m_Solved;
 
     private int m_ActualEvent;
 
@@ -21,7 +27,7 @@ public class EventFour : MonoBehaviour
     {
         m_PauseMenu.SetActive(true);
         m_ActualEvent = 0;
-        solved = false;
+        m_Solved = false;
     }
 
     private void Update()
@@ -29,11 +35,74 @@ public class EventFour : MonoBehaviour
         if (m_ActualEvent == 1)
         {
             m_DialogManager.SetMessageDialog(m_SeenEnemy);
+            m_ActualEvent = 2;
+        }
+        else if (m_ActualEvent == 2 && m_Katherine.m_CanMove)
+        {
+            ActivateColliders(true);
+            m_MessageText.ShowMessageInTime(m_HideMessage, m_MessageTime);
             m_ActualEvent = 0;
         }
-        else if (m_ActualEvent == 2)
+        else if (m_ActualEvent == 3)
         {
+            if (m_HidePositions[0].GetComponent<BoxCollider>().enabled == false)
+            {
+                ActivateColliders(true);
+            }
             m_DialogManager.SetMessageDialog(m_LoseMessages);
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 4)
+        {
+            ActivateColliders(false);
+            m_DialogManager.SetMessageDialog(m_PuzzleMessages);
+            m_ActualEvent = 5;
+        }
+        else if (m_ActualEvent == 5 && m_Katherine.m_CanMove)
+        {
+            m_Katherine.m_CanMove = false;
+            m_PuzzleMenu.SetActive(true);
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent >= 6 && m_ActualEvent <= 8)
+        {
+            m_DialogManager.SetMessageDialog(m_SelectOptionMessages);
+            if (m_ActualEvent == 8)
+            {
+                m_Solved = true;
+                Debug.Log("Solucionado");
+            }
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 9)
+        {
+            m_DialogManager.SetMessageDialog(m_RockDropMessages);
+            m_ActualEvent = 10;
+        }
+        else if (m_ActualEvent == 10 && m_Katherine.m_CanMove)
+        {
+            m_Rock.SetActive(true);
+            m_FocusObject.FocusObject();
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 11)
+        {
+            m_DialogManager.SetMessageDialog(m_BeforeRockMessages);
+            m_ActualEvent = 12;
+        }
+        else if (m_ActualEvent == 12 && m_Katherine.m_CanMove)
+        {
+            m_BlackScreenWin.SetBool("isActive", true);
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 13)
+        {
+            m_DialogManager.SetMessageDialog(m_BeforeTeleportMessages);
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 14)
+        {
+            m_DialogManager.SetMessageDialog(m_CharlotteMessages);
             m_ActualEvent = 0;
         }
     }
@@ -41,5 +110,13 @@ public class EventFour : MonoBehaviour
     public void SetEvent(int opc)
     {
         m_ActualEvent = opc;
+    }
+
+    private void ActivateColliders(bool activate)
+    {
+        for (int i = 0; i < m_HidePositions.Length; i++)
+        {
+            m_HidePositions[i].GetComponent<BoxCollider>().enabled = activate;
+        }
     }
 }

@@ -8,6 +8,7 @@ public class KaluMovement : MonoBehaviour
     public bool m_Following = true;
     public Transform m_Katherine;
     public float m_Smooting = 2.0f;
+    public float m_RotationSmoothing = 3f;
     public float m_XOffset = -0.35f;
     public float m_YOffset = 1.2f;
     public float m_ZOffset = -0.25f;
@@ -24,7 +25,7 @@ public class KaluMovement : MonoBehaviour
             m_TargetPosition += new Vector3(m_XOffset, m_YOffset, m_ZOffset);
 
             transform.position = Vector3.Lerp(transform.position, m_TargetPosition, m_Smooting * Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, m_TargetRotation, m_Smooting * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, m_TargetRotation, m_RotationSmoothing * Time.deltaTime);
         }
     }
 

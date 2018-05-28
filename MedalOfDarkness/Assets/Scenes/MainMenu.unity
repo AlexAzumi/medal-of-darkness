@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 32375911}
   - component: {fileID: 32375910}
   - component: {fileID: 32375914}
+  - component: {fileID: 32375915}
   m_Layer: 5
   m_Name: BetweenScenes
   m_TagString: Untagged
@@ -295,6 +296,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &32375915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 32375908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb06bab48bb03fb4b8af70cc28969003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneName: {fileID: 0}
 --- !u!1 &83726576
 GameObject:
   m_ObjectHideFlags: 0
