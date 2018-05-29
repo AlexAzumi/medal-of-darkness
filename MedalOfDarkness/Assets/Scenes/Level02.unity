@@ -462,40 +462,25 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4690359871346356, guid: 22f0ca2e95ac3404e9d595a4e9ceac63, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.09374654
+      value: -0.093746535
       objectReference: {fileID: 0}
     - target: {fileID: 4690359871346356, guid: 22f0ca2e95ac3404e9d595a4e9ceac63, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.6978552
+      value: 0.6978551
       objectReference: {fileID: 0}
     - target: {fileID: 4690359871346356, guid: 22f0ca2e95ac3404e9d595a4e9ceac63, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.70746905
+      value: 0.707469
       objectReference: {fileID: 0}
     - target: {fileID: 4690359871346356, guid: 22f0ca2e95ac3404e9d595a4e9ceac63, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.06080672
+      value: 0.06080671
       objectReference: {fileID: 0}
     - target: {fileID: 82933745059835448, guid: 22f0ca2e95ac3404e9d595a4e9ceac63,
         type: 2}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: c4f3ec652ac90ef4aaaa627f7d289ac9, type: 3}
-    - target: {fileID: 82933745059835448, guid: 22f0ca2e95ac3404e9d595a4e9ceac63,
-        type: 2}
-      propertyPath: BypassEffects
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82933745059835448, guid: 22f0ca2e95ac3404e9d595a4e9ceac63,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82933745059835448, guid: 22f0ca2e95ac3404e9d595a4e9ceac63,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22f0ca2e95ac3404e9d595a4e9ceac63, type: 2}
   m_IsPrefabParent: 0
@@ -576,18 +561,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1638228068665222, guid: 22f0ca2e95ac3404e9d595a4e9ceac63,
     type: 2}
   m_PrefabInternal: {fileID: 425767064}
---- !u!114 &712243174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 712243173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7249cd52503f59e4097b2579ef705b9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  secondsToFade: 4
 --- !u!95 &866801224 stripped
 Animator:
   m_PrefabParentObject: {fileID: 95307905189239152, guid: b56360886476093469fd82838436ecec,
@@ -1459,7 +1432,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1618941086832998, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
@@ -1566,6 +1539,11 @@ Prefab:
       propertyPath: m_EventSystem
       value: 
       objectReference: {fileID: 994149250}
+    - target: {fileID: 114796208211551814, guid: b56360886476093469fd82838436ecec,
+        type: 2}
+      propertyPath: m_AudioSource.Array.data[2]
+      value: 
+      objectReference: {fileID: 425767065}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b56360886476093469fd82838436ecec, type: 2}
   m_IsPrefabParent: 0

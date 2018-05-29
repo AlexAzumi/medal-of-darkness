@@ -21,7 +21,7 @@ public class SaveLoad
 
     public User LoadUser()
     {
-        if (File.Exists(Application.persistentDataPath + "/user.gd"))
+        if (File.Exists(Application.persistentDataPath + "/user.save"))
         {
             BinaryFormatter bf = new BinaryFormatter();
             try

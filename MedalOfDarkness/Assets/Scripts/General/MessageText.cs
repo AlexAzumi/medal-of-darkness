@@ -56,6 +56,7 @@ public class MessageText : MonoBehaviour
         }
         catch(MissingReferenceException ex)
         {
+            Debug.Log("Mensaje: " + ex.Message);
             Debug.Log("Animador perdido");
         }
     }

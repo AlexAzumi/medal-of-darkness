@@ -12,6 +12,7 @@ public class BackAction : MonoBehaviour
     public GameObject m_MainMenu;
     public GameObject m_OptionButton;
     public GameObject m_NewGameButton;
+    public ConfigManager m_ConfigManager;
 
 	void Update () 
     {
@@ -19,6 +20,7 @@ public class BackAction : MonoBehaviour
         {
             if (m_OptionsMenu.activeSelf == true)
             {
+                m_ConfigManager.SaveData();
                 m_OptionsMenu.SetActive(false);
                 m_MainMenu.SetActive(true);
                 m_EventSystem.SetSelectedGameObject(m_OptionButton);

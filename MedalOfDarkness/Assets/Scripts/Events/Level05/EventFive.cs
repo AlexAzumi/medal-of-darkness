@@ -13,6 +13,6 @@ public class EventFive : MonoBehaviour
 
     private void Start()
     {
-        m_PauseMenu.SetActive(true);
+        
     }
 }

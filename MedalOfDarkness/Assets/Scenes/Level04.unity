@@ -3388,6 +3388,11 @@ Prefab:
       propertyPath: m_TagString
       value: PublishMessage
       objectReference: {fileID: 0}
+    - target: {fileID: 114796208211551814, guid: b56360886476093469fd82838436ecec,
+        type: 2}
+      propertyPath: m_AudioSource.Array.data[2]
+      value: 
+      objectReference: {fileID: 850692023}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b56360886476093469fd82838436ecec, type: 2}
   m_IsPrefabParent: 0

@@ -21,7 +21,7 @@ public class LoadNextScene : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (fadeOut)
         {

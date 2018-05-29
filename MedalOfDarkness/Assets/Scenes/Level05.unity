@@ -2065,6 +2065,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22f0ca2e95ac3404e9d595a4e9ceac63, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &525347611 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82933745059835448, guid: 22f0ca2e95ac3404e9d595a4e9ceac63,
+    type: 2}
+  m_PrefabInternal: {fileID: 525347610}
 --- !u!1001 &550504442
 Prefab:
   m_ObjectHideFlags: 0
@@ -7571,7 +7576,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1618941086832998, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
@@ -9643,6 +9648,11 @@ Prefab:
       propertyPath: m_EventSystem
       value: 
       objectReference: {fileID: 867044371}
+    - target: {fileID: 114796208211551814, guid: b56360886476093469fd82838436ecec,
+        type: 2}
+      propertyPath: m_AudioSource.Array.data[2]
+      value: 
+      objectReference: {fileID: 525347611}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b56360886476093469fd82838436ecec, type: 2}
   m_IsPrefabParent: 0
