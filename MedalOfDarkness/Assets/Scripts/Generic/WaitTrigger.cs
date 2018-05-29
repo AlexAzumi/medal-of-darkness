@@ -14,11 +14,11 @@ public class WaitTrigger : MonoBehaviour
 
     private void OnTriggerStay()
     {
-        Debug.Log("Esperando...");
+        Debug.Log("Waiting...");
         m_Count += Time.deltaTime;
         if (m_Count > m_WaitTime && !m_Finished)
         {
-            Debug.Log("Espera terminada");
+            Debug.Log("Finished");
             m_Count = 0;
             m_EventSelector.SendToEvent(m_CallEvent);
         }

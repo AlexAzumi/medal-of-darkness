@@ -2634,7 +2634,7 @@ Transform:
   - {fileID: 1874720014}
   - {fileID: 1260497423}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &639183905
 Prefab:
@@ -7576,7 +7576,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1618941086832998, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
@@ -9591,7 +9591,7 @@ Prefab:
     - target: {fileID: 224879508721481366, guid: b56360886476093469fd82838436ecec,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224879508721481366, guid: b56360886476093469fd82838436ecec,
         type: 2}
@@ -9643,16 +9643,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114816162092742368, guid: b56360886476093469fd82838436ecec,
-        type: 2}
-      propertyPath: m_EventSystem
-      value: 
-      objectReference: {fileID: 867044371}
     - target: {fileID: 114796208211551814, guid: b56360886476093469fd82838436ecec,
         type: 2}
       propertyPath: m_AudioSource.Array.data[2]
       value: 
       objectReference: {fileID: 525347611}
+    - target: {fileID: 114816162092742368, guid: b56360886476093469fd82838436ecec,
+        type: 2}
+      propertyPath: m_EventSystem
+      value: 
+      objectReference: {fileID: 867044371}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b56360886476093469fd82838436ecec, type: 2}
   m_IsPrefabParent: 0

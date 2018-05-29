@@ -9,7 +9,6 @@ public class SaveLoad
 {
     /* Made by Aldan Project | 2018 */
     public User m_User;
-    public Game[] m_Games = new Game[3];
 
     public void SaveUser()
     {
@@ -33,8 +32,7 @@ public class SaveLoad
             }
             catch(FileNotFoundException ex)
             {
-                Debug.Log("No hay usuarios almacenados");
-                Debug.Log("Mensaje: " + ex.Message);
+                Debug.Log("No user was found > " + ex.Message);
                 return null;
             }
         }
@@ -55,7 +53,7 @@ public class SaveLoad
             }
             catch(Exception ex)
             {
-                Debug.Log(ex.Message);
+                Debug.LogWarning("Error while deleting user > " + ex.Message);
                 return false;
             }
         }
@@ -64,32 +62,4 @@ public class SaveLoad
             return true;
         }
     }
-
-    /*
-    public List<Game> LoadGames()
-    {
-        if (File.Exists(Application.persistentDataPath + "savedGames.save"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/savedGames.save", FileMode.Open);
-            m_Games = (Game[])bf.Deserialize(file);
-            file.Close();
-            return m_Games;
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-
-    public void SaveGame(int slot, Game actualGame)
-    {
-        m_Games[slot - 1] = actualGame;
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/savedGames.save");
-        bf.Serialize(file, m_Games);
-        file.Close();
-    }
-    */
 }

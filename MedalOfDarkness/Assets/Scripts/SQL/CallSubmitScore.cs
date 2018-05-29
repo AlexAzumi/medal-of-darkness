@@ -16,8 +16,7 @@ public class CallSubmitScore : MonoBehaviour
         }
         catch(NullReferenceException ex)
         {
-            Debug.Log("Mensaje: " + ex.Message);
-            Debug.Log("ScoreManager no existe");
+            Debug.LogWarning("Score Manager not found (CallSubmitScore) > " + ex.Message);
         }
     }
 
@@ -25,7 +24,14 @@ public class CallSubmitScore : MonoBehaviour
     {
         if (m_Publish)
         {
-            m_LevelScore.SubmitScore();
+            try
+            {
+                m_LevelScore.SubmitScore();
+            }
+            catch(NullReferenceException ex) 
+            {
+                Debug.LogWarning("Error while sending username to Score Manager > " + ex.Message);
+            }
         }
     }
 }

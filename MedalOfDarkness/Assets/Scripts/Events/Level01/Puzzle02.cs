@@ -24,7 +24,7 @@ public class Puzzle02 : MonoBehaviour
             {
                 m_Event.m_Barrel03 = true;
             }
-            this.gameObject.SetActive(false);
+            gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }

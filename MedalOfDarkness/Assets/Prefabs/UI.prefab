@@ -538,7 +538,6 @@ GameObject:
   - component: {fileID: 114656529861952610}
   - component: {fileID: 114228342921472876}
   - component: {fileID: 114160789259944506}
-  - component: {fileID: 114023661930170344}
   m_Layer: 5
   m_Name: BetweenScenes
   m_TagString: Untagged
@@ -1192,18 +1191,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114023661930170344
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1604392488622100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4decc5e50768174599000b5049d321b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Publish: 0
 --- !u!114 &114051960256873786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1463,7 +1450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2603de8e67e950a44bfed50733407bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level04
+  sceneName: Level06
 --- !u!114 &114278450528689954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1704,7 +1691,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114796208211551814}
         m_MethodName: SaveData
         m_Mode: 1
         m_Arguments:
@@ -2605,7 +2592,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mazmorra de las mil almas
+  m_Text: Pueblo Nerea
 --- !u!114 &114760509671386120
 MonoBehaviour:
   m_ObjectHideFlags: 1

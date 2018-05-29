@@ -15,8 +15,7 @@ public class ActivePauseMenu : MonoBehaviour
         }
         catch(UnassignedReferenceException ex)
         {
-            Debug.Log("Mensaje: " + ex.Message);
-            Debug.Log("Menu no asignado");
+            Debug.LogWarning("Menu not assigned > " + ex.Message);
         }
     }
 }

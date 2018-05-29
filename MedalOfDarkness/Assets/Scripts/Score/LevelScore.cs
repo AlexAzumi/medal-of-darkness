@@ -31,7 +31,7 @@ public class LevelScore : MonoBehaviour
     public void SetUsername(string username)
     {
         m_Username = username;
-        Debug.Log("Nombre de usuario asignado: " + m_Username);
+        Debug.Log("Username: " + m_Username);
     }
 
     public void StartPuzzle()
@@ -40,11 +40,11 @@ public class LevelScore : MonoBehaviour
         {
             m_ActualScore = m_MaxPoints;
             m_StartPuzzle = true;
-            Debug.Log("El usuario " + m_Username + " ha iniciado el puzzle");
+            Debug.Log(m_Username + " started the puzzle");
         }
         else
         {
-            Debug.Log("Se requiere nombre de usuario o el puzzle ya ha iniciado");
+            Debug.Log("A username is needed or the puzzle has already started");
         }
     }
 
@@ -53,8 +53,8 @@ public class LevelScore : MonoBehaviour
         CalculateScore();
         m_StartPuzzle = false;
         m_Count = 0.0f;
-        Debug.Log("El puzzle ha concluido");
-        Debug.Log("Puntuación adquirida = " + m_ActualScore);
+        Debug.Log("Puzzled was resolved");
+        Debug.Log("Points gained: " + m_ActualScore);
     }
 
     public void PausePuzzle()
@@ -65,6 +65,7 @@ public class LevelScore : MonoBehaviour
     public void RemovePoints(int points)
     {
         m_ActualScore -= points;
+        Debug.Log("Removing points: " + points);
     }
 
     public void SubmitScore()
@@ -80,7 +81,7 @@ public class LevelScore : MonoBehaviour
             m_ActualScore = 500;
         }
         m_TotalScore += m_ActualScore;
-        Debug.Log("Puntuación total = " + m_TotalScore);
+        Debug.Log("Total score: " + m_TotalScore);
     }
 
     private IEnumerator PublishScore()
@@ -95,18 +96,18 @@ public class LevelScore : MonoBehaviour
         Debug.Log("result = " + sendData.text);
         if (result.Contains("submitted"))
         {
-            Debug.Log("Publicación completada correctamente");
+            Debug.Log("Scores were submitted correctly");
             SetPublishedMessage();
         }
         else
         {
             if (result.Contains("Error01"))
             {
-                Debug.Log("Error al preparar la consulta");
+                Debug.Log("SQL was not prepared correctly");
             }
             else
             {
-                Debug.Log("No fue posible publicar las puntuaciones");
+                Debug.Log("Error while submitting player's score");
             }
         }
     }

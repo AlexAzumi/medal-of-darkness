@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EventTwo : MonoBehaviour 
 {
@@ -10,6 +11,7 @@ public class EventTwo : MonoBehaviour
     public LevelScore m_LevelScore;
     public PlayerController m_Katherine;
     public KaluMovement m_Kalu;
+    public int m_RemovePoints = 250;
 
     public string[] m_KaluMessages;
     public string[] m_PuzzleMessages;
@@ -25,7 +27,14 @@ public class EventTwo : MonoBehaviour
 
 	private void Start()
     {
-        m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
+        try
+        {
+            m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
+        }
+        catch(NullReferenceException ex)
+        {
+            Debug.LogWarning("Score Manager not found > " + ex.Message);
+        }
         m_DialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
 
         m_Lose = gameObject.GetComponent<LoseScript>();
@@ -51,6 +60,7 @@ public class EventTwo : MonoBehaviour
         }
         else if (m_ActualEvent == 4)
         {
+            m_LevelScore.RemovePoints(m_RemovePoints);
             m_DialogManager.SetMessageDialog(m_FailMessages);
             m_ActualEvent = 5;
         }

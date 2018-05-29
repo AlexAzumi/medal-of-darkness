@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EventFour : MonoBehaviour 
 {
@@ -13,8 +14,9 @@ public class EventFour : MonoBehaviour
     public DialogManager m_DialogManager;
     public FocusObjectGeneric m_FocusObject, m_FocusObjectRockPuzzle;
     public Animator m_BlackScreenWin;
+    public int m_RemovePoints = 250;
 
-    public string[] m_SeenEnemy, m_LoseMessages, m_PuzzleMessagesOne, m_PuzzleMessagesTwo, m_SelectOptionMessages, m_RockDropMessages, m_BeforeRockMessages, m_BeforeTeleportMessages, m_CharlotteMessages;
+    public string[] m_SeenEnemy, m_LoseMessages, m_PuzzleMessagesOne, m_PuzzleMessagesTwo, m_SelectOptionMessages, m_RockDropMessages, m_BeforeRockMessages, m_BeforeTeleportMessages, m_CharlotteMessages, m_PuzzleError, m_SecondTryPuzzle, m_LookSign;
     public string m_HideMessage;
     public float m_MessageTime;
     public GameObject[] m_HidePositions;
@@ -23,10 +25,18 @@ public class EventFour : MonoBehaviour
     public bool m_Solved;
 
     private int m_ActualEvent;
+    private bool m_OptionSelected = false;
 
     private void Start()
     {
-        m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
+        try
+        {
+            m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
+        }
+        catch(NullReferenceException ex)
+        {
+            Debug.LogWarning("Score Manager not found > " + ex.Message);
+        }
         m_PauseMenu.SetActive(true);
         m_ActualEvent = 0;
         m_Solved = false;
@@ -41,25 +51,42 @@ public class EventFour : MonoBehaviour
         }
         else if (m_ActualEvent == 2 && m_Katherine.m_CanMove)
         {
-            m_LevelScore.StopPuzzle();
+            m_LevelScore.StartPuzzle();
             ActivateColliders(true);
             m_MessageText.ShowMessageInTime(m_HideMessage, m_MessageTime);
             m_ActualEvent = 0;
         }
         else if (m_ActualEvent == 3)
         {
+            m_LevelScore.RemovePoints(m_RemovePoints);
             if (m_HidePositions[0].GetComponent<BoxCollider>().enabled == false)
             {
                 ActivateColliders(true);
             }
-            m_DialogManager.SetMessageDialog(m_LoseMessages);
+
+            if (!m_OptionSelected)
+            {
+                m_DialogManager.SetMessageDialog(m_LoseMessages);
+            }
+            else
+            {
+                m_DialogManager.SetMessageDialog(m_PuzzleError);
+            }
             m_ActualEvent = 0;
         }
         else if (m_ActualEvent == 4)
         {
             ActivateColliders(false);
-            m_DialogManager.SetMessageDialog(m_PuzzleMessagesOne);
-            m_ActualEvent = 15;
+            if (!m_OptionSelected)
+            {
+                m_DialogManager.SetMessageDialog(m_PuzzleMessagesOne);
+                m_ActualEvent = 15;
+            }
+            else
+            {
+                m_DialogManager.SetMessageDialog(m_SecondTryPuzzle);
+                m_ActualEvent = 5;
+            }
         }
         else if (m_ActualEvent == 5 && m_Katherine.m_CanMove)
         {
@@ -70,6 +97,10 @@ public class EventFour : MonoBehaviour
         else if (m_ActualEvent >= 6 && m_ActualEvent <= 8)
         {
             m_DialogManager.SetMessageDialog(m_SelectOptionMessages);
+            if (!m_OptionSelected)
+            {
+                m_OptionSelected = true;
+            }
             if (m_ActualEvent == 8)
             {
                 m_LevelScore.StopPuzzle();
@@ -119,6 +150,11 @@ public class EventFour : MonoBehaviour
         {
             m_DialogManager.SetMessageDialog(m_PuzzleMessagesTwo);
             m_ActualEvent = 5;
+        }
+        else if (m_ActualEvent == 17)
+        {
+            m_DialogManager.SetMessageDialog(m_LookSign);
+            m_ActualEvent = 0;
         }
     }
 

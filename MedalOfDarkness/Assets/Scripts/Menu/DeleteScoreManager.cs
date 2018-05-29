@@ -10,7 +10,7 @@ public class DeleteScoreManager : MonoBehaviour
         if (m_ScoreManger != null)
         {
             Destroy(m_ScoreManger);
-            Debug.Log("Score Manager eliminado");
+            Debug.Log("Score Manager was deleted from this scene");
         }
     }
 }

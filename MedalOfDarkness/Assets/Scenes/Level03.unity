@@ -1198,6 +1198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Text: Presiona X para avanzar a la siguiente zona
   m_ActionText: 
+  m_WaitTime: 5
 --- !u!23 &499584776
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3637,7 +3638,8 @@ Prefab:
       propertyPath: m_EventSystem
       value: 
       objectReference: {fileID: 345125849}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114023661930170344, guid: b56360886476093469fd82838436ecec, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b56360886476093469fd82838436ecec, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1266262121 stripped

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Event : MonoBehaviour 
 {
@@ -44,7 +45,14 @@ public class Event : MonoBehaviour
 
 	void Start() 
     {
-        m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
+        try
+        {
+            m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
+        }
+        catch(NullReferenceException ex)
+        {
+            Debug.LogWarning("Score Manager not found > " + ex.Message);
+        }
         m_CameraControl = GetComponent<CameraControl>();
         m_CharacterControl = GameObject.Find("Katherine").GetComponent<PlayerController>();
         m_MessageText = GetComponent<MessageText>();

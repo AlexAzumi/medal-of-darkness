@@ -48,7 +48,7 @@ public class ConfigManager : MonoBehaviour
         FileStream file = File.Create(Application.persistentDataPath + "/config.save");
         bf.Serialize(file, config);
         file.Close();
-        Debug.Log("Configuración guardada");
+        Debug.Log("Configuration was saved");
     }
 
     private Config LoadConfig()
@@ -66,8 +66,7 @@ public class ConfigManager : MonoBehaviour
             }
             catch (FileNotFoundException ex)
             {
-                Debug.Log("Mensaje: " + ex.Message);
-                Debug.Log("No hay configuración almacenada");
+                Debug.Log("No configuration file was found > " + ex.Message);
                 return null;
             }
         }

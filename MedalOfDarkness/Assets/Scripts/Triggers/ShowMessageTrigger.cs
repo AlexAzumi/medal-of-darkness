@@ -9,6 +9,7 @@ public class ShowMessageTrigger : MonoBehaviour
     /* Public stuff */
     public string m_Text;
     public string m_ActionText;
+    public float m_WaitTime = 5.0f;
 
     /* Private stuff */
     private MessageText m_Event01;
@@ -36,9 +37,9 @@ public class ShowMessageTrigger : MonoBehaviour
 
     void OnTriggerStay()
     {
-        if (Input.GetAxisRaw("Action") != 0 && m_ActionText.Length > 0)
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton2)) && m_ActionText.Length > 0)
         {
-            m_Event01.SetMessageText(m_ActionText, true);
+            m_Event01.ShowMessageInTime(m_ActionText, m_WaitTime);
         }
     }
 }

@@ -33,8 +33,7 @@ public class EventSelector : MonoBehaviour
         }
         catch(NullReferenceException ex)
         {
-            Debug.Log("Evento " + eventNumber + " no encontrado");
-            Debug.Log("Error: " + ex.Message);
+            Debug.LogWarning("Event " + eventNumber + " not found > " + ex.Message);
         }
     }
 }

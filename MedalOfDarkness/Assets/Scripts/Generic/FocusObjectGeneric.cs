@@ -35,6 +35,7 @@ public class FocusObjectGeneric : MonoBehaviour
             m_Count += Time.deltaTime;
             if (m_Count > m_FocusTime)
             {
+                m_Count = 0;
                 m_CameraFollow.SetPlayerAsTarget();
                 m_Bars.SetBool("isActive", false);
                 m_Active = false;

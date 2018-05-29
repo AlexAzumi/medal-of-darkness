@@ -50,8 +50,7 @@ public class LoadMenuData : MonoBehaviour
         }
         catch(NullReferenceException ex)
         {
-            Debug.Log("Mensaje: " + ex.Message);
-            Debug.Log("ScoreManager no existe");
+            Debug.LogWarning("Score Manager not found (LoadMenuData) > " + ex.Message);
         }
     }
 
@@ -62,12 +61,12 @@ public class LoadMenuData : MonoBehaviour
             m_Session = false;
             if (m_SaveLoad.DeleteUser())
             {
-                Debug.Log("Usuario eliminado");
+                Debug.Log("User was deleted");
                 CheckIfUser();
             }
             else
             {
-                Debug.Log("No se pudo eliminar el usuario");
+                Debug.Log("Error while deleting user");
             }
         }
     }

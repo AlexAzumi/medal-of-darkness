@@ -9,7 +9,7 @@ public class VerifyTime : MonoBehaviour
         if (Time.timeScale < 1.0f)
         {
             Time.timeScale = 1.0f;
-            Debug.Log("Tiempo restaurado");
+            Debug.Log("Time scale was restored to 1.0f");
         }
     }
 }

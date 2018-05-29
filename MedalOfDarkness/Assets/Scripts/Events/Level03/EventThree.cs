@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EventThree : MonoBehaviour 
 {
@@ -28,7 +29,14 @@ public class EventThree : MonoBehaviour
 
 	private void Start() 
     {
-        m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
+        try
+        {
+            m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
+        }
+        catch(NullReferenceException ex)
+        {
+            Debug.LogWarning("Score Manager not found > " + ex.Message);
+        }
         m_DialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
         m_PauseMenu.SetActive(true);
         m_Kalu.FollowKatherine();

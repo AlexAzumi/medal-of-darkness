@@ -15,8 +15,7 @@ public class ShowSceneName : MonoBehaviour
         }
         catch(UnassignedReferenceException ex)
         {
-            Debug.Log("Mensaje: " + ex.Message);
-            Debug.Log("Sin nombre de escena");
+            Debug.Log("No scene name > " + ex.Message);
         }
     }
 }
