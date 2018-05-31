@@ -33,4 +33,9 @@ public class KaluMovement : MonoBehaviour
     {
         m_Following = true;
     }
+
+    public void DestroyKalu()
+    {
+        gameObject.SetActive(false);
+    }
 }

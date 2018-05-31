@@ -9,7 +9,7 @@ public class CallEventGeneric : MonoBehaviour
     public EventSelector m_EventSelector;
     public bool m_DesactivateTrigger = false;
 
-    private void OnTriggerEvent()
+    private void OnTriggerEnter()
     {
         CallEvent();
         if (m_DesactivateTrigger)

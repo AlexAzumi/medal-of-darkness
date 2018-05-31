@@ -4234,15 +4234,17 @@ MonoBehaviour:
   m_ReopenPage: "Presiona Y para ver la p\xE1gina de nuevo"
   m_MessageDuration: 5
   m_EntranceMessages:
-  - "Wooow, \xBFpero que clase de sitio es este?"
-  - '"Parece una especie de cueva o mazmorra"'
-  - "\xBFHabr\xE1 pertenecido a alguna clase de banda de maleantes o algo asi?"
-  - '"Parece ser que si. Vamos vayamos a investigar, tal vez haya una salida por aqui"'
+  - "Katherine>Wooow, \xBFpero que clase de sitio es este?"
+  - "Kal\xFA>Parece una especie de cueva o mazmorra"
+  - "Katherine>\xBFHabr\xE1 pertenecido a alguna clase de banda de maleantes o algo
+    asi?"
+  - "Kal\xFA>Parece ser que si. Vamos vayamos a investigar, tal vez haya una salida
+    por aqui"
   m_FoundPaper:
-  - '"Hey Kath, mira esto"'
-  - "\xBFQu\xE9 es?"
-  - '"Parece una especie de pergamino o algo asi, se ve bastante antiguo"'
-  - "Veamos, hay un texto escrito en \xE9l"
+  - "Kal\xFA>Hey Katherine, mira esto"
+  - "Katherine>\xBFQu\xE9 es?"
+  - "Kal\xFA>Parece una especie de pergamino o algo asi, se ve bastante antiguo"
+  - "Katherine>Veamos, hay un texto escrito en \xE9l"
   m_PaperText:
   - "Hace 5 a\xF1os se celebr\xF3 una carrera de caballos, con el prop\xF3sito de
     averiguar cu\xE1l era el m\xE1s vel\xF3z, y con cu\xE1l se quedar\xEDa el rey
@@ -4254,14 +4256,14 @@ MonoBehaviour:
     y \"cuatro\", dejandolos atr\xE1s."
   - "Al final, \"dos\" gan\xF3 la carrea y \"uno\" qued\xF3 en \xFAltimo."
   m_FailedMessages:
-  - Mmmm... parece que no activa nada
-  - "\xBFTienes alguna idea?"
-  - '"Puede que el orden no sea el correcto"'
-  - '"Intenta leer de nuevo el pergamino"'
+  - Katherine>Mmmm... parece que no activa nada
+  - "Katherine>\xBFTienes alguna idea?"
+  - "Kal\xFA>Puede que el orden no sea el correcto"
+  - "Kal\xFA>Intenta leer de nuevo el pergamino"
   m_ResolvedMessages:
-  - Vaya, no me puedo creer que funcionara
-  - "\u201DNi yo, tal vez la historia de los caballos estaba aqu\xED a prop\xF3sito
-    para poder avanzar\u201D"
+  - Katherine>Vaya, no me puedo creer que funcionara
+  - "Kal\xFA>Ni yo, tal vez la historia de los caballos estaba aqu\xED a prop\xF3sito
+    para poder avanzar"
 --- !u!114 &1501326810
 MonoBehaviour:
   m_ObjectHideFlags: 0

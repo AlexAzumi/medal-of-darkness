@@ -11,6 +11,7 @@ public class EventSelector : MonoBehaviour
     public EventTwo eventTwo;
     public EventThree eventThree;
     public EventFour eventFour;
+    public EventFive eventFive;
 
     public void SendToEvent(int callEvent)
     {
@@ -28,6 +29,9 @@ public class EventSelector : MonoBehaviour
                     break;
                 case 4:
                     eventFour.SetEvent(callEvent);
+                    break;
+                case 5:
+                    eventFive.SetEvent(callEvent);
                     break;
             }
         }

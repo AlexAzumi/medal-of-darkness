@@ -236,6 +236,7 @@ MonoBehaviour:
   m_CallEvent: 4
   m_FocusTime: 4
   m_DesactivateTrigger: 0
+  m_NewSmoothing: 0
   m_Object: {fileID: 1773456833}
   m_Event: {fileID: 984893967}
   m_CharacterAnimator: {fileID: 1538145548}
@@ -812,59 +813,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 956937927}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &984893962
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114273066683708224, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_MessageText
-      value: 
-      objectReference: {fileID: 1735352451}
-    m_RemovedComponents:
-    - {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-  m_IsPrefabParent: 0
---- !u!1 &984893963 stripped
+--- !u!1 &984893963
 GameObject:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1565344375708228, guid: 202d86a2a37b3e349a02733a5fb73a49,
     type: 2}
-  m_PrefabInternal: {fileID: 984893962}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 984893970}
+  - component: {fileID: 984893964}
+  - component: {fileID: 984893969}
+  - component: {fileID: 984893968}
+  - component: {fileID: 984893965}
+  - component: {fileID: 984893966}
+  - component: {fileID: 984893967}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!114 &984893964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,68 +851,68 @@ MonoBehaviour:
   m_Kalu: {fileID: 1645400565}
   m_RemovePoints: 250
   m_KaluMessages:
-  - Emm... Disculpe
-  - "\"Hola viajera, \xBFqu\xE9 te trae a este bosque?\""
-  - "\"Espera, te me haces conocida, \xBFnos hemos visto antes?\""
-  - "No lo s\xE9, no recuerdo nada, solo s\xE9 que estaba inconsciente y despert\xE9
+  - Chica>Emm... Disculpe
+  - "Criatura>Hola viajera, \xBFqu\xE9 te trae a este bosque?"
+  - "Criatura>Espera, te me haces conocida, \xBFnos hemos visto antes?"
+  - "Chica>No lo s\xE9, no recuerdo nada, solo s\xE9 que estaba inconsciente y despert\xE9
     en medio de este desastre"
-  - "\"Vaya, menudo problema, mira te propongo algo, como ves no soy de por aqu\xED,
-    pero se c\xF3mo ayudarte. Estoy buscando un medall\xF3n, \xBFqu\xE9 te parece
-    si nos ayudamos entre nosotros?\u201D"
-  - '...'
-  - "\"Mi nombre es Kal\xFA, encantado\""
-  - '...'
-  - "\u201CParece ser que tampoco recuerdas tu nombre, menudo problema, bueno lo importante
-    es movernos de aqu\xED\u201D"
-  - De acuerdo
+  - "Criatura>Vaya, menudo problema, mira te propongo algo, como ves no soy de por
+    aqu\xED, pero se c\xF3mo ayudarte. Estoy buscando un medall\xF3n, \xBFqu\xE9 te
+    parece si nos ayudamos entre nosotros?"
+  - Chica>...
+  - "Kal\xFA>Mi nombre es Kal\xFA, encantado"
+  - Chica>...
+  - "Kal\xFA>Parece ser que tampoco recuerdas tu nombre, menudo problema, bueno lo
+    importante es movernos de aqu\xED"
   m_PuzzleMessages:
-  - "\"Sabes, hace no mucho un grupo de enemigos pas\xF3 por aqui y escuche que har\xEDan
-    guardia por el camino\""
-  - "\"Afortunadamente hay 3 caminos a elegir, pero al parecer s\xF3lo en 2 estan
-    montando guardia\""
-  - "\xBFC\xF3mo sabremos cu\xE1l elegir?"
-  - "\"Cuando pasaron cerca de aqui, uno de ellos iba comiendo una manzana, otro llevaba
-    una pelota \ty el otro trataba de quitarsela\""
-  - "Mmm, \xBFalguna idea por donde fue el que llevaba la pelota?"
-  - "\"Solo s\xE9 que por el medio\""
-  - "\xBFY que hay del otro?"
-  - "\"No lo s\xE9 lo perd\xED de vista desp\xFAes de eso\""
-  - "Mmmm, conque le quer\xEDa quitar la pelota..."
+  - "Kal\xFA>Sabes, hace no mucho un grupo de enemigos pas\xF3 por aqui y escuche
+    que har\xEDan guardia por el camino"
+  - "Kal\xFA>Afortunadamente hay 3 caminos a elegir, pero al parecer s\xF3lo en 2
+    estan montando guardia"
+  - "Chica>\xBFC\xF3mo sabremos cu\xE1l elegir?"
+  - "Kal\xFA>Cuando pasaron cerca de aqui, uno de ellos iba comiendo una manzana,
+    otro llevaba una pelota y el otro trataba de quitarsela"
+  - "Chica>Mmm, \xBFalguna idea por donde fue el que llevaba la pelota?"
+  - "Kal\xFA>Solo s\xE9 que por el medio"
+  - "Chica>\xBFY que hay del otro?"
+  - "Kal\xFA>No lo s\xE9 lo perd\xED de vista desp\xFAes de eso"
+  - "Chica>Mmmm, conque le quer\xEDa quitar la pelota..."
   m_FailMessages:
-  - Demonios, este no es el camino correcto
-  - "\"Ser\xE1 mejor que regresemos antes de que nos atrapen\""
-  - De acuerdo
+  - Katherine>Demonios, este no es el camino correcto
+  - "Kal\xFA>Ser\xE1 mejor que regresemos antes de que nos atrapen"
   m_RestartMessages:
-  - "Bien, ahora, \xBFcu\xE1l ser\xE1 el camino correcto?"
+  - "Chica>Bien, ahora, \xBFcu\xE1l ser\xE1 el camino correcto?"
   m_CompleteMessages:
-  - "\"Vaya, \xBFc\xF3mo supiste que por este camino no habr\xEDa enemigos?\""
-  - "Con la informaci\xF3n que me diste deduje que el enemigo que quer\xEDa la pelota
-    siguio al que la ten\xEDa, as\xED que dejaba el camino de la izquierda libre"
-  - "\"Wow, eres muy inteligente, vamos continuemos por aqu\xED\""
+  - "Kal\xFA>Vaya, \xBFc\xF3mo supiste que por este camino no habr\xEDa enemigos?"
+  - "Chica>Con la informaci\xF3n que me diste deduje que el enemigo que quer\xEDa
+    la pelota siguio al que la ten\xEDa, as\xED que dejaba el camino de la izquierda
+    libre"
+  - "Kal\xFA>Wow, eres muy inteligente, vamos continuemos por aqu\xED"
   m_KatherineInfo:
-  - "\xBFHuh? \xBFUna pulsera morada? \xBFSe le habr\xE1 caido a alguien?"
-  - '"Probablemente alguien la haya perdido de paso"'
-  - Tiene algo grabado...
-  - Charlotte...
-  - '...'
-  - '...'
-  - "\"Hey, \xBFoye te sientes bien?\""
-  - "Aghhh, creo que s\xED"
-  - (Conozco a esta persona)
-  - "Al leer el nombre que tiene grabado la pulsera tuve algunos extra\xF1os recuerdos"
-  - "Siento que s\xE9 a quien le pertenece esta pulsera"
-  - "\"Ahora que lo dices, no lo habia notado antes, pero tambi\xE9n tu tienes una
-    pulsera parecida, s\xF3lo que la tuya es de color rojo\""
-  - Wow, tampoco me habia dado cuenta de ella
-  - '"Katherine"'
-  - "\xBFQuien ser\xE1 esta tal Katherine?"
-  - "\"No lo s\xE9, pero, creo que el nombre te queda, es un nombre muy bonito\""
-  - "\xBFT\xFA crees?"
-  - "\"Claro, de ahora en adelante te llamar\xE9 as\xED\""
-  - "\"Pero, no perdamos m\xE1s el tiempo, continu\xE9mos nuestro camino\""
-  - Mmm.. Vale
-  - (Charlotte)
-  - (Siento que he escuchado ese nombre)
+  - "Chica>\xBFHuh? \xBFUna pulsera morada? \xBFSe le habr\xE1 caido a alguien?"
+  - "Kal\xFA>Probablemente alguien la haya perdido de paso"
+  - Chica>Tiene algo grabado...
+  - Chica>Charlotte...
+  - Chica>...
+  - Chica>...
+  - "Kal\xFA>Hey, \xBFoye te sientes bien?"
+  - "Chica>Aghhh, creo que s\xED"
+  - Chica>(Conozco a esta persona)
+  - "Chica>Al leer el nombre que tiene grabado la pulsera tuve algunos extra\xF1os
+    recuerdos"
+  - "Chica>Siento que s\xE9 a quien le pertenece esta pulsera"
+  - "Kal\xFA>Ahora que lo dices, no lo habia notado antes, pero tambi\xE9n tu tienes
+    una pulsera parecida, s\xF3lo que la tuya es de color rojo"
+  - Chica>Wow, tampoco me habia dado cuenta de ella
+  - "Kal\xFA>Katherine"
+  - "Chica>\xBFQuien ser\xE1 esta tal Katherine?"
+  - "Kal\xFA>No lo s\xE9, pero, creo que el nombre te queda, es un nombre muy bonito"
+  - "Chica>\xBFT\xFA crees?"
+  - "Kal\xFA>Claro, de ahora en adelante te llamar\xE9 as\xED"
+  - "Kal\xFA>Pero, no perdamos m\xE1s el tiempo, continu\xE9mos nuestro camino"
+  - Katherine>Mmm.. Vale
+  - Katherine>(Charlotte)
+  - Katherine>(Siento que he escuchado ese nombre)
 --- !u!114 &984893965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,6 +959,46 @@ MonoBehaviour:
   eventTwo: {fileID: 984893964}
   eventThree: {fileID: 0}
   eventFour: {fileID: 0}
+  eventFive: {fileID: 0}
+--- !u!114 &984893968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114529788827109432, guid: 202d86a2a37b3e349a02733a5fb73a49,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984893963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3f03f95861400498df847b7da3e82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &984893969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114273066683708224, guid: 202d86a2a37b3e349a02733a5fb73a49,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984893963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5fdc647e6f7ca4b800ee72dbcc4d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MessageText: {fileID: 1735352451}
+--- !u!4 &984893970
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984893963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994149248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,23 +1555,7 @@ Prefab:
       propertyPath: m_AudioSource.Array.data[2]
       value: 
       objectReference: {fileID: 425767065}
-    - target: {fileID: 114750738718198918, guid: b56360886476093469fd82838436ecec,
-        type: 2}
-      propertyPath: m_Text
-      value: Paso Khrix
-      objectReference: {fileID: 0}
-    - target: {fileID: 114266019070030124, guid: b56360886476093469fd82838436ecec,
-        type: 2}
-      propertyPath: sceneName
-      value: Level03
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023661930170344, guid: b56360886476093469fd82838436ecec,
-        type: 2}
-      propertyPath: m_Publish
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114023661930170344, guid: b56360886476093469fd82838436ecec, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b56360886476093469fd82838436ecec, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1176470263
@@ -1820,6 +1814,7 @@ MonoBehaviour:
   m_CallEvent: 4
   m_FocusTime: 4
   m_DesactivateTrigger: 0
+  m_NewSmoothing: 0
   m_Object: {fileID: 2107718697}
   m_Event: {fileID: 984893967}
   m_CharacterAnimator: {fileID: 1538145548}

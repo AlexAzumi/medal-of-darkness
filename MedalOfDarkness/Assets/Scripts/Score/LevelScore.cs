@@ -86,7 +86,7 @@ public class LevelScore : MonoBehaviour
 
     private IEnumerator PublishScore()
     {
-        Debug.Log("Publicando puntuación...");
+        Debug.Log("Submiting score...");
         WWWForm score = new WWWForm();
         score.AddField("username", m_Username);
         score.AddField("score", m_TotalScore);

@@ -9,6 +9,7 @@ TagManager:
   - Bars
   - LevelScore
   - PublishMessage
+  - Kalu
   layers:
   - Default
   - TransparentFX

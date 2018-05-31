@@ -10,6 +10,7 @@ public class LoseScriptGeneric : MonoBehaviour
     public float m_WaitTime;
     public EventSelector m_Event;
     public int m_CallEvent;
+    public bool m_UnlockMovement = true;
 
     private float m_Count = 0.0f;
 
@@ -21,7 +22,10 @@ public class LoseScriptGeneric : MonoBehaviour
             m_Count += Time.deltaTime;
         }
         this.GetComponent<Animator>().SetBool("isActive", false);
-        m_Katherine.GetComponent<PlayerController>().m_CanMove = true;
+        if (m_UnlockMovement)
+        {
+            m_Katherine.GetComponent<PlayerController>().m_CanMove = true;
+        }
         m_Event.SendToEvent(m_CallEvent);
     }
 }

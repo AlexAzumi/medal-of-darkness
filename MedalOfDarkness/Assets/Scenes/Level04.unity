@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -86,7 +86,8 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 2fa8ab0cbe5fb09458d1290fa6292aa8,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -771,6 +772,7 @@ MonoBehaviour:
   m_CallEvent: 17
   m_FocusTime: 3
   m_DesactivateTrigger: 1
+  m_NewSmoothing: 0
   m_Object: {fileID: 787482687}
   m_Event: {fileID: 1083187256}
   m_CharacterAnimator: {fileID: 850692026}
@@ -2087,7 +2089,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1618941086832998, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
@@ -2150,6 +2152,7 @@ MonoBehaviour:
   eventTwo: {fileID: 0}
   eventThree: {fileID: 0}
   eventFour: {fileID: 1083187260}
+  eventFive: {fileID: 0}
 --- !u!114 &1083187257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2211,75 +2214,72 @@ MonoBehaviour:
   m_BlackScreenWin: {fileID: 347116413}
   m_RemovePoints: 120
   m_SeenEnemy:
-  - "Tch, vaya adelante se encuentran m\xE1s enemigos, \xBFno se cansan?"
-  - "\"Tal parece que no nos dejar\xE1n pasar tan f\xE1cilmente\""
-  - "Ser\xE1 mejor no acercarnos mucho o podr\xE1n atraparnos f\xE1cilmente"
-  - "\"Debemos de ocultarnos detr\xE1s de alg\xFAn lado para idear un plan y poder
-    deshacernos de ellos\""
-  - '"Echa un vistazo a la zona, y mira en donde nos podemos ocultar"'
+  - "Katherine>Tch, vaya adelante se encuentran m\xE1s enemigos, \xBFno se cansan?"
+  - "Kal\xFA>Tal parece que no nos dejar\xE1n pasar tan f\xE1cilmente"
+  - "Katherine>Ser\xE1 mejor no acercarnos mucho o podr\xE1n atraparnos f\xE1cilmente"
+  - "Kal\xFA>Debemos de ocultarnos detr\xE1s de alg\xFAn lado para idear un plan y
+    poder deshacernos de ellos"
+  - "Kal\xFA>Echa un vistazo a la zona, y mira en donde nos podemos ocultar"
   m_LoseMessages:
-  - "\"Wow, espera, ser\xE1 mejor no acercarnos demasiado o puede que nos atrapen\""
+  - "Kal\xFA>Wow, espera, ser\xE1 mejor no acercarnos demasiado o puede que nos atrapen"
   m_PuzzleMessagesOne:
-  - "\"Maldici\xF3n, no logr\xF3 ver una manera de distraerlos o de deshacernos de
-    ellos\""
-  - "\xBFY ahora que haremos?"
-  - '"Tranquila, debe de haber una manera"'
-  - "Hey, \xA1mira!"
+  - "Kal\xFA>Maldici\xF3n, no logr\xF3 ver una manera de distraerlos o de deshacernos
+    de ellos"
+  - "Katherine>\xBFY ahora que haremos?"
+  - "Kal\xFA>Tranquila, debe de haber una manera"
+  - "Katherine>Hey, \xA1mira!"
   m_PuzzleMessagesTwo:
-  - "\xBFPero qu\xE9 hace una roca arriba del acantilado?"
-  - "\"No lo s\xE9 pero tal vez podamos utilizarla en su contra\""
-  - "\xBFY c\xF3mo piensas hacerlo?"
-  - "La roca est\xE1 demasiado lejos y dudo que arrojandole algo sea suficiente para
-    derribarla"
-  - "\"Tranquila, no te lo hab\xEDa dicho, pero puedo utilizar algo de magia, pero...
-    s\xF3lo puede ser por poco tiempo\""
-  - "\xBFQu\xE9 clase de magia puedes utilizar?"
+  - "Katherine>\xBFPero qu\xE9 hace una roca arriba del acantilado?"
+  - "Kal\xFA>No lo s\xE9 pero tal vez podamos utilizarla en su contra"
+  - "Katherine>\xBFY c\xF3mo piensas hacerlo?"
+  - "Katherine>La roca est\xE1 demasiado lejos y dudo que arrojandole algo sea suficiente
+    para derribarla"
+  - "Kal\xFA>Tranquila, no te lo hab\xEDa dicho, pero puedo utilizar algo de magia,
+    pero... s\xF3lo puede ser por poco tiempo"
+  - "Katherine>\xBFQu\xE9 clase de magia puedes utilizar?"
   m_SelectOptionMessages:
-  - Intenta usar esta, tal vez funcione
-  - '"Muy bien, vamos a acabar con ellos"'
+  - Katherine>Usa esta, tal vez funcione
+  - "Kal\xFA>Muy bien, vamos a acabar con ellos"
   m_RockDropMessages:
-  - "\"\xBFLista?, voy a usar mi magia\""
+  - "Kal\xFA>\xBFLista?, voy a usar mi magia"
   m_BeforeRockMessages:
-  - "Ouch, eso debi\xF3 doler"
-  - "\"Tal vez, pero ellos se lo buscar\xF3n. Adem\xE1s, necesitamos recuperar mi
-    medall\xF3n\""
-  - "Bueno, ahora que ya no nos impiden el paso, podemos pasar por los escombros,
+  - "Katherine>Ouch, eso debi\xF3 doler"
+  - "Kal\xFA>Tal vez, pero ellos se lo buscar\xF3n. Adem\xE1s, necesitamos recuperar
+    mi medall\xF3n"
+  - "Katherine>Bueno, ahora que ya no nos impiden el paso, podemos pasar por los escombros,
     al parecer la roca no bloque\xF3 por completo el camino"
-  - "\"Vale, s\xF3lo espero no cortarme con alg\xFAn escombro o algo\""
-  - "Eres un fantasma, \xBFqu\xE9 te podria pasar?"
-  - "\"S\xF3lo bromeaba jijiji\""
-  - Muy gracioso
-  - Vamos entonces
+  - "Kal\xFA>Vale, s\xF3lo espero no cortarme con alg\xFAn escombro o algo"
+  - "Katherine>Eres un fantasma, \xBFqu\xE9 te podria pasar?"
+  - "Kal\xFA>S\xF3lo bromeaba jijiji"
+  - Katherine>Muy gracioso
   m_BeforeTeleportMessages:
-  - "\"\xBFEst\xE1s bien?\""
-  - Si, demasiada tierra y polvo, es todo
-  - "\"Venga, continu\xE9mos, espero que no nos encontremos con m\xE1s enemigos durante
-    un rato\""
-  - Eso esperemos
+  - "Kal\xFA>\xBFEst\xE1s bien?"
+  - Katherine>Si, demasiada tierra y polvo, es todo
+  - "Kal\xFA>Venga, continu\xE9mos, espero que no nos encontremos con m\xE1s enemigos
+    durante un rato"
   m_CharlotteMessages:
-  - 'El cartel dice:'
-  - "\"Katherine, encu\xE9ntrame m\xE1s adelante en Pueblo Nerea, he seguido el rastro
-    de Khrix y del medall\xF3n, pero sin ustedes no podr\xE9 quitarselo\""
-  - '"Nos veremos en Pueblo Nerea al atardecer"'
-  - -Charlotte-
-  - '"..."'
-  - "Pero, \xBFqui\xE9n es ella?, \xBFporqu\xE9 parece que me conoce?"
-  - "\"Mmmmm, no lo s\xE9 pero solo hay una manera de averiguarlo\""
-  - "Tienes raz\xF3n, adem\xE1s tengo que devolverle su pulsera"
-  - "(Pero sobre todo, \xBFqui\xE9n es ese tal Khrix?)"
-  - "(\xBFY porqu\xE9 mencion\xF3 nuestra ayuda?)"
-  - "(\xBFSer\xE1 que es una amiga de Kal\xFA?)"
-  - "(No lo s\xE9 pero prefiero no preguntarle a Kal\xFA hasta encontrarnos con ella)"
+  - "Cartel>Katherine, encu\xE9ntrame m\xE1s adelante en Pueblo Nerea, he seguido
+    el rastro de Khrix y del medall\xF3n, pero sin ustedes no podr\xE9 quitarselo"
+  - Cartel>Nos veremos en Pueblo Nerea al atardecer
+  - Cartel>-Charlotte-
+  - Katherine>...
+  - "Katherine>Pero, \xBFqui\xE9n es ella?, \xBFporqu\xE9 parece que me conoce?"
+  - "Kal\xFA>Mmmmm, no lo s\xE9 pero solo hay una manera de averiguarlo"
+  - "Katherine>Tienes raz\xF3n, adem\xE1s tengo que devolverle su pulsera"
+  - "Katherine>(Pero sobre todo, \xBFqui\xE9n es ese tal Khrix?)"
+  - "Katherine>(\xBFY porqu\xE9 mencion\xF3 nuestra ayuda?)"
+  - "Katherine>(\xBFSer\xE1 que es una amiga de Kal\xFA?)"
+  - "Katherine>(No lo s\xE9 pero prefiero no preguntarle a Kal\xFA hasta encontrarnos
+    con ella)"
   m_PuzzleError:
-  - No salio como esperamos
-  - "\"Regresemos al escondite para pensar en otra opci\xF3n\""
-  - "Est\xE1 bien, vamos"
+  - Katherine>No salio como esperamos
+  - "Kal\xFA>Regresemos al escondite para pensar en otra opci\xF3n"
   m_SecondTryPuzzle:
-  - "\"\xBFAlguna otra idea?\""
+  - "Kal\xFA>\xBFAlguna otra idea?"
   m_LookSign:
-  - "\xBFHuh?"
-  - "\xBFQu\xE9 hace un cartel en medio de la nada?"
-  - '"Ni idea pero, veamos que dice"'
+  - "Katherine>\xBFHuh?"
+  - "Katherine>\xBFQu\xE9 hace un cartel en medio de la nada?"
+  - "Kal\xFA>Ni idea pero, veamos que dice"
   m_HideMessage: Busca un escondite
   m_MessageTime: 5
   m_HidePositions:
@@ -2315,6 +2315,7 @@ MonoBehaviour:
   m_CallEvent: 11
   m_FocusTime: 5
   m_DesactivateTrigger: 0
+  m_NewSmoothing: 0
   m_Object: {fileID: 1141172554}
   m_Event: {fileID: 1083187256}
   m_CharacterAnimator: {fileID: 850692026}
@@ -2332,6 +2333,7 @@ MonoBehaviour:
   m_CallEvent: 16
   m_FocusTime: 5
   m_DesactivateTrigger: 0
+  m_NewSmoothing: 0
   m_Object: {fileID: 432834222}
   m_Event: {fileID: 1083187256}
   m_CharacterAnimator: {fileID: 850692026}
@@ -2514,6 +2516,7 @@ MonoBehaviour:
   m_CallEvent: 1
   m_FocusTime: 4
   m_DesactivateTrigger: 1
+  m_NewSmoothing: 0
   m_Object: {fileID: 362420612}
   m_Event: {fileID: 1083187256}
   m_CharacterAnimator: {fileID: 850692026}
@@ -3219,7 +3222,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.85
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10

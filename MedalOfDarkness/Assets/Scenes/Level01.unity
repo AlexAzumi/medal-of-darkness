@@ -834,228 +834,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 643039183}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &654777751
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_SolvedPuzzle.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_RockMessages.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_BarrelMessages.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_FoundOneBarrel.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114273066683708224, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_MessageText
-      value: 
-      objectReference: {fileID: 2076904827}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_BlackScreen
-      value: 
-      objectReference: {fileID: 338967228}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_PauseMenu
-      value: 
-      objectReference: {fileID: 1397394645}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_Buttons.Array.data[0]
-      value: 
-      objectReference: {fileID: 1947561376}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_Buttons.Array.data[1]
-      value: 
-      objectReference: {fileID: 405947186}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_Buttons.Array.data[2]
-      value: 
-      objectReference: {fileID: 669303412}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_FocusTrigger
-      value: 
-      objectReference: {fileID: 147190321}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_RockMesh
-      value: 
-      objectReference: {fileID: 701930573}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_RockCollider
-      value: 
-      objectReference: {fileID: 701930574}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_BarrelMessages.Array.data[1]
-      value: 'El papel dice: "Hace poco tiempo, misteriosamente desaparecieron 3 de
-        mis 4 barriles en los que guardo mi cosecha de manzanas"'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_BarrelMessages.Array.data[3]
-      value: '"No creo que se los hayan llevado lejos ya que pesaban demasiado, asi
-        que tal vez pueda encontrarlos por aqui"'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_BarrelMessages.Array.data[4]
-      value: -Henry el granjero-
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_BarrelMessages.Array.data[5]
-      value: "Hmmm, me pregunto si esos barriles est\xE9n por aqu\xED"
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_BarrelMessages.Array.data[2]
-      value: '"No me he dado a la tarea de buscarlos porque simplemente tengo poco
-        tiempo"'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_SolvedPuzzle.Array.data[2]
-      value: "Investigar\xE9 la salida"
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_ExitMessages.Array.data[0]
-      value: Vaya, parece que esos interruptores, de alguna manera, quitaron a la
-        roca del camino
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_ExitMessages.Array.data[1]
-      value: Parece que tengo algo de suerte
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_ExitMessages.Array.data[2]
-      value: Ahora tengo que encontrar ayuda, tal vez mas adelante encuentre a alguien
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_RockMessages.Array.data[0]
-      value: "\xBFHuh? Pero \xBFque hace esta roca en medio del camino?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_RockMessages.Array.data[1]
-      value: Es imposible, no puedo pasar
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_RockMessages.Array.data[2]
-      value: Tal vez necesite investigar la zona
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_RockMessages.Array.data[3]
-      value: '"Para remover la roca necesitas buscar en un contenedor hecho de madera"'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_RockMessages.Array.data[4]
-      value: '....'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_RockMessages.Array.data[5]
-      value: "\xBFQui\xE9n ha dicho eso?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_RockInstruction
-      value: Busca en los alrededores de la zona
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_FoundOneBarrel.Array.data[0]
-      value: Parece que hay algo debajo del barril
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_FoundOneBarrel.Array.data[1]
-      value: "\xBFHuh? \xBFUn interruptor? \xBFQu\xE9 activar\xE1?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_FoundOneBarrel.Array.data[2]
-      value: (Se escucha un sonido de clic)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_FoundOneBarrel.Array.data[3]
-      value: "Mmm, tal vez en los otro barriles tambien haya interruptores. Ir\xE9
-        a investigar"
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
-        type: 2}
-      propertyPath: m_SceneName
-      value: 
-      objectReference: {fileID: 85607831}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 202d86a2a37b3e349a02733a5fb73a49, type: 2}
-  m_IsPrefabParent: 0
---- !u!1 &654777752 stripped
+--- !u!1 &654777752
 GameObject:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1565344375708228, guid: 202d86a2a37b3e349a02733a5fb73a49,
     type: 2}
-  m_PrefabInternal: {fileID: 654777751}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 654777756}
+  - component: {fileID: 857370264}
+  - component: {fileID: 654777753}
+  - component: {fileID: 654777755}
+  - component: {fileID: 654777754}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!114 &654777753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,6 +868,45 @@ MonoBehaviour:
   m_UserText: {fileID: 1365224020}
   m_CloseSession: {fileID: 0}
   m_LevelScore: {fileID: 211001744}
+--- !u!114 &654777754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114529788827109432, guid: 202d86a2a37b3e349a02733a5fb73a49,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654777752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3f03f95861400498df847b7da3e82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &654777755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114273066683708224, guid: 202d86a2a37b3e349a02733a5fb73a49,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654777752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5fdc647e6f7ca4b800ee72dbcc4d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MessageText: {fileID: 2076904827}
+--- !u!4 &654777756
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4107516718158030, guid: 202d86a2a37b3e349a02733a5fb73a49,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654777752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &669303412 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1090453689462878, guid: cb40bd77ebc4c804ca4096dfa12192f5,
@@ -1489,12 +1326,75 @@ Transform:
   m_PrefabParentObject: {fileID: 4222948748487616, guid: cb40bd77ebc4c804ca4096dfa12192f5,
     type: 2}
   m_PrefabInternal: {fileID: 856614093}
---- !u!114 &857370264 stripped
+--- !u!114 &857370264
 MonoBehaviour:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114855336960516640, guid: 202d86a2a37b3e349a02733a5fb73a49,
     type: 2}
-  m_PrefabInternal: {fileID: 654777751}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654777752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a22acb1065ae2b14ba74aebdf4245bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LevelScore: {fileID: 0}
+  m_BlackScreen: {fileID: 338967228}
+  m_PauseMenu: {fileID: 1397394645}
+  m_SceneName: {fileID: 85607831}
+  m_InitialText: Usa la palaca izq. para desplazarte
+  m_InactiveTime: 7
+  m_InitialMessages:
+  - Chica>...
+  - "Chica>\xBFD\xF3nde estoy?..."
+  - "Chica>\xBFQu\xE9 est\xE1 sucediendo?..."
+  - Chica>No recuerdo absolutamente nada...
+  - "Chica>\xBFQu\xE9 es este lugar?... Parece que es un bosque, pero me siento bastante
+    extra\xF1a, como si alguien me estuviera observando"
+  - Chica>Tengo miedo...
+  - Chica>...
+  - Chica>Mejor busco ayuda
+  m_RockMessages:
+  - "Chica>\xBFHuh? Pero \xBFque hace esta roca en medio del camino?"
+  - Chica>Es imposible, no puedo pasar
+  - Chica>Tal vez necesite investigar la zona
+  m_RockInstruction: Busca en los alrededores de la zona
+  m_BarrelMessages:
+  - "Chica>Encontr\xE9 un papel debajo del barril"
+  - 'Chica>El papel dice: "Hace poco tiempo, misteriosamente desaparecieron 3 de mis
+    4 barriles en los que guardo mi cosecha de manzanas"'
+  - Chica>"No me he dado a la tarea de buscarlos porque simplemente tengo poco tiempo"
+  - Chica>"No creo que se los hayan llevado lejos ya que pesaban demasiado, asi que
+    tal vez pueda encontrarlos por aqui"
+  - Chica>-Henry el granjero-
+  - "Chica>Hmmm, me pregunto si esos barriles est\xE9n por aqu\xED"
+  m_FoundOneBarrel:
+  - Chica>Parece que hay algo debajo del barril
+  - "Chica>\xBFHuh? \xBFUn interruptor? \xBFQu\xE9 activar\xE1?"
+  - Barril>(Se escucha un sonido de clic)
+  - "Chica>Mmm, tal vez en los otro barriles tambien haya interruptores. Ir\xE9 a
+    investigar"
+  m_SolvedPuzzle:
+  - "Chica>Bien, encontr\xE9 los tres botones que me mencionaba el papel"
+  - "Chica>Pero no sucedi\xF3 nada, \xBFhabr\xE9 hecho algo mal?"
+  m_ExitMessages:
+  - Chica>Vaya, parece que esos interruptores, de alguna manera, quitaron a la roca
+    del camino
+  - Chica>Parece que tengo algo de suerte
+  - Chica>Ahora tengo que encontrar ayuda, tal vez mas adelante encuentre a alguien
+  m_Buttons:
+  - {fileID: 1947561376}
+  - {fileID: 405947186}
+  - {fileID: 669303412}
+  m_FocusTrigger: {fileID: 147190321}
+  m_RockMesh: {fileID: 701930573}
+  m_RockCollider: {fileID: 701930574}
+  m_ActualEvent: 0
+  m_Found: 0
+  m_Barrel01: 0
+  m_Barrel02: 0
+  m_Barrel03: 0
+  m_Solved: 0
 --- !u!82 &942469587 stripped
 AudioSource:
   m_PrefabParentObject: {fileID: 82933745059835448, guid: 22f0ca2e95ac3404e9d595a4e9ceac63,
@@ -2623,14 +2523,19 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114427144867901878, guid: 3e3bcec2d7fc84940b593c891f197b00,
+    - target: {fileID: 114085083436489232, guid: 3e3bcec2d7fc84940b593c891f197b00,
         type: 2}
-      propertyPath: m_ConfigManager
+      propertyPath: m_EventSystem
       value: 
-      objectReference: {fileID: 1480671580}
+      objectReference: {fileID: 89072178}
     - target: {fileID: 114128649555564392, guid: 3e3bcec2d7fc84940b593c891f197b00,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1480671580}
+    - target: {fileID: 114427144867901878, guid: 3e3bcec2d7fc84940b593c891f197b00,
+        type: 2}
+      propertyPath: m_ConfigManager
       value: 
       objectReference: {fileID: 1480671580}
     - target: {fileID: 114236177190937106, guid: 3e3bcec2d7fc84940b593c891f197b00,
@@ -2638,11 +2543,6 @@ Prefab:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1480671580}
-    - target: {fileID: 114085083436489232, guid: 3e3bcec2d7fc84940b593c891f197b00,
-        type: 2}
-      propertyPath: m_EventSystem
-      value: 
-      objectReference: {fileID: 89072178}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e3bcec2d7fc84940b593c891f197b00, type: 2}
   m_IsPrefabParent: 0

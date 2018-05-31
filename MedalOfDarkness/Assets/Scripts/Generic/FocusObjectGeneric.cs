@@ -10,6 +10,7 @@ public class FocusObjectGeneric : MonoBehaviour
     public int m_CallEvent;
     public float m_FocusTime = 5f;
     public bool m_DesactivateTrigger = true;
+    public float m_NewSmoothing = 0.0f;
     public Transform m_Object;
     public EventSelector m_Event;
     public Animator m_CharacterAnimator;
@@ -17,7 +18,7 @@ public class FocusObjectGeneric : MonoBehaviour
     /* Private stuff */
     private CameraFollow m_CameraFollow;
     private Animator m_Bars;
-    private float m_Count;
+    private float m_Count, m_CameraSmoothing;
     private bool m_Active;
 
 	private void Start()
@@ -26,24 +27,17 @@ public class FocusObjectGeneric : MonoBehaviour
         m_Bars = GameObject.FindGameObjectWithTag("Bars").GetComponent<Animator>();
         m_Event = GameObject.Find("GameManager").GetComponent<EventSelector>();
         m_Active = false;
+        m_CameraSmoothing = m_CameraFollow.m_Smoothing;
 	}
 
     private void Update()
     {
-        if (m_Active)
+        if (m_Active && m_FocusTime != 0)
         {
             m_Count += Time.deltaTime;
             if (m_Count > m_FocusTime)
             {
-                m_Count = 0;
-                m_CameraFollow.SetPlayerAsTarget();
-                m_Bars.SetBool("isActive", false);
-                m_Active = false;
-                m_Event.SendToEvent(m_CallEvent);
-                if (m_DesactivateTrigger)
-                {
-                    GetComponent<BoxCollider>().enabled = false;
-                }
+                RestoreCamera();
             }
         }
     }
@@ -55,10 +49,31 @@ public class FocusObjectGeneric : MonoBehaviour
 
     public void FocusObject()
     {
+        if (m_NewSmoothing != 0.0f)
+        {
+            m_CameraFollow.m_Smoothing = m_NewSmoothing;
+        }
         m_CharacterAnimator.SetBool("IsRunning", false);
         m_CharacterAnimator.SetBool("IsWalking", false);
         m_CameraFollow.SetTarget(m_Object);
         m_Bars.SetBool("isActive", true);
         m_Active = true;
+    }
+
+    public void RestoreCamera()
+    {
+        if (m_CameraFollow.m_Smoothing != m_CameraSmoothing)
+        {
+            m_CameraFollow.m_Smoothing = m_CameraSmoothing;
+        }
+        m_Count = 0;
+        m_CameraFollow.SetPlayerAsTarget();
+        m_Bars.SetBool("isActive", false);
+        m_Active = false;
+        m_Event.SendToEvent(m_CallEvent);
+        if (m_DesactivateTrigger)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+        }
     }
 }

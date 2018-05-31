@@ -8,7 +8,7 @@ public class DialogManager : MonoBehaviour
 {
     /* Made by Aldan Project | 2018 */
     public GameObject m_DialogBox;
-    public Text m_DialogText;
+    public Text m_DialogText, m_DialogName;
     public PauseMenu m_PauseMenu;
     public float m_WaitTime;
 
@@ -88,6 +88,10 @@ public class DialogManager : MonoBehaviour
             {
                 m_ShowAll = true;
             }
+            Debug.Log(m_DialogMessage[m_Count] + " - m_Count = " + m_Count);
+            String[] data = m_DialogMessage[m_Count].Split('>');
+            m_DialogMessage[m_Count] = data[1];
+            m_DialogName.text = data[0];
         }
     }
 
@@ -104,7 +108,11 @@ public class DialogManager : MonoBehaviour
 
     public void SetMessageDialog(string[] dialogText)
     {
-        m_DialogMessage = dialogText;
+        m_DialogMessage = new string[dialogText.Length];
+        for (int i = 0; i < dialogText.Length; i++)
+        {
+            m_DialogMessage[i] = dialogText[i];
+        }
         m_CharacterControl.SetAnimation("IsWalking", false);
         m_CharacterControl.SetAnimation("IsRunning", false);
         ShowNext();
