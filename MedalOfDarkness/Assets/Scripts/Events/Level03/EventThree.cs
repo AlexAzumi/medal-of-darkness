@@ -53,6 +53,10 @@ public class EventThree : MonoBehaviour
     {
         if (switchCount > 3 && !resolved)
         {
+            for (int i = 0; i < m_Switches.Length; i++)
+            {
+                m_Switches[i].enabled = true;
+            }
             m_DialogManager.SetMessageDialog(m_FailedMessages);
             switchCount = 0;
             switchOne = 0;
@@ -116,18 +120,22 @@ public class EventThree : MonoBehaviour
         {
             case 1:
                 switchOne = switchCount;
+                m_Switches[0].enabled = false;
                 Debug.Log("switchOne = " + switchCount);
                 break;
             case 2:
                 switchTwo = switchCount;
+                m_Switches[1].enabled = false;
                 Debug.Log("switchTwo = " + switchCount);
                 break;
             case 3:
                 switchThree = switchCount;
+                m_Switches[2].enabled = false;
                 Debug.Log("switchThree = " + switchCount);
                 break;
             case 4:
                 switchFour = switchCount;
+                m_Switches[3].enabled = false;
                 Debug.Log("switchFour = " + switchCount);
                 break;
         }

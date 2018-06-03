@@ -419,6 +419,7 @@ Transform:
   - {fileID: 1910582060}
   - {fileID: 2107718697}
   - {fileID: 1773456833}
+  - {fileID: 887444821}
   m_Father: {fileID: 2072718443}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -567,6 +568,82 @@ Animator:
   m_PrefabParentObject: {fileID: 95307905189239152, guid: b56360886476093469fd82838436ecec,
     type: 2}
   m_PrefabInternal: {fileID: 1162728905}
+--- !u!1001 &887444820
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 396214182}
+    m_Modifications:
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 28.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 34.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.3492045
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.42188388
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.070253246
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.83374745
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 31.535002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 28.891
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000010968640844, guid: df48a05baee01154c924c5c7ec74aeee,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: df48a05baee01154c924c5c7ec74aeee, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &887444821 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000011321095692, guid: df48a05baee01154c924c5c7ec74aeee,
+    type: 2}
+  m_PrefabInternal: {fileID: 887444820}
 --- !u!1 &909924117
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +955,7 @@ MonoBehaviour:
   - "Kal\xFA>No lo s\xE9 lo perd\xED de vista desp\xFAes de eso"
   - "Chica>Mmmm, conque le quer\xEDa quitar la pelota..."
   m_FailMessages:
-  - Katherine>Demonios, este no es el camino correcto
+  - Chica>Demonios, este no es el camino correcto
   - "Kal\xFA>Ser\xE1 mejor que regresemos antes de que nos atrapen"
   m_RestartMessages:
   - "Chica>Bien, ahora, \xBFcu\xE1l ser\xE1 el camino correcto?"
@@ -1493,7 +1570,7 @@ Prefab:
     - target: {fileID: 224879508721481366, guid: b56360886476093469fd82838436ecec,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224879508721481366, guid: b56360886476093469fd82838436ecec,
         type: 2}
@@ -3096,7 +3173,7 @@ Transform:
   - {fileID: 396214182}
   - {fileID: 1540183045}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &2072718444
 TerrainCollider:
@@ -3176,7 +3253,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011550217864, guid: 1ce05a9bb8cf8c34890ad308705a8ca4, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000011550217864, guid: 1ce05a9bb8cf8c34890ad308705a8ca4, type: 2}
       propertyPath: m_LocalScale.x

@@ -11384,7 +11384,7 @@ MonoBehaviour:
   - "Charlotte>Si, as\xED es, s\xE9 que no recuerdas nada, Kal\xFA me lo dijo"
   - "Kal\xFA>Escucha Katherine, te explicare todo"
   m_TalkWithCharlotteTwo:
-  - "Kal\xFA>En realidad siempre estuve con ambas, como ver\xE1s puede dividirme cuantas
+  - "Kal\xFA>En realidad siempre estuve con ambas, como ver\xE1s puedo dividirme cuantas
     veces quiera pero eso no es lo m\xE1s importante"
   - "Charlotte>As\xED es hermana, estoy aqu\xED para recuperar tu memoria"
   - "Charlotte>Escucha, m\xE1s adelante se encuentra Khrix, tenemos que recuperar
@@ -11456,7 +11456,7 @@ MonoBehaviour:
   - "Charlotte>Gracias Kal\xFA, ahora deber\xEDamos ir a informarle al alcalde"
   m_Thanks:
   - Alcalde>Ohhh, lo lograron
-  - Alcalde>Reeestablecieron el agua del pozo
+  - Alcalde>Restablecieron el agua del pozo
   - "Alcalde>Much\xEDsimas gracias, ahora podremos volver a empezar y reconstruir
     Pueblo Nerea"
   - "Alcalde>Les estar\xE9 eternamente agradecido"
@@ -13932,6 +13932,11 @@ Prefab:
         type: 2}
       propertyPath: sceneName
       value: Level06
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750738718198918, guid: b56360886476093469fd82838436ecec,
+        type: 2}
+      propertyPath: m_Text
+      value: Pueblo Nerea
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b56360886476093469fd82838436ecec, type: 2}
