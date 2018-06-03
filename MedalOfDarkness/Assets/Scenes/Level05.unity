@@ -10752,7 +10752,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1618941086832998, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9c3f1ae6a1b7894ea3ba0ff0a193aef, type: 2}
@@ -11353,31 +11353,118 @@ MonoBehaviour:
   m_NewMayorPosition: {fileID: 1938067102}
   m_NewKatherinePosition: {fileID: 501078477}
   m_MenMessages:
-  - Prueba>Hola men
+  - "Katherine>Buenas tardes se\xF1or"
+  - "Alcalde>Dichosos sean mis ojos, \xBFqu\xE9 hace una jovencita como t\xFA en Pueblo
+    Nerea?"
+  - "Kal\xFA>Estamos buscando a una chica se\xF1or"
+  - "Alcalde>\xBFPero qu\xE9 es esto?"
+  - "Alcalde>Una s\xE1bana con ojos me esta hablando"
+  - "Kal\xFA>7-7"
+  - "Alcalde>Pero bueno, \xBFdicen que buscan a una chica no?"
+  - "Alcalde>Hace poco lleg\xF3 una chica algo agitada y se dirigi\xF3 hacia el pozo
+    del pueblo"
+  - "Katherine>\xBFDe casualidad no le dijo su nombre?"
+  - "Alcalde>No, pero parec\xEDa muy preocupada"
+  - "Katherine>Muchas gracias se\xF1or"
   m_WatchKhrix:
-  - "Prueba>\xA1Khrix!"
+  - "Katherine>(\xBFQu\xE9 demonios fue eso?)"
+  - "Katherine>(Se parec\xEDa bastante a Kal\xFA)"
+  - "Katherine>(Puede que sea ese tal Khrix, pero necesitar\xEDa preguntarle a Kal\xFA
+    sobre ello)"
   m_WatchCharlotte:
-  - "Prueba>\xBFCharlotte?"
+  - "Katherine>Mira, ah\xED est\xE1 la chica que nos mencion\xF3 el alcalde"
+  - "Kal\xFA>Eso parece, vamos con ella"
   m_TalkWithCharlotteOne:
-  - "Prueba>\xA1Charlotte!"
+  - Katherine>Emm, disculpa
+  - "Chica>Shhh silencio nos puede escu\u2026 \xBF\xA1Ka...Katherine!?"
+  - "Katherine>Emmm, \xBFqui\xE9n eres t\xFA?"
+  - Chica>Hermana, soy yo, Charlotte
+  - "Charlotte>Kal\xFA me cont\xF3 todo sobre lo que pas\xF3"
+  - "Katherine>\xA1\xBFHer...hermana?!"
+  - "Charlotte>Si, as\xED es, s\xE9 que no recuerdas nada, Kal\xFA me lo dijo"
+  - "Kal\xFA>Escucha Katherine, te explicare todo"
   m_TalkWithCharlotteTwo:
-  - "Prueba>\xA1DOS!"
+  - "Kal\xFA>En realidad siempre estuve con ambas, como ver\xE1s puede dividirme cuantas
+    veces quiera pero eso no es lo m\xE1s importante"
+  - "Charlotte>As\xED es hermana, estoy aqu\xED para recuperar tu memoria"
+  - "Charlotte>Escucha, m\xE1s adelante se encuentra Khrix, tenemos que recuperar
+    el medall\xF3n para recuperar tu memoria"
+  - "Katherine>Pe...pero, \xBFc\xF3mo lo recuperaremos?"
+  - "Charlote>Tranquila, Kal\xFA y yo ideamos un plan para ello, pero tendremos que
+    trabajar las dos si queremos conseguirlo"
+  - "Kal\xFA>Exacto, as\xED que no perdamos tiempo, vamos por ese medall\xF3n"
+  - "Katherine>E\u2026 espera, Charlotte, encontr\xE9 esto poco despu\xE9s que me
+    encontr\xE9 con Kal\xFA"
+  - "Charlotte>\xA1Mi pulsera!"
+  - "Charlotte>Es el \xFAnico recuerdo de nuestro padre, cre\xED que la hab\xEDa perdido"
+  - Charlotte>Muchas gracias hermana
+  - Katherine>No fue nada
   m_TalkWithCharlotteThree:
-  - "Prueba>M\xE1s mensajes"
+  - "Kal\xFA>Bien, ahora que conocen la situaci\xF3n, busquemos a Khrix"
+  - "Charlotte>\xA1Espera!"
+  - "Charlotte>Not\xE9 que el alcalde del pueblo estaba algo preocupado, parece que
+    antes de que lleg\xE1ramos Khrix hizo de las suyas, es por eso que no hay nadie
+    m\xE1s en el pueblo"
+  - "Charlotte>Deber\xEDamos ayudarles"
+  - "Kal\xFA>Me parece buena idea, \xBFt\xFA que opinas Kath?"
+  - "Katherine>De acuerdo, veamos si necesitan ayuda, vamos her... hermana, Kal\xFA"
+  - Charlotte>Kath... Me da gusto tenerte conmigo de nuevo
   m_ForceTalkWithMen:
-  - "Prueba>\xA1Habla con \xE9l!"
+  - "Kal\xFA>Tal vez deber\xEDamos hablar con el sujeto que est\xE1 a lado de esa
+    casa, puede que \xE9l conozca a Charlotte, \xBFno crees?"
   m_CantExit:
-  - Prueba>No podemos salir
+  - "Kal\xFA>Ser\xE1 mejor que busquemos a Charlotte"
+  m_CantExitPuzzle:
+  - "Kal\xFA>Hey Kath, \xBFa d\xF3nde crees que vas?"
+  - "Kal\xFA>Tenemos que ayudar esta aldea"
+  - "Katherine>Vale, vale, s\xF3lo exploraba la zona"
   m_SearchMayor:
-  - Prueba>A buscar
+  - "Charlotte>\xA1Busquemos al alcalde!"
   m_Puzzle:
-  - Prueba>Puzzle
+  - Alcalde>Veo que has encontrado a la persona que buscabas
+  - Alcalde>Pero no es momento de festejar
+  - Alcalde>El pueblo Nerea necesita tu ayuda
+  - "Alcalde>El pozo ha dejado de proveernos agua y la necesitamos para poder sobrevivir,
+    sobre todo\u2026 en este momento de crisis"
+  - "Charlotte>\xBFC\xF3mo podemos ayudar?"
+  - "Charlotte>\xBFHay alguna manera de repararlo?"
+  - "Alcalde>Puede ser posible que s\xED, hay una leyenda sobre este pueblo, se dice
+    que hace 50 a\xF1os, los que fundaron este pueblo crearon un mecanismo para que
+    el pozo volviera a proveer agua en caso de emergencia"
+  - "Katherine>\xBFC\xF3mo podemos activarlo?"
+  - "Alcalde>Se dice que tiene que ver con las farolas que rodean el pozo, de acuerdo
+    a la leyenda si se activan de cierto modo el agua volver\xE1 a fluir"
+  - "Charlotte>\xBFTiene alguna idea de que patr\xF3n era del que habla la leyenda?"
+  - "Alcalde>Lamentablemente no, solo recuerdo que ten\xEDa algo que ver con la primera
+    letra del nombre del pueblo"
+  - "Katherine>\xBFLa primera letra del nombre del pueblo?"
+  - "Katherine>Muchas gracias por la informaci\xF3n"
   m_Error:
-  - Prueba>Error
+  - Katherine>Mmmmm...
+  - "Charlotte>\xBFQu\xE9 pasa hermana?"
+  - Katherine>No sucede nada, he desactivado las farolas pero, parece que no es de
+    esta manera
+  - Charlotte>Recuerda lo que dijo el alcalde
+  - Charlotte>La manera de reestablecer el agua tiene que ver con la primera letra
+    del nombre del pueblo
+  - "Kal\xFA>La primera letra del nombre del pueblo es la \"N\""
   m_Complete:
-  - Prueba>Completado
+  - "Charlotte>\xA1Lo hicimos hermana!"
+  - "Kal\xFA>Qui\xE9n dir\xEDa que el mecanismo se ten\xEDa que activar en forma de
+    \"N\""
+  - "Kal\xFA>Bien pensado Kath, Charlotte"
+  - "Charlotte>Gracias Kal\xFA, ahora deber\xEDamos ir a informarle al alcalde"
   m_Thanks:
-  - Mayor>Gracias
+  - Alcalde>Ohhh, lo lograron
+  - Alcalde>Reeestablecieron el agua del pozo
+  - "Alcalde>Much\xEDsimas gracias, ahora podremos volver a empezar y reconstruir
+    Pueblo Nerea"
+  - "Alcalde>Les estar\xE9 eternamente agradecido"
+  - Alcalde>Suerte en su viaje y espero que detengan al malvado de Khrix
+  - "Katherine>Gracias se\xF1or, que su pueblo prospere con \xE9xito"
+  - "Kal\xFA>Bien, ahora podemos ir tras Khrix y detenerlo"
+  - "Kal\xFA>\xBFEst\xE1n listas?"
+  - "Ambas>\xA1Claro que si!"
 --- !u!114 &1733853631
 MonoBehaviour:
   m_ObjectHideFlags: 0

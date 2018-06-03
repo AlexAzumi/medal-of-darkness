@@ -24,7 +24,7 @@ public class EventFive : MonoBehaviour
     public Transform m_Mayor, m_NewMayorPosition;
     public Transform m_NewKatherinePosition;
 
-    public string[] m_MenMessages, m_WatchKhrix, m_WatchCharlotte, m_TalkWithCharlotteOne, m_TalkWithCharlotteTwo, m_TalkWithCharlotteThree, m_ForceTalkWithMen, m_CantExit, m_SearchMayor, m_Puzzle, m_Error, m_Complete, m_Thanks;
+    public string[] m_MenMessages, m_WatchKhrix, m_WatchCharlotte, m_TalkWithCharlotteOne, m_TalkWithCharlotteTwo, m_TalkWithCharlotteThree, m_ForceTalkWithMen, m_CantExit, m_CantExitPuzzle, m_SearchMayor, m_Puzzle, m_Error, m_Complete, m_Thanks;
 
     private int[] m_LanterNum;
     private int m_ActualEvent, m_LanternsOrder;
@@ -140,7 +140,14 @@ public class EventFive : MonoBehaviour
         }
         else if (m_ActualEvent == 12)
         {
-            m_DialogManager.SetMessageDialog(m_CantExit);
+            if (m_Charlotte.activeSelf)
+            {
+                m_DialogManager.SetMessageDialog(m_CantExit);
+            }
+            else
+            {
+                m_DialogManager.SetMessageDialog(m_CantExitPuzzle);
+            }
             m_ActualEvent = 0;
         }
         else if (m_ActualEvent == 13 && m_Katherine.m_CanMove)
