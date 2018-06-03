@@ -17,6 +17,7 @@ public class LoseScriptGeneric : MonoBehaviour
     public void ReturnCharacter()
     {
         m_Katherine.position = m_NewPosition.position;
+        m_Katherine.rotation = m_NewPosition.rotation;
         while (m_Count < m_WaitTime)
         {
             m_Count += Time.deltaTime;

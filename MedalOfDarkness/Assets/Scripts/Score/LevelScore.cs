@@ -36,7 +36,7 @@ public class LevelScore : MonoBehaviour
 
     public void StartPuzzle()
     { 
-        if (!string.IsNullOrEmpty(m_Username))
+        if (!string.IsNullOrEmpty(m_Username) && !m_StartPuzzle)
         {
             m_ActualScore = m_MaxPoints;
             m_StartPuzzle = true;
