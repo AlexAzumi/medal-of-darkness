@@ -12,7 +12,7 @@ public class LevelScore : MonoBehaviour
 
     private Animator m_PublishMessage;
     private int m_ActualScore;
-    private bool m_StartPuzzle = true;
+    private bool m_StartPuzzle = false;
     private float m_Count = 0;
 
     private void Awake()
@@ -40,6 +40,7 @@ public class LevelScore : MonoBehaviour
         {
             m_ActualScore = m_MaxPoints;
             m_StartPuzzle = true;
+            m_Count = 0;
             Debug.Log(m_Username + " started the puzzle");
         }
         else

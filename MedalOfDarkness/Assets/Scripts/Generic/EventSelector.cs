@@ -12,6 +12,7 @@ public class EventSelector : MonoBehaviour
     public EventThree eventThree;
     public EventFour eventFour;
     public EventFive eventFive;
+    public EventSix eventSix;
 
     public void SendToEvent(int callEvent)
     {
@@ -32,6 +33,9 @@ public class EventSelector : MonoBehaviour
                     break;
                 case 5:
                     eventFive.SetEvent(callEvent);
+                    break;
+                case 6:
+                    eventSix.SetEvent(callEvent);
                     break;
             }
         }

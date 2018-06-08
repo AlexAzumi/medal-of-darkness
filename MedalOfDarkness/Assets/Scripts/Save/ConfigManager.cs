@@ -3,6 +3,7 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
+using System;
 
 public class ConfigManager : MonoBehaviour 
 {
@@ -17,7 +18,14 @@ public class ConfigManager : MonoBehaviour
         if (actualConfig != null)
         {
             m_ActualVolume = actualConfig.GetVolume();
-            m_VolumeSlider.value = m_ActualVolume * 100;
+            try
+            {
+                m_VolumeSlider.value = m_ActualVolume * 100;
+            }
+            catch(NullReferenceException ex)
+            {
+                Debug.Log("Slider not found > " + ex.Message);
+            }
             ApplyChanges();
         }
     }
