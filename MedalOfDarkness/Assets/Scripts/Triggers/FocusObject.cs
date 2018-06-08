@@ -35,6 +35,7 @@ public class FocusObject : MonoBehaviour
                 m_CameraFollow.SetPlayerAsTarget();
                 m_Bars.SetBool("isActive", false);
                 m_Active = false;
+                m_Count = 0;
                 m_Event.SetMessages();
                 GetComponent<BoxCollider>().enabled = false;
             }

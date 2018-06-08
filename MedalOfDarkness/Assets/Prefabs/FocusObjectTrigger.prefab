@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33090427635114172}
   - component: {fileID: 65689695647552116}
   - component: {fileID: 114121510879534222}
+  - component: {fileID: 114120320300337976}
   m_Layer: 0
   m_Name: FocusObjectTrigger
   m_TagString: Untagged
@@ -61,6 +62,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114120320300337976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937085399449798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad35be3f031dbd409f7b626a4000538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger: {fileID: 0}
 --- !u!114 &114121510879534222
 MonoBehaviour:
   m_ObjectHideFlags: 1

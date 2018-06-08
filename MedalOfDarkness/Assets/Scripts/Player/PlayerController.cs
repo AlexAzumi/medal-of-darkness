@@ -102,6 +102,14 @@ public class PlayerController : MonoBehaviour
     {
         m_CanRun = canRun;
     }
+
+    public void MoveRigidbody(Vector3 movement)
+    {
+        Quaternion charRotation = Quaternion.LookRotation(movement);
+
+        m_PlayerRB.MoveRotation(charRotation);
+        m_PlayerRB.MovePosition(transform.position + movement);
+    }
         
     public void SetAnimation(string anim, bool value)
     {

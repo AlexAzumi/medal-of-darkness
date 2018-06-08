@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
     /* Made by Aldan Project | 2018 */
 
     /* Public stuff */
-    public float m_Smooting = 5.0f;
+    public float m_Smoothing = 5.0f;
     public float m_XOffset = -0.4f;
     public float m_ZOffset = 0.4f;
     public int m_YOffset = 1;
@@ -32,7 +32,7 @@ public class CameraFollow : MonoBehaviour
         if(m_PlayerAsTarget) //Adds offset if the camera is following the player
             m_TargetCamPos += new Vector3(m_XOffset, m_YOffset, m_ZOffset);
         
-        transform.position = Vector3.Lerp(transform.position, m_TargetCamPos, m_Smooting * Time.deltaTime);	
+        transform.position = Vector3.Lerp(transform.position, m_TargetCamPos, m_Smoothing * Time.deltaTime);	
 	}
 
     public void SetPlayerAsTarget()

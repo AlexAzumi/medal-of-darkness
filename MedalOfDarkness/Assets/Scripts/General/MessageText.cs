@@ -14,13 +14,14 @@ public class MessageText : MonoBehaviour
     private Animator m_Animator;
     private float m_Timer;
     private float m_WaitTime;
-    private bool m_OnUse;
+    private bool m_OnUse, m_Showing = false;
 
     void Start()
     {
         m_Animator = m_MessageText.GetComponent<Animator>();
         m_Timer = 0.0f;
         m_WaitTime = 0.0f;
+        m_OnUse = false;
     }
 
     void Update()
@@ -40,22 +41,34 @@ public class MessageText : MonoBehaviour
 
     public void SetMessageText(string text, bool onTrigger)
     {
-        if (onTrigger && !m_OnUse)
+        try
         {
-
-            if (!m_MessageText.text.Equals(text))
+            if (onTrigger)
+            {
                 m_MessageText.text = text;
-
-            m_Animator.SetBool("isOnScreen", true);
+                if(!m_Showing)
+                {
+                    m_Animator.SetBool("isOnScreen", true);
+                    m_Showing = true;
+                }
+            }
+            else
+            {
+                m_Animator.SetBool("isOnScreen", false);
+                m_Showing = false;
+            }
         }
-        else
-            m_Animator.SetBool("isOnScreen", false);
+        catch(MissingReferenceException ex)
+        {
+            Debug.Log("Animator not found > " + ex.Message);
+        }
     }
 
     public void ShowMessageInTime(string text, float time)
     {
-        SetMessageText(text, true);
+        m_Timer = 0f;
         m_WaitTime = time;
         m_OnUse = true;
+        SetMessageText(text, true);
     }
 }

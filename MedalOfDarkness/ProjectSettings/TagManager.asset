@@ -7,6 +7,9 @@ TagManager:
   - GameManager
   - Pause Menu
   - Bars
+  - LevelScore
+  - PublishMessage
+  - Kalu
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Player
   - 
   - 
   - 

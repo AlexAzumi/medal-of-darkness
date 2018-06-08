@@ -2,18 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Event : MonoBehaviour 
 {
     /* Made by Aldan Project | 2018 */
 
     /* Public stuff */
+    public LevelScore m_LevelScore;
     public Image m_BlackScreen;
     public GameObject m_PauseMenu;
-    public string m_InitialText = "Usa la palaca izq. para desplazarte";
+    public GameObject m_SceneName;
+
+    public string m_InitialText;
     public float m_InactiveTime = 7f;
-    public string[] m_InitialMessages = {"...", "¿Dónde estoy?...", "¿Quién soy?...", "¿Qué está sucediendo?..."};
-    public string[] m_RockMessages = {"La roca está bloqueando el camino", "¿Qué hago ahora?"};
+
+    public string[] m_InitialMessages;
+    public string[] m_RockMessages;
+    public string m_RockInstruction;
+    public string[] m_BarrelMessages;
+    public string[] m_FoundOneBarrel;
+    public string[] m_SolvedPuzzle;
+    public string[] m_ExitMessages;
+
+    public GameObject[] m_Buttons;
+    public BoxCollider m_FocusTrigger;
+    public MeshRenderer m_RockMesh;
+    public SphereCollider m_RockCollider;
+
+    /* Flags */
+    public int m_ActualEvent = 0;
+    public bool m_Found, m_Barrel01, m_Barrel02, m_Barrel03;
+    public bool m_Solved;
 
     /* Private stuff */
     private CameraControl m_CameraControl;
@@ -23,11 +43,16 @@ public class Event : MonoBehaviour
     private Animator m_BlackScreenAnimator;
     private float m_Timer;
 
-    /* Useful stuff */
-    public bool m_Start, m_InitialDialog, m_MovementMessage, m_Rock;
-
 	void Start() 
     {
+        try
+        {
+            m_LevelScore = GameObject.FindGameObjectWithTag("LevelScore").GetComponent<LevelScore>();
+        }
+        catch(NullReferenceException ex)
+        {
+            Debug.LogWarning("Score Manager not found > " + ex.Message);
+        }
         m_CameraControl = GetComponent<CameraControl>();
         m_CharacterControl = GameObject.Find("Katherine").GetComponent<PlayerController>();
         m_MessageText = GetComponent<MessageText>();
@@ -40,15 +65,24 @@ public class Event : MonoBehaviour
         m_CameraControl.SetCameraSize(1.5f, false, 0.0f);
         m_BlackScreenAnimator.Play("BlackScreenFadeOut");
 
-        m_Start = false;
-        m_InitialDialog = false;
-        m_MovementMessage = false;
-        m_Rock = false;
+        m_ActualEvent = 1;
+        m_Found = false;
+        m_Solved = false;
 	}
 
 	void Update() 
     {
-        if (!m_Start)
+        if (m_Barrel01 && m_Barrel02 && m_Barrel03)
+        {
+            m_ActualEvent = 6;
+        }
+        else if ((m_Barrel01 || m_Barrel02 || m_Barrel03) && !m_Found)
+        {
+            m_DialogManager.SetMessageDialog(m_FoundOneBarrel);
+            m_Found = true;
+        }
+
+        if (m_ActualEvent == 1)
         {
             m_Timer += Time.deltaTime;
             if (m_Timer > m_InactiveTime)
@@ -56,46 +90,73 @@ public class Event : MonoBehaviour
                 if (m_CameraControl.SetCameraSize(2.5f, true, 0.01f))
                 {
                     m_Timer = 0.0f;
-                    m_Start = true;
+                    m_ActualEvent = 2;
                 }
             }
         }
-        else if (!m_InitialDialog)
+        else if (m_ActualEvent == 2)
         {
             m_DialogManager.SetMessageDialog(m_InitialMessages);
-            m_InitialDialog = true;
             m_PauseMenu.SetActive(true);
+            m_ActualEvent = 3;
         }
-        if (m_CharacterControl.m_CanMove == true && !m_MovementMessage)
+        else if (m_ActualEvent == 3 && m_CharacterControl.m_CanMove == true)
         {
-            InitialText();
+            m_SceneName.GetComponent<Animator>().SetTrigger("showName");
+            m_MessageText.ShowMessageInTime(m_InitialText, 7f);
+            m_ActualEvent = 0;
         }
-        if (m_Rock)
+        else if (m_ActualEvent == 4)
         {
             m_DialogManager.SetMessageDialog(m_RockMessages);
-            m_Rock = false;
+            m_ActualEvent = 8;
+        }
+        else if (m_ActualEvent == 8 && m_CharacterControl.m_CanMove == true)
+        {
+            m_LevelScore.StartPuzzle();
+            m_MessageText.ShowMessageInTime(m_RockInstruction, 7f);
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 5)
+        {
+            m_DialogManager.SetMessageDialog(m_BarrelMessages);
+            for (int i = 0; i < m_Buttons.Length; i++)
+            {
+                m_Buttons[i].SetActive(true);
+            }
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 6)
+        {
+            m_LevelScore.StopPuzzle();
+            m_DialogManager.SetMessageDialog(m_SolvedPuzzle);
+            m_FocusTrigger.enabled = true;
+            m_RockMesh.enabled = false;
+            m_RockCollider.enabled = false;
+            m_Barrel01 = false;
+            m_Barrel02 = false;
+            m_Barrel03 = false;
+            m_Solved = true;
+            m_ActualEvent = 0;
+        }
+        else if (m_ActualEvent == 7)
+        {
+            m_DialogManager.SetMessageDialog(m_ExitMessages);
+            m_ActualEvent = 0;
         }
 	} 
-        
-    /* Private methods */
-
-    private void InitialText()
-    {
-        m_MessageText.SetMessageText(m_InitialText, true);
-  
-        m_Timer += Time.deltaTime;
-        if (m_Timer > m_InactiveTime)
-        {
-            m_MessageText.SetMessageText("", false);
-            m_Timer = 0.0f;
-            m_MovementMessage = true;
-        }
-    }
 
     /* Public methods */
 
     public void SetMessages()
     {
-        m_Rock = true;
+        if (m_Solved)
+        {
+            m_ActualEvent = 7;
+        }
+        else
+        {
+            m_ActualEvent = 4;
+        }
     }
 }
